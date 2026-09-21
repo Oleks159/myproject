@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: token-poker-farm
+    runtime: node
+    plan: free
+    buildCommand: pnpm run render:build
+    startCommand: pnpm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: 24.19.0
+      - key: TPF_ALLOW_DEMO_DEPLOYMENT
+        value: "1"
+      - key: HOST
+        value: 0.0.0.0

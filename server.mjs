@@ -15,15 +15,16 @@ const mode = process.env.TPF_MODE === 'telegram' ? 'telegram' : 'preview';
 const telegramMode = mode === 'telegram';
 if (process.env.NODE_ENV === 'production' && process.env.TPF_ALLOW_DEMO_DEPLOYMENT !== '1') throw new Error('This is a Telegram-authenticated beta, not a production poker backend. Set TPF_ALLOW_DEMO_DEPLOYMENT=1 only for a closed demo.');
 const port = Number(process.env.PORT || 8790);
-const origin = telegramMode ? process.env.TPF_PUBLIC_ORIGIN : `http://127.0.0.1:${port}`;
+const renderHostname = process.env.RENDER_EXTERNAL_HOSTNAME?.trim();
+const localOrigin = `http://127.0.0.1:${port}`;
+const origin = process.env.TPF_PUBLIC_ORIGIN?.trim() || (renderHostname ? `https://${renderHostname}` : localOrigin);
 if (telegramMode && !origin) throw new Error('TPF_PUBLIC_ORIGIN fehlt.');
 if (telegramMode && process.env.NODE_ENV !== 'test' && !origin.startsWith('https://')) throw new Error('TPF_PUBLIC_ORIGIN muss HTTPS verwenden.');
 if (telegramMode && !process.env.TELEGRAM_BOT_TOKEN) throw new Error('TELEGRAM_BOT_TOKEN fehlt.');
-const allowedHosts = new Set(telegramMode
-  ? (process.env.TPF_ALLOWED_HOSTS || new URL(origin).host).split(',').map(value => value.trim()).filter(Boolean)
-  : [`127.0.0.1:${port}`, `localhost:${port}`]);
-const allowedOrigins = new Set(telegramMode ? [origin] : [origin, `http://localhost:${port}`]);
-const bindHost = telegramMode ? (process.env.HOST || '0.0.0.0') : '127.0.0.1';
+const configuredHosts = process.env.TPF_ALLOWED_HOSTS?.split(',').map(value => value.trim()).filter(Boolean) || [];
+const allowedHosts = new Set(configuredHosts.length ? configuredHosts : [new URL(origin).host, `127.0.0.1:${port}`, `localhost:${port}`]);
+const allowedOrigins = new Set([origin, localOrigin, `http://localhost:${port}`]);
+const bindHost = process.env.HOST || (renderHostname || telegramMode ? '0.0.0.0' : '127.0.0.1');
 const dataDirectory = process.env.TPF_DATA_DIR || join(root, 'data');
 mkdirSync(dataDirectory, { recursive: true });
 const botEngine = new BotEngine(root, dataDirectory);
