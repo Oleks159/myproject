@@ -29,7 +29,7 @@ export const canRevealSeat = (state, seat) => Boolean(
   state?.status === 'finished' && state.showdown && !seat?.folded && Array.isArray(seat?.cards)
 );
 
-export function createBotUI({ icon, html, card, apiHeaders, render, go, modal, notify, accountState, setAccountState, onSettlement }) {
+export function createBotUI({ icon, html, card, apiHeaders, apiUrl, rememberApiSession, render, go, modal, notify, accountState, setAccountState, onSettlement }) {
   let catalog, catalogLoading, loadError = '', state, tier, loading = false, pending = false;
   let amount = 0, amountRevision = -1, preset = 'min', historyHand;
   let focusedControlState = '';
@@ -40,7 +40,11 @@ export function createBotUI({ icon, html, card, apiHeaders, render, go, modal, n
     const options = data ? { method: 'POST', headers: apiHeaders(true), body: JSON.stringify(data) } : { headers: apiHeaders() };
     let response;
     for (let retry = 0; retry < 2; retry++) {
-      try { response = await fetch(`/api/bots/${path}`, { ...options, signal: AbortSignal.timeout(35000) }); break; }
+      try {
+        response = await fetch(apiUrl(`/api/bots/${path}`), { ...options, signal: AbortSignal.timeout(35000) });
+        rememberApiSession(response);
+        break;
+      }
       catch (error) { if (retry) throw error; }
     }
     const body = await response.json();

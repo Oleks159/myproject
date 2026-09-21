@@ -1,6 +1,7 @@
 // @ts-nocheck -- faithful typed-file port of the approved DOM controller; page shells are React components.
 import { createVictoryAnimator, victoryFixture } from './victory';
 import { createBotUI, seatPortrait } from './bots';
+import { apiUrl, previewSessionHeaders, rememberApiSession } from './api';
 
 const $ = selector => document.querySelector(selector);
 const victory = createVictoryAnimator();
@@ -55,7 +56,7 @@ const telegramInitData = () => window.Telegram?.WebApp?.initData || '';
 const apiHeaders = (json = false) => ({
   ...(json ? { 'Content-Type': 'application/json' } : {}),
   'X-TPF-Request': telegramInitData() ? 'telegram' : 'preview',
-  ...(telegramInitData() ? { 'X-Telegram-Init-Data': telegramInitData() } : {})
+  ...(telegramInitData() ? { 'X-Telegram-Init-Data': telegramInitData() } : previewSessionHeaders())
 });
 const profilePhoto = () => {
   const url = telegramUser()?.photo_url;
@@ -80,7 +81,7 @@ const route = () => {
   return requested;
 };
 const setState = next => { state = next; skew = state.serverTime - Date.now(); document.body.classList.toggle('reduced-motion', state.settings.reducedMotion); };
-const botUI = createBotUI({ icon, html, card, apiHeaders, render, go, modal, notify, accountState: () => state, setAccountState: setState,
+const botUI = createBotUI({ icon, html, card, apiHeaders, apiUrl, rememberApiSession, render, go, modal, notify, accountState: () => state, setAccountState: setState,
   onSettlement: result => {
     const event = result.account?.events?.find(item => item.type === 'earning_rate_increased' && item.at >= Date.now() - 60000);
     if (event) queueProgressWin({ qualifiedWin: event.qualifiedWin, previousRate: event.oldRate, nextRate: event.newRate, at: event.at });
@@ -117,7 +118,8 @@ async function command(path, data = {}, success) {
     let response;
     for (let attempt = 0; attempt < 2; attempt++) {
       try {
-        response = await fetch(`/api/${path}`, { method: 'POST', headers: apiHeaders(true), body: payload, signal: AbortSignal.timeout(8000) });
+        response = await fetch(apiUrl(`/api/${path}`), { method: 'POST', headers: apiHeaders(true), body: payload, signal: AbortSignal.timeout(8000) });
+        rememberApiSession(response);
         break;
       } catch (e) { if (attempt === 1) throw e; } // Reuse the same command ID after an uncertain network result.
     }
@@ -741,7 +743,8 @@ async function poll() {
   polling = true;
   const startingRevision = revision;
   try {
-    const response = await fetch('/api/state', { headers: apiHeaders(), signal: AbortSignal.timeout(5000) });
+    const response = await fetch(apiUrl('/api/state'), { headers: apiHeaders(), signal: AbortSignal.timeout(5000) });
+    rememberApiSession(response);
     if (!response.ok || busy) return;
     const next = await response.json();
     if (busy || startingRevision !== revision) return;
@@ -753,7 +756,8 @@ async function poll() {
 async function bootstrap() {
   if (rewardPreview) { showRewardPreview(rewardPreview); return; }
   try {
-    const response = await fetch('/api/state', { headers: apiHeaders(), signal: AbortSignal.timeout(8000) });
+    const response = await fetch(apiUrl('/api/state'), { headers: apiHeaders(), signal: AbortSignal.timeout(8000) });
+    rememberApiSession(response);
     if (!response.ok) throw new Error('Server nicht bereit');
     setState(await response.json()); render();
   } catch { $('#view').innerHTML = `<div class="error-state"><h2>Verbindung unterbrochen</h2><p>Starte den lokalen Vorschau-Server und lade dein Konto erneut.</p><button class="primary" data-action="retry">Erneut verbinden</button></div>`; }

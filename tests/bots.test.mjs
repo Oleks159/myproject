@@ -31,10 +31,11 @@ test('bot HTTP: real hands, isolated accounts, legal moves, retry and process re
   const cwd = fileURLToPath(new URL('..', import.meta.url));
   const data = mkdtempSync(join(tmpdir(), 'tpf-bot-http-'));
   const port = 21000 + Math.floor(Math.random() * 15000), base = `http://127.0.0.1:${port}`;
+  const previewOrigin = 'https://preview.example.test';
   let child;
   const start = async () => {
     child = spawn(process.execPath, ['server.mjs'], { cwd, windowsHide: true,
-      env: { ...process.env, PORT: String(port), TPF_DATA_DIR: data, NODE_ENV: 'test', TPF_BOTS_DISABLED: '0' }, stdio: ['ignore','pipe','pipe'] });
+      env: { ...process.env, PORT: String(port), TPF_DATA_DIR: data, NODE_ENV: 'test', TPF_BOTS_DISABLED: '0', TPF_ALLOWED_ORIGINS: previewOrigin }, stdio: ['ignore','pipe','pipe'] });
     await new Promise((resolve, reject) => {
       const timer = setTimeout(() => reject(new Error('Bot startup timeout')), 10000);
       child.stdout.on('data', chunk => { if (String(chunk).includes('models ready')) { clearTimeout(timer); resolve(); } });
@@ -65,6 +66,14 @@ test('bot HTTP: real hands, isolated accounts, legal moves, retry and process re
   assert.equal((await post('next',{ ...begin, profile:'mixed' })).status,400);
   assert.equal((await post('action',{ tier:'micro', revision:state.revision, request_id:randomUUID(),action:'call' }, { Origin:'https://example.invalid' })).status,403);
   assert.equal((await post('action',{ tier:'micro', revision:state.revision, request_id:randomUUID(),action:'call' }, { 'X-TPF-Request':'' })).status,400);
+  const previewAccountResponse = await fetch(`${base}/api/state`, { headers: { Origin:previewOrigin, 'X-TPF-Request':'preview' } });
+  const previewSession = previewAccountResponse.headers.get('x-tpf-session');
+  const crossSiteBot = await fetch(`${base}/api/bots/next`, { method:'POST', headers: {
+    Origin:previewOrigin, 'Sec-Fetch-Site':'cross-site', 'X-TPF-Session':previewSession,
+    'X-TPF-Request':'preview', 'Content-Type':'application/json'
+  }, body:JSON.stringify({ tier:'micro', request_id:randomUUID(), revision:0 }) });
+  assert.equal(crossSiteBot.status,200);
+  assert.equal(crossSiteBot.headers.get('access-control-allow-origin'),previewOrigin);
   const other = await (await fetch(`${base}/api/bots/state?tier=micro`)).json();
   assert.equal(other.state.status,'empty');
   assert.equal((await get('state?tier=legend')).state.status,'empty');

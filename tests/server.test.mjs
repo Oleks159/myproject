@@ -11,9 +11,10 @@ test('HTTP contract: persistence, idempotency, isolation, security and rollback'
   const cwd = fileURLToPath(new URL('..', import.meta.url));
   const directory = mkdtempSync(join(tmpdir(), 'token-poker-farm-test-'));
   const port = 19000 + Math.floor(Math.random() * 20000), origin = `http://127.0.0.1:${port}`;
+  const previewOrigin = 'https://preview.example.test';
   let child;
   const start = async () => {
-    child = spawn(process.execPath, ['server.mjs'], { cwd, env: { ...process.env, PORT: String(port), TPF_DATA_DIR: directory, NODE_ENV: 'test' }, stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true });
+    child = spawn(process.execPath, ['server.mjs'], { cwd, env: { ...process.env, PORT: String(port), TPF_DATA_DIR: directory, NODE_ENV: 'test', TPF_ALLOWED_ORIGINS: previewOrigin }, stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true });
     await new Promise((resolve, reject) => {
       const timer = setTimeout(() => reject(new Error('server startup timeout')), 8000);
       child.stdout.on('data', chunk => { if (String(chunk).includes('preview:')) { clearTimeout(timer); resolve(); } });
@@ -49,6 +50,24 @@ test('HTTP contract: persistence, idempotency, isolation, security and rollback'
   await t.test('cross-origin and missing command header are rejected', async () => {
     assert.equal((await post('earning/start', {}, randomUUID(), { Origin: 'https://example.invalid' })).status, 403);
     assert.equal((await post('earning/start', {}, randomUUID(), { 'X-TPF-Request': '' })).status, 400);
+  });
+  await t.test('approved hosted preview gets CORS and a persistent header session', async () => {
+    const preflight = await fetch(`${origin}/api/state`, { method: 'OPTIONS', headers: {
+      Origin: previewOrigin,
+      'Access-Control-Request-Method': 'GET',
+      'Access-Control-Request-Headers': 'x-tpf-request,x-tpf-session'
+    } });
+    assert.equal(preflight.status, 204);
+    assert.equal(preflight.headers.get('access-control-allow-origin'), previewOrigin);
+    assert.match(preflight.headers.get('access-control-allow-headers'), /X-TPF-Session/i);
+    const first = await fetch(`${origin}/api/state`, { headers: { Origin: previewOrigin, 'X-TPF-Request': 'preview' } });
+    assert.equal(first.status, 200);
+    const previewSession = first.headers.get('x-tpf-session');
+    assert.match(previewSession, /^[a-z0-9-]{8,100}$/);
+    const firstState = await first.json();
+    const second = await fetch(`${origin}/api/state`, { headers: { Origin: previewOrigin, 'X-TPF-Request': 'preview', 'X-TPF-Session': previewSession } });
+    assert.equal(second.status, 200);
+    assert.equal((await second.json()).id, firstState.id);
   });
   await t.test('separate local browser session cannot read another account', async () => {
     const other = await (await fetch(`${origin}/api/state`)).json();

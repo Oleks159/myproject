@@ -23,7 +23,17 @@ if (telegramMode && process.env.NODE_ENV !== 'test' && !origin.startsWith('https
 if (telegramMode && !process.env.TELEGRAM_BOT_TOKEN) throw new Error('TELEGRAM_BOT_TOKEN fehlt.');
 const configuredHosts = process.env.TPF_ALLOWED_HOSTS?.split(',').map(value => value.trim()).filter(Boolean) || [];
 const allowedHosts = new Set(configuredHosts.length ? configuredHosts : [new URL(origin).host, `127.0.0.1:${port}`, `localhost:${port}`]);
-const allowedOrigins = new Set([origin, localOrigin, `http://localhost:${port}`]);
+const configuredOrigins = process.env.TPF_ALLOWED_ORIGINS?.split(',').map(value => value.trim()).filter(Boolean) || [];
+const allowedOrigins = new Set([origin, localOrigin, `http://localhost:${port}`, ...configuredOrigins]);
+const trustedPreviewHosts = ['lovable.app', 'lovableproject.com', 'lovable.dev'];
+function isAllowedOrigin(value) {
+  if (!value) return false;
+  if (allowedOrigins.has(value)) return true;
+  try {
+    const candidate = new URL(value);
+    return candidate.protocol === 'https:' && trustedPreviewHosts.some(host => candidate.hostname === host || candidate.hostname.endsWith(`.${host}`));
+  } catch { return false; }
+}
 const bindHost = process.env.HOST || (renderHostname || telegramMode ? '0.0.0.0' : '127.0.0.1');
 const dataDirectory = process.env.TPF_DATA_DIR || join(root, 'data');
 mkdirSync(dataDirectory, { recursive: true });
@@ -103,9 +113,21 @@ export const server = http.createServer(async (req, res) => {
   try {
     if (!allowedHosts.has(req.headers.host)) throw new d.RuleError('Host nicht erlaubt.', 403);
     const url = new URL(req.url, origin);
+    const requestOrigin = req.headers.origin?.trim();
+    if (requestOrigin && isAllowedOrigin(requestOrigin)) {
+      res.setHeader('Access-Control-Allow-Origin', requestOrigin);
+      res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+      res.setHeader('Access-Control-Allow-Headers', 'Content-Type, X-TPF-Request, X-Telegram-Init-Data, X-TPF-Session');
+      res.setHeader('Access-Control-Expose-Headers', 'X-TPF-Session');
+      res.setHeader('Vary', 'Origin');
+    }
+    if (req.method === 'OPTIONS' && url.pathname.startsWith('/api/')) {
+      if (!requestOrigin || !isAllowedOrigin(requestOrigin)) throw new d.RuleError('Fremde Herkunft abgewiesen.', 403);
+      res.writeHead(204); res.end(); return;
+    }
     if (req.method === 'GET' && !url.pathname.startsWith('/api/') && serveClientFile(url.pathname, res)) return;
     if (!url.pathname.startsWith('/api/')) return send(res, 404, { error: 'Nicht gefunden.' });
-    if (req.headers.origin && !allowedOrigins.has(req.headers.origin)) throw new d.RuleError('Fremde Herkunft abgewiesen.', 403);
+    if (requestOrigin && !isAllowedOrigin(requestOrigin)) throw new d.RuleError('Fremde Herkunft abgewiesen.', 403);
     let id, a, telegramIdentity;
     if (telegramMode) {
       telegramIdentity = validateTelegramInitData(telegramInitDataFromRequest(req), process.env.TELEGRAM_BOT_TOKEN, {
@@ -121,18 +143,21 @@ export const server = http.createServer(async (req, res) => {
       if (!saved) attachPendingReferral(a, telegramIdentity, Date.now() + a.offset);
       save(a);
     } else {
-      id = req.headers.cookie?.match(/(?:^|;\s*)tpf_session=([a-z0-9-]+)/)?.[1];
+      const headerSession = String(req.headers['x-tpf-session'] || '').trim();
+      if (headerSession && !/^[a-z0-9-]{8,100}$/.test(headerSession)) throw new d.RuleError('Ungültige Sitzung.', 400);
+      id = headerSession || req.headers.cookie?.match(/(?:^|;\s*)tpf_session=([a-z0-9-]+)/)?.[1];
       const saved = id && get.get(id);
       a = saved ? JSON.parse(saved.json) : d.account();
       if (!id || a.id !== id) {
         save(a); res.setHeader('Set-Cookie', `tpf_session=${a.id}; HttpOnly; SameSite=Strict; Path=/; Max-Age=2592000`);
       }
+      res.setHeader('X-TPF-Session', a.id);
     }
     if (url.pathname.startsWith('/api/bots/')) {
       if (req.method === 'GET' && url.pathname === '/api/bots/catalog') return send(res, 200, await botEngine.request('catalog'));
       if (req.method === 'GET' && url.pathname === '/api/bots/state') return send(res, 200, await botEngine.request('state', a.id, url.searchParams.get('tier')));
       if (req.method === 'GET' && url.pathname === '/api/bots/hand') return send(res, 200, await botEngine.request('hand', a.id, url.searchParams.get('tier'), { hand_id: url.searchParams.get('hand') }));
-      if (req.method !== 'POST' || req.headers['x-tpf-request'] !== mode || !req.headers['content-type']?.startsWith('application/json') || req.headers['sec-fetch-site'] === 'cross-site') throw new d.RuleError('Ungültiger Bot-Befehl.', 400);
+      if (req.method !== 'POST' || req.headers['x-tpf-request'] !== mode || !req.headers['content-type']?.startsWith('application/json')) throw new d.RuleError('Ungültiger Bot-Befehl.', 400);
       const command = url.pathname.slice('/api/bots/'.length);
       if (!['next', 'action', 'reset'].includes(command)) throw new d.RuleError('Nicht gefunden.', 404);
       const b = await body(req);
