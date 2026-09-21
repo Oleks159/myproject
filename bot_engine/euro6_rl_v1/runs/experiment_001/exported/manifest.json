@@ -1,0 +1,20 @@
+{
+  "human_emphasis": {
+    "directory": "runs\\experiment_001\\exported\\human_emphasis",
+    "iteration": 16,
+    "source_checkpoint": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\experiment_001\\human_emphasis\\iteration_016.npz",
+    "model_bytes": 539194
+  },
+  "balanced": {
+    "directory": "runs\\experiment_001\\exported\\balanced",
+    "iteration": 32,
+    "source_checkpoint": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\experiment_001\\balanced\\iteration_032.npz",
+    "model_bytes": 539041
+  },
+  "pluribus_emphasis": {
+    "directory": "runs\\experiment_001\\exported\\pluribus_emphasis",
+    "iteration": 16,
+    "source_checkpoint": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\experiment_001\\pluribus_emphasis\\iteration_016.npz",
+    "model_bytes": 539439
+  }
+}

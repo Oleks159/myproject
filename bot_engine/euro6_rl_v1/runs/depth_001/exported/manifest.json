@@ -1,0 +1,14 @@
+{
+  "balanced": {
+    "directory": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\depth_001\\exported\\balanced",
+    "iteration": 40,
+    "source_checkpoint": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\depth_001\\balanced\\iteration_040.npz",
+    "model_bytes": 538924
+  },
+  "pluribus_emphasis": {
+    "directory": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\depth_001\\exported\\pluribus_emphasis",
+    "iteration": 8,
+    "source_checkpoint": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\depth_001\\pluribus_emphasis\\iteration_008.npz",
+    "model_bytes": 539230
+  }
+}

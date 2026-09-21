@@ -1,0 +1,248 @@
+{
+  "schema_version": "euro6_sizing_discrete_v1",
+  "profile": "human_emphasis",
+  "heads": {
+    "preflop_open": {
+      "train_rows": 11898,
+      "validation_rows": 1474,
+      "test_rows": 1541,
+      "test_accuracy": 0.772225827384815,
+      "test_nll": 0.5091886757526697,
+      "frequency_baseline_nll": 1.2309483620874955,
+      "test_class_counts": [
+        279,
+        525,
+        662,
+        14,
+        50,
+        11,
+        0
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "val_weighted_nll": 1.0038566589355469,
+          "val_accuracy": 0.6316146540027137
+        },
+        {
+          "epoch": 2,
+          "val_weighted_nll": 0.7315189242362976,
+          "val_accuracy": 0.7238805970149254
+        },
+        {
+          "epoch": 4,
+          "val_weighted_nll": 0.5812102556228638,
+          "val_accuracy": 0.7639077340569878
+        },
+        {
+          "epoch": 6,
+          "val_weighted_nll": 0.5526939034461975,
+          "val_accuracy": 0.7530529172320217
+        },
+        {
+          "epoch": 8,
+          "val_weighted_nll": 0.5509337186813354,
+          "val_accuracy": 0.7591587516960652
+        },
+        {
+          "epoch": 10,
+          "val_weighted_nll": 0.5476609468460083,
+          "val_accuracy": 0.7666214382632293
+        },
+        {
+          "epoch": 12,
+          "val_weighted_nll": 0.5396239757537842,
+          "val_accuracy": 0.762550881953867
+        }
+      ]
+    },
+    "preflop_reraise": {
+      "train_rows": 2846,
+      "validation_rows": 344,
+      "test_rows": 364,
+      "test_accuracy": 0.7032967032967034,
+      "test_nll": 0.7830384123275811,
+      "frequency_baseline_nll": 1.4250453293856447,
+      "test_class_counts": [
+        0,
+        2,
+        21,
+        79,
+        132,
+        110,
+        20
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "val_weighted_nll": 1.4217631816864014,
+          "val_accuracy": 0.5523255813953488
+        },
+        {
+          "epoch": 2,
+          "val_weighted_nll": 1.158974051475525,
+          "val_accuracy": 0.6453488372093024
+        },
+        {
+          "epoch": 4,
+          "val_weighted_nll": 0.8932024836540222,
+          "val_accuracy": 0.6831395348837209
+        },
+        {
+          "epoch": 6,
+          "val_weighted_nll": 0.7648953199386597,
+          "val_accuracy": 0.6976744186046512
+        },
+        {
+          "epoch": 8,
+          "val_weighted_nll": 0.7142568826675415,
+          "val_accuracy": 0.7354651162790697
+        },
+        {
+          "epoch": 10,
+          "val_weighted_nll": 0.6882150173187256,
+          "val_accuracy": 0.7412790697674418
+        },
+        {
+          "epoch": 12,
+          "val_weighted_nll": 0.684141993522644,
+          "val_accuracy": 0.7616279069767442
+        }
+      ]
+    },
+    "postflop_bet": {
+      "train_rows": 8040,
+      "validation_rows": 987,
+      "test_rows": 1032,
+      "test_accuracy": 0.41375968992248063,
+      "test_nll": 1.463162030532369,
+      "frequency_baseline_nll": 1.638439751613485,
+      "test_class_counts": [
+        73,
+        143,
+        315,
+        335,
+        99,
+        51,
+        16
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "val_weighted_nll": 1.650526762008667,
+          "val_accuracy": 0.342451874366768
+        },
+        {
+          "epoch": 2,
+          "val_weighted_nll": 1.497536540031433,
+          "val_accuracy": 0.3961499493414387
+        },
+        {
+          "epoch": 4,
+          "val_weighted_nll": 1.4142569303512573,
+          "val_accuracy": 0.42857142857142855
+        },
+        {
+          "epoch": 6,
+          "val_weighted_nll": 1.38330078125,
+          "val_accuracy": 0.4579533941236069
+        },
+        {
+          "epoch": 8,
+          "val_weighted_nll": 1.3664159774780273,
+          "val_accuracy": 0.47821681864235055
+        },
+        {
+          "epoch": 10,
+          "val_weighted_nll": 1.3690558671951294,
+          "val_accuracy": 0.4690982776089159
+        },
+        {
+          "epoch": 12,
+          "val_weighted_nll": 1.375893235206604,
+          "val_accuracy": 0.47922998986828774
+        }
+      ]
+    },
+    "postflop_raise": {
+      "train_rows": 971,
+      "validation_rows": 134,
+      "test_rows": 120,
+      "test_accuracy": 0.5,
+      "test_nll": 1.4610949144334882,
+      "frequency_baseline_nll": 1.6424156757192052,
+      "test_class_counts": [
+        1,
+        12,
+        49,
+        24,
+        10,
+        8,
+        16
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "val_weighted_nll": 2.290640115737915,
+          "val_accuracy": 0.11194029850746269
+        },
+        {
+          "epoch": 2,
+          "val_weighted_nll": 2.0914926528930664,
+          "val_accuracy": 0.16417910447761194
+        },
+        {
+          "epoch": 4,
+          "val_weighted_nll": 1.8076932430267334,
+          "val_accuracy": 0.3358208955223881
+        },
+        {
+          "epoch": 6,
+          "val_weighted_nll": 1.6544082164764404,
+          "val_accuracy": 0.44776119402985076
+        },
+        {
+          "epoch": 8,
+          "val_weighted_nll": 1.5614289045333862,
+          "val_accuracy": 0.4552238805970149
+        },
+        {
+          "epoch": 10,
+          "val_weighted_nll": 1.5138181447982788,
+          "val_accuracy": 0.4626865671641791
+        },
+        {
+          "epoch": 12,
+          "val_weighted_nll": 1.494493842124939,
+          "val_accuracy": 0.4701492537313433
+        }
+      ]
+    }
+  },
+  "seed": 42,
+  "source_sha256": {
+    "train": "ae0902e3fa330775a81c2cdb67f9af3290a33a8b3f562ffd1c399680ba59a88b",
+    "validation": "6e7814e1ebe87b9e160578ac4a38fdc178a95ae2d1085db560e2090bee260cb5",
+    "test": "15f8604029aed0c12c8466f3629f9fbddfc14b3d57e2d4f45f34577cfa17fa55"
+  },
+  "split_overlap": 0,
+  "open_to_bb": [
+    2.0,
+    2.5,
+    3.0,
+    4.0,
+    5.0,
+    7.0
+  ],
+  "raise_or_bet_fractions": [
+    0.25,
+    0.3333333333333333,
+    0.5,
+    0.75,
+    1.0,
+    1.5
+  ],
+  "final_class": "all_in",
+  "hrc_used": false,
+  "meaning": "imitation of observed aggressive sizes; no EV or playing strength guarantee"
+}

@@ -1,0 +1,1788 @@
+{
+  "status": "complete",
+  "config": {
+    "output": "runs\\depth_001",
+    "seed": 20260918,
+    "workers": 6,
+    "iterations": 48,
+    "hands": 8192,
+    "eval_every": 8,
+    "dev_blocks": 100,
+    "test_blocks": 2000,
+    "lr": 8e-05
+  },
+  "sources": {
+    "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\experiment_001\\human_emphasis\\iteration_016.npz": "f0e213f0484f7c7b44753fb20ea1948ac10e69b406a93bb1fafdb0b2d12c7ad3",
+    "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\experiment_001\\balanced\\iteration_032.npz": "ad1cf9947390db07d107723bcd7924a1760f5663c766c5155bb87436dfb8d8ee",
+    "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\experiment_001\\pluribus_emphasis\\iteration_016.npz": "ead06f2e1ba335c832704d07fb4b15401f4e4e0ce80a915ed5875c5a698b867d",
+    "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\human_emphasis\\iteration_000.npz": "d151cabfbcc8efcfc691028978447c7f6238b0172e3c61f52c5345f4e435e5d0",
+    "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\balanced\\iteration_012.npz": "2cfbebf12c4eeaa82f3af06ab01f4e4216ad2a42168fb559ba526bfa89ffdf61",
+    "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\pluribus_emphasis\\iteration_012.npz": "1ca2555739b673b2c14ea8de123e6ed198cda77211ef6e4f0c59a43950c0c02a"
+  },
+  "selected": {
+    "balanced": {
+      "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\depth_001\\balanced\\iteration_040.npz",
+      "iteration": 40,
+      "dev_score": 0.004362312964379687
+    },
+    "pluribus_emphasis": {
+      "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\depth_001\\pluribus_emphasis\\iteration_008.npz",
+      "iteration": 8,
+      "dev_score": 0.006838205270058027
+    }
+  },
+  "metrics": [
+    {
+      "profile": "balanced",
+      "iteration": 1,
+      "hands": 8192,
+      "learner_decisions": 34530,
+      "min_start_chips": 1,
+      "max_start_chips": 240452,
+      "session_continuations": 6144,
+      "elapsed_seconds": 16.25,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 272,
+        "early_stop": false,
+        "policy_loss": -0.01139433176254971,
+        "approx_kl": 0.0022874281203441532,
+        "samples": 34530
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 1,
+      "hands": 8192,
+      "learner_decisions": 36232,
+      "min_start_chips": 1,
+      "max_start_chips": 218155,
+      "session_continuations": 6144,
+      "elapsed_seconds": 14.23399999999674,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 284,
+        "early_stop": false,
+        "policy_loss": -0.010847676507558012,
+        "approx_kl": 0.001869016114077189,
+        "samples": 36232
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 2,
+      "hands": 8192,
+      "learner_decisions": 34529,
+      "min_start_chips": 1,
+      "max_start_chips": 214422,
+      "session_continuations": 6144,
+      "elapsed_seconds": 13.375,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 272,
+        "early_stop": false,
+        "policy_loss": -0.012376158131054272,
+        "approx_kl": 0.0020617367814781025,
+        "samples": 34529
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 2,
+      "hands": 8192,
+      "learner_decisions": 36100,
+      "min_start_chips": 1,
+      "max_start_chips": 179518,
+      "session_continuations": 6144,
+      "elapsed_seconds": 17.32799999997951,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 284,
+        "early_stop": false,
+        "policy_loss": -0.011112539205609458,
+        "approx_kl": 0.001966136418474085,
+        "samples": 36100
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 3,
+      "hands": 8192,
+      "learner_decisions": 35380,
+      "min_start_chips": 1,
+      "max_start_chips": 219973,
+      "session_continuations": 6144,
+      "elapsed_seconds": 25.06300000002375,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 280,
+        "early_stop": false,
+        "policy_loss": -0.012054220216999331,
+        "approx_kl": 0.002282119095519601,
+        "samples": 35380
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 3,
+      "hands": 8192,
+      "learner_decisions": 36358,
+      "min_start_chips": 1,
+      "max_start_chips": 184761,
+      "session_continuations": 6144,
+      "elapsed_seconds": 24.28100000001723,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 288,
+        "early_stop": false,
+        "policy_loss": -0.010721639402988085,
+        "approx_kl": 0.0019121029257245375,
+        "samples": 36358
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 4,
+      "hands": 8192,
+      "learner_decisions": 35290,
+      "min_start_chips": 1,
+      "max_start_chips": 220013,
+      "session_continuations": 6144,
+      "elapsed_seconds": 25.46799999999348,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 276,
+        "early_stop": false,
+        "policy_loss": -0.012009958131579424,
+        "approx_kl": 0.002666026660906933,
+        "samples": 35290
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 4,
+      "hands": 8192,
+      "learner_decisions": 35973,
+      "min_start_chips": 1,
+      "max_start_chips": 348058,
+      "session_continuations": 6144,
+      "elapsed_seconds": 21.14100000000326,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 284,
+        "early_stop": false,
+        "policy_loss": -0.010558514758418434,
+        "approx_kl": 0.0019203076523060753,
+        "samples": 35973
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 5,
+      "hands": 8192,
+      "learner_decisions": 35131,
+      "min_start_chips": 1,
+      "max_start_chips": 195058,
+      "session_continuations": 6144,
+      "elapsed_seconds": 22.28100000001723,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 276,
+        "early_stop": false,
+        "policy_loss": -0.012104632674355345,
+        "approx_kl": 0.002461219602355468,
+        "samples": 35131
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 5,
+      "hands": 8192,
+      "learner_decisions": 35788,
+      "min_start_chips": 2,
+      "max_start_chips": 156746,
+      "session_continuations": 6144,
+      "elapsed_seconds": 24.26500000001397,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 280,
+        "early_stop": false,
+        "policy_loss": -0.010718076816069828,
+        "approx_kl": 0.0019947552536578646,
+        "samples": 35788
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 6,
+      "hands": 8192,
+      "learner_decisions": 35102,
+      "min_start_chips": 1,
+      "max_start_chips": 299839,
+      "session_continuations": 6144,
+      "elapsed_seconds": 24.84299999999348,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 276,
+        "early_stop": false,
+        "policy_loss": -0.012464919441099708,
+        "approx_kl": 0.002345862394789303,
+        "samples": 35102
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 6,
+      "hands": 8192,
+      "learner_decisions": 36484,
+      "min_start_chips": 1,
+      "max_start_chips": 174434,
+      "session_continuations": 6144,
+      "elapsed_seconds": 24.76500000001397,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 288,
+        "early_stop": false,
+        "policy_loss": -0.010666987505430747,
+        "approx_kl": 0.0019436348290999455,
+        "samples": 36484
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 7,
+      "hands": 8192,
+      "learner_decisions": 34676,
+      "min_start_chips": 1,
+      "max_start_chips": 237149,
+      "session_continuations": 6144,
+      "elapsed_seconds": 23.514999999955762,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 272,
+        "early_stop": false,
+        "policy_loss": -0.012082449572581951,
+        "approx_kl": 0.0023533870420145014,
+        "samples": 34676
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 7,
+      "hands": 8192,
+      "learner_decisions": 35906,
+      "min_start_chips": 1,
+      "max_start_chips": 228973,
+      "session_continuations": 6144,
+      "elapsed_seconds": 24.030999999959022,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 284,
+        "early_stop": false,
+        "policy_loss": -0.01059033071092881,
+        "approx_kl": 0.001957560532720899,
+        "samples": 35906
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 8,
+      "hands": 8192,
+      "learner_decisions": 34137,
+      "min_start_chips": 1,
+      "max_start_chips": 237138,
+      "session_continuations": 6144,
+      "elapsed_seconds": 23.17199999996228,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 268,
+        "early_stop": false,
+        "policy_loss": -0.011376646026993875,
+        "approx_kl": 0.0022282551470101976,
+        "samples": 34137
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 8,
+      "hands": 8192,
+      "learner_decisions": 36374,
+      "min_start_chips": 1,
+      "max_start_chips": 191544,
+      "session_continuations": 6144,
+      "elapsed_seconds": 17.95299999997951,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 288,
+        "early_stop": false,
+        "policy_loss": -0.010704247212850133,
+        "approx_kl": 0.0019187580717559992,
+        "samples": 36374
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 9,
+      "hands": 8192,
+      "learner_decisions": 34206,
+      "min_start_chips": 1,
+      "max_start_chips": 184028,
+      "session_continuations": 6144,
+      "elapsed_seconds": 15.59399999998277,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 268,
+        "early_stop": false,
+        "policy_loss": -0.01245289922286996,
+        "approx_kl": 0.0022426400682716103,
+        "samples": 34206
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 9,
+      "hands": 8192,
+      "learner_decisions": 35583,
+      "min_start_chips": 1,
+      "max_start_chips": 384644,
+      "session_continuations": 6144,
+      "elapsed_seconds": 16.14000000001397,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 280,
+        "early_stop": false,
+        "policy_loss": -0.010981558477717377,
+        "approx_kl": 0.002017126674154699,
+        "samples": 35583
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 10,
+      "hands": 8192,
+      "learner_decisions": 35003,
+      "min_start_chips": 1,
+      "max_start_chips": 261361,
+      "session_continuations": 6144,
+      "elapsed_seconds": 15.89000000001397,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 276,
+        "early_stop": false,
+        "policy_loss": -0.011818582789193883,
+        "approx_kl": 0.002135006593586911,
+        "samples": 35003
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 10,
+      "hands": 8192,
+      "learner_decisions": 35571,
+      "min_start_chips": 1,
+      "max_start_chips": 165294,
+      "session_continuations": 6144,
+      "elapsed_seconds": 18.42200000002049,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 280,
+        "early_stop": false,
+        "policy_loss": -0.010568246650403457,
+        "approx_kl": 0.002090628105138308,
+        "samples": 35571
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 11,
+      "hands": 8192,
+      "learner_decisions": 34349,
+      "min_start_chips": 1,
+      "max_start_chips": 157032,
+      "session_continuations": 6144,
+      "elapsed_seconds": 24.68800000002375,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 272,
+        "early_stop": false,
+        "policy_loss": -0.011401725754831463,
+        "approx_kl": 0.002450962711528756,
+        "samples": 34349
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 11,
+      "hands": 8192,
+      "learner_decisions": 36160,
+      "min_start_chips": 1,
+      "max_start_chips": 295112,
+      "session_continuations": 6144,
+      "elapsed_seconds": 18.84399999998277,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 284,
+        "early_stop": false,
+        "policy_loss": -0.010934259833976558,
+        "approx_kl": 0.0019830552265110205,
+        "samples": 36160
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 12,
+      "hands": 8192,
+      "learner_decisions": 34203,
+      "min_start_chips": 2,
+      "max_start_chips": 274410,
+      "session_continuations": 6144,
+      "elapsed_seconds": 12.813000000023749,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 268,
+        "early_stop": false,
+        "policy_loss": -0.011149703233334578,
+        "approx_kl": 0.0020341400530154165,
+        "samples": 34203
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 12,
+      "hands": 8192,
+      "learner_decisions": 35652,
+      "min_start_chips": 1,
+      "max_start_chips": 175910,
+      "session_continuations": 6144,
+      "elapsed_seconds": 12.936999999976251,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 280,
+        "early_stop": false,
+        "policy_loss": -0.01077001010122979,
+        "approx_kl": 0.0018508978556849203,
+        "samples": 35652
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 13,
+      "hands": 8192,
+      "learner_decisions": 34593,
+      "min_start_chips": 1,
+      "max_start_chips": 209990,
+      "session_continuations": 6144,
+      "elapsed_seconds": 14.452999999979511,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 272,
+        "early_stop": false,
+        "policy_loss": -0.011726981119030307,
+        "approx_kl": 0.0021407461315525278,
+        "samples": 34593
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 13,
+      "hands": 8192,
+      "learner_decisions": 35814,
+      "min_start_chips": 1,
+      "max_start_chips": 259199,
+      "session_continuations": 6144,
+      "elapsed_seconds": 15.327999999979511,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 280,
+        "early_stop": false,
+        "policy_loss": -0.010076181059448868,
+        "approx_kl": 0.0017296427141123903,
+        "samples": 35814
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 14,
+      "hands": 8192,
+      "learner_decisions": 34964,
+      "min_start_chips": 1,
+      "max_start_chips": 259866,
+      "session_continuations": 6144,
+      "elapsed_seconds": 14.813000000023749,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 276,
+        "early_stop": false,
+        "policy_loss": -0.011565371450377405,
+        "approx_kl": 0.0021833540624135745,
+        "samples": 34964
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 14,
+      "hands": 8192,
+      "learner_decisions": 36141,
+      "min_start_chips": 1,
+      "max_start_chips": 259327,
+      "session_continuations": 6144,
+      "elapsed_seconds": 14.5,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 284,
+        "early_stop": false,
+        "policy_loss": -0.010528492701285462,
+        "approx_kl": 0.0019914425031624895,
+        "samples": 36141
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 15,
+      "hands": 8192,
+      "learner_decisions": 34298,
+      "min_start_chips": 2,
+      "max_start_chips": 152076,
+      "session_continuations": 6144,
+      "elapsed_seconds": 14.46899999998277,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 268,
+        "early_stop": false,
+        "policy_loss": -0.01204863782016749,
+        "approx_kl": 0.0024043286466269853,
+        "samples": 34298
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 15,
+      "hands": 8192,
+      "learner_decisions": 35974,
+      "min_start_chips": 1,
+      "max_start_chips": 211955,
+      "session_continuations": 6144,
+      "elapsed_seconds": 17.5,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 284,
+        "early_stop": false,
+        "policy_loss": -0.010318599681013904,
+        "approx_kl": 0.001907378486364943,
+        "samples": 35974
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 16,
+      "hands": 8192,
+      "learner_decisions": 34378,
+      "min_start_chips": 1,
+      "max_start_chips": 234544,
+      "session_continuations": 6144,
+      "elapsed_seconds": 16.67099999997299,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 272,
+        "early_stop": false,
+        "policy_loss": -0.01210954154750858,
+        "approx_kl": 0.0022375295225868603,
+        "samples": 34378
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 16,
+      "hands": 8192,
+      "learner_decisions": 35140,
+      "min_start_chips": 1,
+      "max_start_chips": 278924,
+      "session_continuations": 6144,
+      "elapsed_seconds": 24.15600000001723,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 276,
+        "early_stop": false,
+        "policy_loss": -0.01103973882742329,
+        "approx_kl": 0.0019582663418674135,
+        "samples": 35140
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 17,
+      "hands": 8192,
+      "learner_decisions": 34251,
+      "min_start_chips": 1,
+      "max_start_chips": 216470,
+      "session_continuations": 6144,
+      "elapsed_seconds": 14.35899999999674,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 268,
+        "early_stop": false,
+        "policy_loss": -0.011231628724964035,
+        "approx_kl": 0.0019329809157808023,
+        "samples": 34251
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 17,
+      "hands": 8192,
+      "learner_decisions": 35936,
+      "min_start_chips": 1,
+      "max_start_chips": 196514,
+      "session_continuations": 6144,
+      "elapsed_seconds": 14.73399999999674,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 284,
+        "early_stop": false,
+        "policy_loss": -0.011049411964557884,
+        "approx_kl": 0.0022221983064254908,
+        "samples": 35936
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 18,
+      "hands": 8192,
+      "learner_decisions": 34023,
+      "min_start_chips": 1,
+      "max_start_chips": 233226,
+      "session_continuations": 6144,
+      "elapsed_seconds": 14.46899999998277,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 268,
+        "early_stop": false,
+        "policy_loss": -0.011643010843251771,
+        "approx_kl": 0.0020900492921029205,
+        "samples": 34023
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 18,
+      "hands": 8192,
+      "learner_decisions": 35687,
+      "min_start_chips": 1,
+      "max_start_chips": 198722,
+      "session_continuations": 6144,
+      "elapsed_seconds": 15.75,
+      "ppo": {
+        "epochs": 3,
+        "minibatches": 243,
+        "early_stop": true,
+        "policy_loss": -0.00907667266842233,
+        "approx_kl": 0.028484761930028055,
+        "samples": 35687
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 19,
+      "hands": 8192,
+      "learner_decisions": 33726,
+      "min_start_chips": 2,
+      "max_start_chips": 193486,
+      "session_continuations": 6144,
+      "elapsed_seconds": 15.48499999998603,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 264,
+        "early_stop": false,
+        "policy_loss": -0.012229413166118999,
+        "approx_kl": 0.00240675119304801,
+        "samples": 33726
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 19,
+      "hands": 8192,
+      "learner_decisions": 35370,
+      "min_start_chips": 1,
+      "max_start_chips": 196606,
+      "session_continuations": 6144,
+      "elapsed_seconds": 16.40600000001723,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 280,
+        "early_stop": false,
+        "policy_loss": -0.010285031509190678,
+        "approx_kl": 0.0018466371412816267,
+        "samples": 35370
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 20,
+      "hands": 8192,
+      "learner_decisions": 34196,
+      "min_start_chips": 1,
+      "max_start_chips": 286525,
+      "session_continuations": 6144,
+      "elapsed_seconds": 15.65700000000652,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 268,
+        "early_stop": false,
+        "policy_loss": -0.011569310338414658,
+        "approx_kl": 0.0025519091485503758,
+        "samples": 34196
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 20,
+      "hands": 8192,
+      "learner_decisions": 36030,
+      "min_start_chips": 2,
+      "max_start_chips": 297178,
+      "session_continuations": 6144,
+      "elapsed_seconds": 17.655999999959022,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 284,
+        "early_stop": false,
+        "policy_loss": -0.011002033396562786,
+        "approx_kl": 0.002058977766097548,
+        "samples": 36030
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 21,
+      "hands": 8192,
+      "learner_decisions": 34529,
+      "min_start_chips": 1,
+      "max_start_chips": 158448,
+      "session_continuations": 6144,
+      "elapsed_seconds": 16.90600000001723,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 272,
+        "early_stop": false,
+        "policy_loss": -0.01192564620376344,
+        "approx_kl": 0.0023768491706557095,
+        "samples": 34529
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 21,
+      "hands": 8192,
+      "learner_decisions": 36189,
+      "min_start_chips": 1,
+      "max_start_chips": 184398,
+      "session_continuations": 6144,
+      "elapsed_seconds": 16.39100000000326,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 284,
+        "early_stop": false,
+        "policy_loss": -0.011124212419469688,
+        "approx_kl": 0.002121103963908344,
+        "samples": 36189
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 22,
+      "hands": 8192,
+      "learner_decisions": 33260,
+      "min_start_chips": 1,
+      "max_start_chips": 302092,
+      "session_continuations": 6144,
+      "elapsed_seconds": 16.344000000040978,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 260,
+        "early_stop": false,
+        "policy_loss": -0.012374780345643903,
+        "approx_kl": 0.002184773934544045,
+        "samples": 33260
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 22,
+      "hands": 8192,
+      "learner_decisions": 35712,
+      "min_start_chips": 2,
+      "max_start_chips": 291097,
+      "session_continuations": 6144,
+      "elapsed_seconds": 17.15600000001723,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 280,
+        "early_stop": false,
+        "policy_loss": -0.010374348560811446,
+        "approx_kl": 0.0018386431112923885,
+        "samples": 35712
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 23,
+      "hands": 8192,
+      "learner_decisions": 33164,
+      "min_start_chips": 2,
+      "max_start_chips": 199189,
+      "session_continuations": 6144,
+      "elapsed_seconds": 15.297000000020489,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 260,
+        "early_stop": false,
+        "policy_loss": -0.011377947635293126,
+        "approx_kl": 0.0022563734137873376,
+        "samples": 33164
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 23,
+      "hands": 8192,
+      "learner_decisions": 36444,
+      "min_start_chips": 1,
+      "max_start_chips": 173850,
+      "session_continuations": 6144,
+      "elapsed_seconds": 13.578000000037719,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 288,
+        "early_stop": false,
+        "policy_loss": -0.010435865698172883,
+        "approx_kl": 0.00187195202947498,
+        "samples": 36444
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 24,
+      "hands": 8192,
+      "learner_decisions": 34183,
+      "min_start_chips": 1,
+      "max_start_chips": 195334,
+      "session_continuations": 6144,
+      "elapsed_seconds": 13.312000000034459,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 268,
+        "early_stop": false,
+        "policy_loss": -0.011922520569817593,
+        "approx_kl": 0.002274388266747604,
+        "samples": 34183
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 24,
+      "hands": 8192,
+      "learner_decisions": 36037,
+      "min_start_chips": 1,
+      "max_start_chips": 228069,
+      "session_continuations": 6144,
+      "elapsed_seconds": 13.389999999955762,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 284,
+        "early_stop": false,
+        "policy_loss": -0.010457638395177498,
+        "approx_kl": 0.0022205791119719203,
+        "samples": 36037
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 25,
+      "hands": 8192,
+      "learner_decisions": 34278,
+      "min_start_chips": 1,
+      "max_start_chips": 181514,
+      "session_continuations": 6144,
+      "elapsed_seconds": 11.813000000023749,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 268,
+        "early_stop": false,
+        "policy_loss": -0.011708460820335565,
+        "approx_kl": 0.002123076134089034,
+        "samples": 34278
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 25,
+      "hands": 8192,
+      "learner_decisions": 35791,
+      "min_start_chips": 1,
+      "max_start_chips": 276283,
+      "session_continuations": 6144,
+      "elapsed_seconds": 10.530999999959022,
+      "ppo": {
+        "epochs": 1,
+        "minibatches": 79,
+        "early_stop": true,
+        "policy_loss": -0.0007705500224844968,
+        "approx_kl": 0.04066992737455552,
+        "samples": 35791
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 26,
+      "hands": 8192,
+      "learner_decisions": 34000,
+      "min_start_chips": 1,
+      "max_start_chips": 297555,
+      "session_continuations": 6144,
+      "elapsed_seconds": 11.73399999999674,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 268,
+        "early_stop": false,
+        "policy_loss": -0.011436745856477649,
+        "approx_kl": 0.0022688890294742664,
+        "samples": 34000
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 26,
+      "hands": 8192,
+      "learner_decisions": 35641,
+      "min_start_chips": 1,
+      "max_start_chips": 233642,
+      "session_continuations": 6144,
+      "elapsed_seconds": 12.0,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 280,
+        "early_stop": false,
+        "policy_loss": -0.010824875051185857,
+        "approx_kl": 0.0018398456386132696,
+        "samples": 35641
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 27,
+      "hands": 8192,
+      "learner_decisions": 34487,
+      "min_start_chips": 1,
+      "max_start_chips": 218518,
+      "session_continuations": 6144,
+      "elapsed_seconds": 12.203000000037719,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 272,
+        "early_stop": false,
+        "policy_loss": -0.011908714621795076,
+        "approx_kl": 0.0025289239986125713,
+        "samples": 34487
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 27,
+      "hands": 8192,
+      "learner_decisions": 35904,
+      "min_start_chips": 1,
+      "max_start_chips": 260854,
+      "session_continuations": 6144,
+      "elapsed_seconds": 13.172000000020489,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 284,
+        "early_stop": false,
+        "policy_loss": -0.010606753422603497,
+        "approx_kl": 0.0021302542372199956,
+        "samples": 35904
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 28,
+      "hands": 8192,
+      "learner_decisions": 34092,
+      "min_start_chips": 1,
+      "max_start_chips": 208852,
+      "session_continuations": 6144,
+      "elapsed_seconds": 12.64100000000326,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 268,
+        "early_stop": false,
+        "policy_loss": -0.012689472239780284,
+        "approx_kl": 0.0024009992815778834,
+        "samples": 34092
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 28,
+      "hands": 8192,
+      "learner_decisions": 35423,
+      "min_start_chips": 1,
+      "max_start_chips": 198361,
+      "session_continuations": 6144,
+      "elapsed_seconds": 15.64100000000326,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 280,
+        "early_stop": false,
+        "policy_loss": -0.01029767405398039,
+        "approx_kl": 0.0018091189051197257,
+        "samples": 35423
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 29,
+      "hands": 8192,
+      "learner_decisions": 33816,
+      "min_start_chips": 1,
+      "max_start_chips": 183172,
+      "session_continuations": 6144,
+      "elapsed_seconds": 22.79700000002049,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 268,
+        "early_stop": false,
+        "policy_loss": -0.012218048152391192,
+        "approx_kl": 0.002280342194409709,
+        "samples": 33816
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 29,
+      "hands": 8192,
+      "learner_decisions": 35318,
+      "min_start_chips": 1,
+      "max_start_chips": 295528,
+      "session_continuations": 6144,
+      "elapsed_seconds": 22.76500000001397,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 276,
+        "early_stop": false,
+        "policy_loss": -0.010095467277661122,
+        "approx_kl": 0.0019522380144530044,
+        "samples": 35318
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 30,
+      "hands": 8192,
+      "learner_decisions": 33235,
+      "min_start_chips": 1,
+      "max_start_chips": 192168,
+      "session_continuations": 6144,
+      "elapsed_seconds": 13.296999999962281,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 260,
+        "early_stop": false,
+        "policy_loss": -0.011533667875483381,
+        "approx_kl": 0.0021630764282317264,
+        "samples": 33235
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 30,
+      "hands": 8192,
+      "learner_decisions": 35666,
+      "min_start_chips": 1,
+      "max_start_chips": 258715,
+      "session_continuations": 6144,
+      "elapsed_seconds": 13.59299999999348,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 280,
+        "early_stop": false,
+        "policy_loss": -0.010785252046393384,
+        "approx_kl": 0.001985571895837902,
+        "samples": 35666
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 31,
+      "hands": 8192,
+      "learner_decisions": 32966,
+      "min_start_chips": 1,
+      "max_start_chips": 267199,
+      "session_continuations": 6144,
+      "elapsed_seconds": 12.952999999979511,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 260,
+        "early_stop": false,
+        "policy_loss": -0.012140330603746273,
+        "approx_kl": 0.0022672551398926068,
+        "samples": 32966
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 31,
+      "hands": 8192,
+      "learner_decisions": 35722,
+      "min_start_chips": 1,
+      "max_start_chips": 233989,
+      "session_continuations": 6144,
+      "elapsed_seconds": 13.313000000023749,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 280,
+        "early_stop": false,
+        "policy_loss": -0.01091626667364825,
+        "approx_kl": 0.002190020012530326,
+        "samples": 35722
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 32,
+      "hands": 8192,
+      "learner_decisions": 33819,
+      "min_start_chips": 1,
+      "max_start_chips": 290798,
+      "session_continuations": 6144,
+      "elapsed_seconds": 13.063000000023749,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 268,
+        "early_stop": false,
+        "policy_loss": -0.011912396289355164,
+        "approx_kl": 0.0023521344311060316,
+        "samples": 33819
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 32,
+      "hands": 8192,
+      "learner_decisions": 35467,
+      "min_start_chips": 1,
+      "max_start_chips": 192455,
+      "session_continuations": 6144,
+      "elapsed_seconds": 11.59299999999348,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 280,
+        "early_stop": false,
+        "policy_loss": -0.010430486262466062,
+        "approx_kl": 0.0020107129422368905,
+        "samples": 35467
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 33,
+      "hands": 8192,
+      "learner_decisions": 34228,
+      "min_start_chips": 1,
+      "max_start_chips": 369938,
+      "session_continuations": 6144,
+      "elapsed_seconds": 18.14100000000326,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 268,
+        "early_stop": false,
+        "policy_loss": -0.01211107649305469,
+        "approx_kl": 0.002558098817455269,
+        "samples": 34228
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 33,
+      "hands": 8192,
+      "learner_decisions": 35455,
+      "min_start_chips": 2,
+      "max_start_chips": 308215,
+      "session_continuations": 6144,
+      "elapsed_seconds": 22.90700000000652,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 280,
+        "early_stop": false,
+        "policy_loss": -0.010151891321809062,
+        "approx_kl": 0.0019222157966689096,
+        "samples": 35455
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 34,
+      "hands": 8192,
+      "learner_decisions": 33726,
+      "min_start_chips": 1,
+      "max_start_chips": 211369,
+      "session_continuations": 6144,
+      "elapsed_seconds": 21.0,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 264,
+        "early_stop": false,
+        "policy_loss": -0.011306495381799153,
+        "approx_kl": 0.0022059689009460543,
+        "samples": 33726
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 34,
+      "hands": 8192,
+      "learner_decisions": 35322,
+      "min_start_chips": 3,
+      "max_start_chips": 299839,
+      "session_continuations": 6144,
+      "elapsed_seconds": 25.29700000002049,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 276,
+        "early_stop": false,
+        "policy_loss": -0.009972269598742157,
+        "approx_kl": 0.0017689597015352473,
+        "samples": 35322
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 35,
+      "hands": 8192,
+      "learner_decisions": 34124,
+      "min_start_chips": 1,
+      "max_start_chips": 234747,
+      "session_continuations": 6144,
+      "elapsed_seconds": 23.70299999997951,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 268,
+        "early_stop": false,
+        "policy_loss": -0.011635345067882337,
+        "approx_kl": 0.002234114547663143,
+        "samples": 34124
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 35,
+      "hands": 8192,
+      "learner_decisions": 36173,
+      "min_start_chips": 1,
+      "max_start_chips": 178300,
+      "session_continuations": 6144,
+      "elapsed_seconds": 23.219000000040978,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 284,
+        "early_stop": false,
+        "policy_loss": -0.009851724861360447,
+        "approx_kl": 0.0018956245268200366,
+        "samples": 36173
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 36,
+      "hands": 8192,
+      "learner_decisions": 34002,
+      "min_start_chips": 1,
+      "max_start_chips": 255110,
+      "session_continuations": 6144,
+      "elapsed_seconds": 17.56299999996554,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 268,
+        "early_stop": false,
+        "policy_loss": -0.011715830400151072,
+        "approx_kl": 0.0022810847897864425,
+        "samples": 34002
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 36,
+      "hands": 8192,
+      "learner_decisions": 36145,
+      "min_start_chips": 1,
+      "max_start_chips": 282478,
+      "session_continuations": 6144,
+      "elapsed_seconds": 16.25,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 284,
+        "early_stop": false,
+        "policy_loss": -0.010706900547683728,
+        "approx_kl": 0.0019970024155647613,
+        "samples": 36145
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 37,
+      "hands": 8192,
+      "learner_decisions": 34287,
+      "min_start_chips": 1,
+      "max_start_chips": 259247,
+      "session_continuations": 6144,
+      "elapsed_seconds": 18.04700000002049,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 268,
+        "early_stop": false,
+        "policy_loss": -0.0113655689775897,
+        "approx_kl": 0.0022692152743514645,
+        "samples": 34287
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 37,
+      "hands": 8192,
+      "learner_decisions": 35545,
+      "min_start_chips": 1,
+      "max_start_chips": 220275,
+      "session_continuations": 6144,
+      "elapsed_seconds": 17.15600000001723,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 280,
+        "early_stop": false,
+        "policy_loss": -0.010137055315310624,
+        "approx_kl": 0.0021979576330881916,
+        "samples": 35545
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 38,
+      "hands": 8192,
+      "learner_decisions": 34481,
+      "min_start_chips": 2,
+      "max_start_chips": 333168,
+      "session_continuations": 6144,
+      "elapsed_seconds": 17.03100000001723,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 272,
+        "early_stop": false,
+        "policy_loss": -0.011403098293200466,
+        "approx_kl": 0.0023467618016497103,
+        "samples": 34481
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 38,
+      "hands": 8192,
+      "learner_decisions": 35445,
+      "min_start_chips": 1,
+      "max_start_chips": 217438,
+      "session_continuations": 6144,
+      "elapsed_seconds": 17.84299999999348,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 280,
+        "early_stop": false,
+        "policy_loss": -0.010436759447240937,
+        "approx_kl": 0.0022205443917098057,
+        "samples": 35445
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 39,
+      "hands": 8192,
+      "learner_decisions": 34276,
+      "min_start_chips": 1,
+      "max_start_chips": 202070,
+      "session_continuations": 6144,
+      "elapsed_seconds": 18.46799999999348,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 268,
+        "early_stop": false,
+        "policy_loss": -0.011282940145407847,
+        "approx_kl": 0.002127671284895452,
+        "samples": 34276
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 39,
+      "hands": 8192,
+      "learner_decisions": 36508,
+      "min_start_chips": 1,
+      "max_start_chips": 269214,
+      "session_continuations": 6144,
+      "elapsed_seconds": 23.68699999997625,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 288,
+        "early_stop": false,
+        "policy_loss": -0.010500467230060637,
+        "approx_kl": 0.0019147437871679177,
+        "samples": 36508
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 40,
+      "hands": 8192,
+      "learner_decisions": 33784,
+      "min_start_chips": 1,
+      "max_start_chips": 369582,
+      "session_continuations": 6144,
+      "elapsed_seconds": 20.81199999997625,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 264,
+        "early_stop": false,
+        "policy_loss": -0.011775331566151195,
+        "approx_kl": 0.0021857914623828268,
+        "samples": 33784
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 40,
+      "hands": 8192,
+      "learner_decisions": 35574,
+      "min_start_chips": 1,
+      "max_start_chips": 261533,
+      "session_continuations": 6144,
+      "elapsed_seconds": 16.764999999955762,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 280,
+        "early_stop": false,
+        "policy_loss": -0.010653564105464178,
+        "approx_kl": 0.0021381163190855083,
+        "samples": 35574
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 41,
+      "hands": 8192,
+      "learner_decisions": 34139,
+      "min_start_chips": 3,
+      "max_start_chips": 261670,
+      "session_continuations": 6144,
+      "elapsed_seconds": 16.23499999998603,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 268,
+        "early_stop": false,
+        "policy_loss": -0.011907428273713822,
+        "approx_kl": 0.0024561475076074184,
+        "samples": 34139
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 41,
+      "hands": 8192,
+      "learner_decisions": 35312,
+      "min_start_chips": 1,
+      "max_start_chips": 276212,
+      "session_continuations": 6144,
+      "elapsed_seconds": 16.31200000003446,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 276,
+        "early_stop": false,
+        "policy_loss": -0.010861340816470876,
+        "approx_kl": 0.0022623979048582263,
+        "samples": 35312
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 42,
+      "hands": 8192,
+      "learner_decisions": 34426,
+      "min_start_chips": 1,
+      "max_start_chips": 170808,
+      "session_continuations": 6144,
+      "elapsed_seconds": 15.813000000023749,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 272,
+        "early_stop": false,
+        "policy_loss": -0.011966463695973132,
+        "approx_kl": 0.0024950627234998145,
+        "samples": 34426
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 42,
+      "hands": 8192,
+      "learner_decisions": 35418,
+      "min_start_chips": 1,
+      "max_start_chips": 221420,
+      "session_continuations": 6144,
+      "elapsed_seconds": 16.84399999998277,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 280,
+        "early_stop": false,
+        "policy_loss": -0.010710590665525203,
+        "approx_kl": 0.0020120836585086335,
+        "samples": 35418
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 43,
+      "hands": 8192,
+      "learner_decisions": 35243,
+      "min_start_chips": 1,
+      "max_start_chips": 233724,
+      "session_continuations": 6144,
+      "elapsed_seconds": 16.17200000002049,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 276,
+        "early_stop": false,
+        "policy_loss": -0.011579745736470476,
+        "approx_kl": 0.0024523093866546403,
+        "samples": 35243
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 43,
+      "hands": 8192,
+      "learner_decisions": 35856,
+      "min_start_chips": 1,
+      "max_start_chips": 283638,
+      "session_continuations": 6144,
+      "elapsed_seconds": 16.280999999959022,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 284,
+        "early_stop": false,
+        "policy_loss": -0.010599438082155566,
+        "approx_kl": 0.002185484367548945,
+        "samples": 35856
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 44,
+      "hands": 8192,
+      "learner_decisions": 33920,
+      "min_start_chips": 2,
+      "max_start_chips": 248152,
+      "session_continuations": 6144,
+      "elapsed_seconds": 16.64000000001397,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 268,
+        "early_stop": false,
+        "policy_loss": -0.011808302317155355,
+        "approx_kl": 0.002358199450929082,
+        "samples": 33920
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 44,
+      "hands": 8192,
+      "learner_decisions": 35498,
+      "min_start_chips": 1,
+      "max_start_chips": 228542,
+      "session_continuations": 6144,
+      "elapsed_seconds": 17.64000000001397,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 280,
+        "early_stop": false,
+        "policy_loss": -0.01015187384048027,
+        "approx_kl": 0.002045206714298823,
+        "samples": 35498
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 45,
+      "hands": 8192,
+      "learner_decisions": 34423,
+      "min_start_chips": 1,
+      "max_start_chips": 234722,
+      "session_continuations": 6144,
+      "elapsed_seconds": 16.92200000002049,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 272,
+        "early_stop": false,
+        "policy_loss": -0.01226483472568251,
+        "approx_kl": 0.0024704504659621767,
+        "samples": 34423
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 45,
+      "hands": 8192,
+      "learner_decisions": 35212,
+      "min_start_chips": 1,
+      "max_start_chips": 207464,
+      "session_continuations": 6144,
+      "elapsed_seconds": 17.54700000002049,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 276,
+        "early_stop": false,
+        "policy_loss": -0.01081420754889143,
+        "approx_kl": 0.0020521868417516637,
+        "samples": 35212
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 46,
+      "hands": 8192,
+      "learner_decisions": 34663,
+      "min_start_chips": 1,
+      "max_start_chips": 246417,
+      "session_continuations": 6144,
+      "elapsed_seconds": 17.17200000002049,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 272,
+        "early_stop": false,
+        "policy_loss": -0.01203620575009952,
+        "approx_kl": 0.0023438685610390137,
+        "samples": 34663
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 46,
+      "hands": 8192,
+      "learner_decisions": 35299,
+      "min_start_chips": 1,
+      "max_start_chips": 280946,
+      "session_continuations": 6144,
+      "elapsed_seconds": 19.73399999999674,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 276,
+        "early_stop": false,
+        "policy_loss": -0.01034547463990361,
+        "approx_kl": 0.0018500134568077834,
+        "samples": 35299
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 47,
+      "hands": 8192,
+      "learner_decisions": 34481,
+      "min_start_chips": 1,
+      "max_start_chips": 294530,
+      "session_continuations": 6144,
+      "elapsed_seconds": 16.34399999998277,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 272,
+        "early_stop": false,
+        "policy_loss": -0.01184994031331876,
+        "approx_kl": 0.002332156362818666,
+        "samples": 34481
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 47,
+      "hands": 8192,
+      "learner_decisions": 35590,
+      "min_start_chips": 1,
+      "max_start_chips": 173560,
+      "session_continuations": 6144,
+      "elapsed_seconds": 14.219000000040978,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 280,
+        "early_stop": false,
+        "policy_loss": -0.010813635076966295,
+        "approx_kl": 0.0020933555833553556,
+        "samples": 35590
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 48,
+      "hands": 8192,
+      "learner_decisions": 34137,
+      "min_start_chips": 2,
+      "max_start_chips": 268898,
+      "session_continuations": 6144,
+      "elapsed_seconds": 13.53200000000652,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 268,
+        "early_stop": false,
+        "policy_loss": -0.011510066775628764,
+        "approx_kl": 0.002209469644840974,
+        "samples": 34137
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 48,
+      "hands": 8192,
+      "learner_decisions": 35913,
+      "min_start_chips": 1,
+      "max_start_chips": 264422,
+      "session_continuations": 6144,
+      "elapsed_seconds": 13.75,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 284,
+        "early_stop": false,
+        "policy_loss": -0.011007914587207618,
+        "approx_kl": 0.0021730053133288776,
+        "samples": 35913
+      }
+    }
+  ],
+  "development": {},
+  "protocol": "Fixed counts committed before training. Initial policy is eligible fallback. Development selects each checkpoint and overall champion by absolute normalized panel score on identical development decks/opponents, provided unopened AA fold probability <= max(.05, initial value+.01). Selection freezes before final tests; test size is never extended after results. Two paired tests vs respective old RL baseline, corrected 97.5% panel intervals.",
+  "environment": "Six-player NLHE, fixed 0.5/1 BB, no rake, 1..1000 BB starts, unequal seats with occasional 0.01..0.99 BB remnants; four-hand training sessions carry stacks and rotate button. Bust seats get explicit simulated refill; other seats never reset inside a session.",
+  "reward": "Net BB / max(10, initial effective stack BB), fixed before actions. No win/loss labels or future cards.",
+  "opponents": "Training: 40% full current self-play; otherwise one learner vs old RL, HRC, historical policies and check-call/loose scripted styles. Evaluation: 60% old RL mixtures, 20% HRC mixtures, 20% styles.",
+  "limitations": [
+    "Not a poker solver, no equilibrium guarantee, no online search.",
+    "No fresh HRC supervision; existing HRC models provide opponent diversity only.",
+    "Evaluation hands start independently; carried sessions are covered by training and technical tests, not a validated long-session winrate against humans.",
+    "1000 BB is the upper regular start range, not an inference limit or a guarantee for every depth.",
+    "Hero history is not used for training; no claim to have learned the specific human opponent."
+  ],
+  "sanity_limit": {
+    "balanced": 0.05,
+    "pluribus_emphasis": 0.05
+  },
+  "selection_frozen": true,
+  "champion": "pluribus_emphasis",
+  "selected_hashes": {
+    "balanced": "977b19a2348113d64fa30418fc9c4648a07ffe8dd7e3054a6e1747a3505d776c",
+    "pluribus_emphasis": "61f623e98e1be6b1e4027227c02e57d413d93f7a22fe959591ea1de5fde6e3b7"
+  },
+  "elapsed_seconds": 2269.530999999959,
+  "previous_models_unchanged": true
+}

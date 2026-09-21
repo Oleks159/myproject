@@ -1,0 +1,1485 @@
+{
+  "status": "complete",
+  "config": {
+    "data": "hrc_dataset_v1",
+    "previous": "runs\\experiment_001",
+    "output": "runs\\hrc_001",
+    "workers": 6,
+    "seed": 20260916,
+    "epochs": 12,
+    "teacher_steps": 160,
+    "iterations": 16,
+    "hands": 4096,
+    "dev_blocks": 192,
+    "test_blocks": 3000
+  },
+  "baselines": [
+    "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\experiment_001\\human_emphasis\\iteration_016.npz",
+    "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\experiment_001\\balanced\\iteration_032.npz",
+    "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\experiment_001\\pluribus_emphasis\\iteration_016.npz"
+  ],
+  "baseline_hashes": {
+    "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\experiment_001\\human_emphasis\\iteration_016.npz": "f0e213f0484f7c7b44753fb20ea1948ac10e69b406a93bb1fafdb0b2d12c7ad3",
+    "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\experiment_001\\balanced\\iteration_032.npz": "ad1cf9947390db07d107723bcd7924a1760f5663c766c5155bb87436dfb8d8ee",
+    "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\experiment_001\\pluribus_emphasis\\iteration_016.npz": "ead06f2e1ba335c832704d07fb4b15401f4e4e0ce80a915ed5875c5a698b867d"
+  },
+  "dataset_audit_sha256": "4be05bfb3b405b83988780e13499964f06ce6f8af1d559e69ca7d2fad110324c",
+  "selected": {
+    "human_emphasis": {
+      "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\human_emphasis\\iteration_000.npz",
+      "iteration": 0,
+      "dev_score_bb100": 7.934606481481488
+    },
+    "balanced": {
+      "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\balanced\\iteration_012.npz",
+      "iteration": 12,
+      "dev_score_bb100": -3.524016203703706
+    },
+    "pluribus_emphasis": {
+      "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\pluribus_emphasis\\iteration_012.npz",
+      "iteration": 12,
+      "dev_score_bb100": -2.14554398148148
+    }
+  },
+  "distillation": {
+    "human_emphasis": {
+      "initial_validation": {
+        "preflop": {
+          "rows": 3480,
+          "conditional_kl": 0.3553398549556732,
+          "conditional_teacher_tree_ev_gap_bb": 1.184358835220337,
+          "outside_teacher_tree_probability": 0.0018384449649602175
+        },
+        "flop": {
+          "rows": 16497,
+          "conditional_kl": 0.5144973397254944,
+          "conditional_teacher_tree_ev_gap_bb": 0.11590297520160675,
+          "outside_teacher_tree_probability": 0.0
+        },
+        "macro_kl": 0.4349185973405838
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.11567435413599014,
+              "conditional_teacher_tree_ev_gap_bb": 0.8713995218276978,
+              "outside_teacher_tree_probability": 0.002411900321021676
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.35763826966285706,
+              "conditional_teacher_tree_ev_gap_bb": 0.10466165095567703,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.2366563118994236
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\human_emphasis\\distilled_01.npz"
+        },
+        {
+          "epoch": 2,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.10053348541259766,
+              "conditional_teacher_tree_ev_gap_bb": 0.8566997051239014,
+              "outside_teacher_tree_probability": 0.002488325582817197
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.3429113030433655,
+              "conditional_teacher_tree_ev_gap_bb": 0.10254025459289551,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.22172239422798157
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\human_emphasis\\distilled_02.npz"
+        },
+        {
+          "epoch": 3,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.09199333190917969,
+              "conditional_teacher_tree_ev_gap_bb": 0.8593880534172058,
+              "outside_teacher_tree_probability": 0.002226411597803235
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.33770260214805603,
+              "conditional_teacher_tree_ev_gap_bb": 0.09985567629337311,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.21484796702861786
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\human_emphasis\\distilled_03.npz"
+        },
+        {
+          "epoch": 4,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.09064871817827225,
+              "conditional_teacher_tree_ev_gap_bb": 0.8407250642776489,
+              "outside_teacher_tree_probability": 0.002005866728723049
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.330600768327713,
+              "conditional_teacher_tree_ev_gap_bb": 0.09716067463159561,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.21062474325299263
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\human_emphasis\\distilled_04.npz"
+        },
+        {
+          "epoch": 5,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.08451534807682037,
+              "conditional_teacher_tree_ev_gap_bb": 0.8895276784896851,
+              "outside_teacher_tree_probability": 0.001905092503875494
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.32993894815444946,
+              "conditional_teacher_tree_ev_gap_bb": 0.09455086290836334,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.20722714811563492
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\human_emphasis\\distilled_05.npz"
+        },
+        {
+          "epoch": 6,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.08357439935207367,
+              "conditional_teacher_tree_ev_gap_bb": 0.8420875668525696,
+              "outside_teacher_tree_probability": 0.0017718656454235315
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.330056369304657,
+              "conditional_teacher_tree_ev_gap_bb": 0.09301494807004929,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.20681538432836533
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\human_emphasis\\distilled_06.npz"
+        },
+        {
+          "epoch": 7,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.08101195842027664,
+              "conditional_teacher_tree_ev_gap_bb": 0.872111976146698,
+              "outside_teacher_tree_probability": 0.0016644556308165193
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.3263933062553406,
+              "conditional_teacher_tree_ev_gap_bb": 0.09122870862483978,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.2037026323378086
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\human_emphasis\\distilled_07.npz"
+        },
+        {
+          "epoch": 8,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.08014163374900818,
+              "conditional_teacher_tree_ev_gap_bb": 0.8667405247688293,
+              "outside_teacher_tree_probability": 0.0017131295753642917
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.32407131791114807,
+              "conditional_teacher_tree_ev_gap_bb": 0.08980616182088852,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.20210647583007812
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\human_emphasis\\distilled_08.npz"
+        },
+        {
+          "epoch": 9,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.07777532935142517,
+              "conditional_teacher_tree_ev_gap_bb": 0.9199447631835938,
+              "outside_teacher_tree_probability": 0.0014872379833832383
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.3242030739784241,
+              "conditional_teacher_tree_ev_gap_bb": 0.09037469327449799,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.20098920166492462
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\human_emphasis\\distilled_09.npz"
+        },
+        {
+          "epoch": 10,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.07719387114048004,
+              "conditional_teacher_tree_ev_gap_bb": 0.8852399587631226,
+              "outside_teacher_tree_probability": 0.0013685195008292794
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.3227156400680542,
+              "conditional_teacher_tree_ev_gap_bb": 0.08882734179496765,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.19995475560426712
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\human_emphasis\\distilled_10.npz"
+        },
+        {
+          "epoch": 11,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.07627513259649277,
+              "conditional_teacher_tree_ev_gap_bb": 0.8602712154388428,
+              "outside_teacher_tree_probability": 0.0012790871551260352
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.3239247798919678,
+              "conditional_teacher_tree_ev_gap_bb": 0.0891318991780281,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.20009995624423027
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\human_emphasis\\distilled_11.npz"
+        },
+        {
+          "epoch": 12,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.07477859407663345,
+              "conditional_teacher_tree_ev_gap_bb": 0.9138504266738892,
+              "outside_teacher_tree_probability": 0.0013086141552776098
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.3211325705051422,
+              "conditional_teacher_tree_ev_gap_bb": 0.08815716207027435,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.19795558229088783
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\human_emphasis\\distilled_12.npz"
+        }
+      ],
+      "selected": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\human_emphasis\\distilled_12.npz",
+      "best_kl": 0.19795558229088783
+    },
+    "balanced": {
+      "initial_validation": {
+        "preflop": {
+          "rows": 3480,
+          "conditional_kl": 0.2575821280479431,
+          "conditional_teacher_tree_ev_gap_bb": 0.8265857100486755,
+          "outside_teacher_tree_probability": 0.0015062871389091015
+        },
+        "flop": {
+          "rows": 16497,
+          "conditional_kl": 0.6519164443016052,
+          "conditional_teacher_tree_ev_gap_bb": 0.1208033561706543,
+          "outside_teacher_tree_probability": 0.0
+        },
+        "macro_kl": 0.45474928617477417
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.1178278848528862,
+              "conditional_teacher_tree_ev_gap_bb": 0.8300001621246338,
+              "outside_teacher_tree_probability": 0.0022971571888774633
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.3676241338253021,
+              "conditional_teacher_tree_ev_gap_bb": 0.10221504420042038,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.24272600933909416
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\balanced\\distilled_01.npz"
+        },
+        {
+          "epoch": 2,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.09992463886737823,
+              "conditional_teacher_tree_ev_gap_bb": 0.8782286643981934,
+              "outside_teacher_tree_probability": 0.0022642435505986214
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.35138532519340515,
+              "conditional_teacher_tree_ev_gap_bb": 0.098244309425354,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.2256549820303917
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\balanced\\distilled_02.npz"
+        },
+        {
+          "epoch": 3,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.09436275064945221,
+              "conditional_teacher_tree_ev_gap_bb": 0.8379892706871033,
+              "outside_teacher_tree_probability": 0.0021500601433217525
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.3420355021953583,
+              "conditional_teacher_tree_ev_gap_bb": 0.09432296454906464,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.21819912642240524
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\balanced\\distilled_03.npz"
+        },
+        {
+          "epoch": 4,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.08844663202762604,
+              "conditional_teacher_tree_ev_gap_bb": 0.9195354580879211,
+              "outside_teacher_tree_probability": 0.002083058934658766
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.33689644932746887,
+              "conditional_teacher_tree_ev_gap_bb": 0.09177262336015701,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.21267154067754745
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\balanced\\distilled_04.npz"
+        },
+        {
+          "epoch": 5,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.08624497801065445,
+              "conditional_teacher_tree_ev_gap_bb": 0.8542259335517883,
+              "outside_teacher_tree_probability": 0.001874680514447391
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.3355330228805542,
+              "conditional_teacher_tree_ev_gap_bb": 0.08945225179195404,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.21088900044560432
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\balanced\\distilled_05.npz"
+        },
+        {
+          "epoch": 6,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.08384537696838379,
+              "conditional_teacher_tree_ev_gap_bb": 0.9025420546531677,
+              "outside_teacher_tree_probability": 0.0018549609230831265
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.3340466022491455,
+              "conditional_teacher_tree_ev_gap_bb": 0.0893244594335556,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.20894598960876465
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\balanced\\distilled_06.npz"
+        },
+        {
+          "epoch": 7,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.08223333954811096,
+              "conditional_teacher_tree_ev_gap_bb": 0.931265652179718,
+              "outside_teacher_tree_probability": 0.001894440851174295
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.3319055736064911,
+              "conditional_teacher_tree_ev_gap_bb": 0.08775100857019424,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.20706945657730103
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\balanced\\distilled_07.npz"
+        },
+        {
+          "epoch": 8,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.08017260581254959,
+              "conditional_teacher_tree_ev_gap_bb": 0.9138566255569458,
+              "outside_teacher_tree_probability": 0.0017898476216942072
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.3299693465232849,
+              "conditional_teacher_tree_ev_gap_bb": 0.08670014142990112,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.20507097616791725
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\balanced\\distilled_08.npz"
+        },
+        {
+          "epoch": 9,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.07983513176441193,
+              "conditional_teacher_tree_ev_gap_bb": 0.9169427156448364,
+              "outside_teacher_tree_probability": 0.0017422826495021582
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.3290503919124603,
+              "conditional_teacher_tree_ev_gap_bb": 0.08637580275535583,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.20444276183843613
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\balanced\\distilled_09.npz"
+        },
+        {
+          "epoch": 10,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.07820536196231842,
+              "conditional_teacher_tree_ev_gap_bb": 0.8538696765899658,
+              "outside_teacher_tree_probability": 0.0016265810700133443
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.32542479038238525,
+              "conditional_teacher_tree_ev_gap_bb": 0.08472678065299988,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.20181507617235184
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\balanced\\distilled_10.npz"
+        },
+        {
+          "epoch": 11,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.07764921337366104,
+              "conditional_teacher_tree_ev_gap_bb": 0.82928866147995,
+              "outside_teacher_tree_probability": 0.0015288309659808874
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.3240840435028076,
+              "conditional_teacher_tree_ev_gap_bb": 0.08430317789316177,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.20086662843823433
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\balanced\\distilled_11.npz"
+        },
+        {
+          "epoch": 12,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.07700198143720627,
+              "conditional_teacher_tree_ev_gap_bb": 0.9375705122947693,
+              "outside_teacher_tree_probability": 0.0016269282205030322
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.3254068195819855,
+              "conditional_teacher_tree_ev_gap_bb": 0.08478818833827972,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.20120440050959587
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\balanced\\distilled_12.npz"
+        }
+      ],
+      "selected": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\balanced\\distilled_11.npz",
+      "best_kl": 0.20086662843823433
+    },
+    "pluribus_emphasis": {
+      "initial_validation": {
+        "preflop": {
+          "rows": 3480,
+          "conditional_kl": 0.25996679067611694,
+          "conditional_teacher_tree_ev_gap_bb": 1.0187395811080933,
+          "outside_teacher_tree_probability": 0.0018072513630613685
+        },
+        "flop": {
+          "rows": 16497,
+          "conditional_kl": 0.49829280376434326,
+          "conditional_teacher_tree_ev_gap_bb": 0.1054149717092514,
+          "outside_teacher_tree_probability": 0.0
+        },
+        "macro_kl": 0.3791297972202301
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.1220242828130722,
+              "conditional_teacher_tree_ev_gap_bb": 0.9514429569244385,
+              "outside_teacher_tree_probability": 0.0017331517301499844
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.3513788878917694,
+              "conditional_teacher_tree_ev_gap_bb": 0.1042252704501152,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.2367015853524208
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\pluribus_emphasis\\distilled_01.npz"
+        },
+        {
+          "epoch": 2,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.10593650490045547,
+              "conditional_teacher_tree_ev_gap_bb": 0.937160313129425,
+              "outside_teacher_tree_probability": 0.0017365376697853208
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.3388711214065552,
+              "conditional_teacher_tree_ev_gap_bb": 0.1049216017127037,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.22240381315350533
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\pluribus_emphasis\\distilled_02.npz"
+        },
+        {
+          "epoch": 3,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.09916447848081589,
+              "conditional_teacher_tree_ev_gap_bb": 0.8614798188209534,
+              "outside_teacher_tree_probability": 0.0015295736957341433
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.33280321955680847,
+              "conditional_teacher_tree_ev_gap_bb": 0.10271268337965012,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.21598384901881218
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\pluribus_emphasis\\distilled_03.npz"
+        },
+        {
+          "epoch": 4,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.09259660542011261,
+              "conditional_teacher_tree_ev_gap_bb": 0.8983860015869141,
+              "outside_teacher_tree_probability": 0.0015440320130437613
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.3283105492591858,
+              "conditional_teacher_tree_ev_gap_bb": 0.10105961561203003,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.2104535773396492
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\pluribus_emphasis\\distilled_04.npz"
+        },
+        {
+          "epoch": 5,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.08839014172554016,
+              "conditional_teacher_tree_ev_gap_bb": 0.9352554082870483,
+              "outside_teacher_tree_probability": 0.0014589611673727632
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.3260069787502289,
+              "conditional_teacher_tree_ev_gap_bb": 0.09928552806377411,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.20719856023788452
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\pluribus_emphasis\\distilled_05.npz"
+        },
+        {
+          "epoch": 6,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.08583860099315643,
+              "conditional_teacher_tree_ev_gap_bb": 0.9318596720695496,
+              "outside_teacher_tree_probability": 0.001376983942463994
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.3239114582538605,
+              "conditional_teacher_tree_ev_gap_bb": 0.09723005443811417,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.20487502962350845
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\pluribus_emphasis\\distilled_06.npz"
+        },
+        {
+          "epoch": 7,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.08499874919652939,
+              "conditional_teacher_tree_ev_gap_bb": 0.946474552154541,
+              "outside_teacher_tree_probability": 0.0014094336656853557
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.3239929974079132,
+              "conditional_teacher_tree_ev_gap_bb": 0.09595778584480286,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.2044958733022213
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\pluribus_emphasis\\distilled_07.npz"
+        },
+        {
+          "epoch": 8,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.08445221930742264,
+              "conditional_teacher_tree_ev_gap_bb": 0.8455139994621277,
+              "outside_teacher_tree_probability": 0.0012887638295069337
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.32067930698394775,
+              "conditional_teacher_tree_ev_gap_bb": 0.09292403608560562,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.2025657631456852
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\pluribus_emphasis\\distilled_08.npz"
+        },
+        {
+          "epoch": 9,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.0822988897562027,
+              "conditional_teacher_tree_ev_gap_bb": 0.8404341340065002,
+              "outside_teacher_tree_probability": 0.0012917416170239449
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.3208892047405243,
+              "conditional_teacher_tree_ev_gap_bb": 0.09196926653385162,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.2015940472483635
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\pluribus_emphasis\\distilled_09.npz"
+        },
+        {
+          "epoch": 10,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.08209770917892456,
+              "conditional_teacher_tree_ev_gap_bb": 0.8247683644294739,
+              "outside_teacher_tree_probability": 0.001252426183782518
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.32036322355270386,
+              "conditional_teacher_tree_ev_gap_bb": 0.08989386260509491,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.2012304663658142
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\pluribus_emphasis\\distilled_10.npz"
+        },
+        {
+          "epoch": 11,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.07934404164552689,
+              "conditional_teacher_tree_ev_gap_bb": 0.8972668051719666,
+              "outside_teacher_tree_probability": 0.0011247956426814198
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.3185710906982422,
+              "conditional_teacher_tree_ev_gap_bb": 0.09141342341899872,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.19895756617188454
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\pluribus_emphasis\\distilled_11.npz"
+        },
+        {
+          "epoch": 12,
+          "validation": {
+            "preflop": {
+              "rows": 3480,
+              "conditional_kl": 0.07953491806983948,
+              "conditional_teacher_tree_ev_gap_bb": 0.8200632333755493,
+              "outside_teacher_tree_probability": 0.0011861687526106834
+            },
+            "flop": {
+              "rows": 16497,
+              "conditional_kl": 0.3196594715118408,
+              "conditional_teacher_tree_ev_gap_bb": 0.09061320126056671,
+              "outside_teacher_tree_probability": 0.0
+            },
+            "macro_kl": 0.19959719479084015
+          },
+          "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\pluribus_emphasis\\distilled_12.npz"
+        }
+      ],
+      "selected": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\hrc_001\\pluribus_emphasis\\distilled_11.npz",
+      "best_kl": 0.19895756617188454
+    }
+  },
+  "ppo": [
+    {
+      "profile": "human_emphasis",
+      "iteration": 1,
+      "hands": 4096,
+      "decisions": 19357,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 152,
+        "early_stop": false,
+        "policy_loss": -0.010576443829188572,
+        "approx_kl": 0.00133913657721543,
+        "samples": 19357
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 1,
+      "hands": 4096,
+      "decisions": 18990,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 152,
+        "early_stop": false,
+        "policy_loss": -0.010254186837889766,
+        "approx_kl": 0.0013120823531989462,
+        "samples": 18990
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 1,
+      "hands": 4096,
+      "decisions": 19889,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 156,
+        "early_stop": false,
+        "policy_loss": -0.00942940164162719,
+        "approx_kl": 0.0010658649551402717,
+        "samples": 19889
+      }
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 2,
+      "hands": 4096,
+      "decisions": 19645,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 156,
+        "early_stop": false,
+        "policy_loss": -0.009830886354242951,
+        "approx_kl": 0.0013269511302352673,
+        "samples": 19645
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 2,
+      "hands": 4096,
+      "decisions": 18970,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 152,
+        "early_stop": false,
+        "policy_loss": -0.009343209391231426,
+        "approx_kl": 0.0011649620006069842,
+        "samples": 18970
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 2,
+      "hands": 4096,
+      "decisions": 19431,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 152,
+        "early_stop": false,
+        "policy_loss": -0.008009105421976406,
+        "approx_kl": 0.0009498444056139777,
+        "samples": 19431
+      }
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 3,
+      "hands": 4096,
+      "decisions": 19113,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 152,
+        "early_stop": false,
+        "policy_loss": -0.010117784057998873,
+        "approx_kl": 0.001170325066165347,
+        "samples": 19113
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 3,
+      "hands": 4096,
+      "decisions": 19283,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 152,
+        "early_stop": false,
+        "policy_loss": -0.009512223829103416,
+        "approx_kl": 0.0011125905619456138,
+        "samples": 19283
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 3,
+      "hands": 4096,
+      "decisions": 20077,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 160,
+        "early_stop": false,
+        "policy_loss": -0.007996976542520207,
+        "approx_kl": 0.0009474614721618161,
+        "samples": 20077
+      }
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 4,
+      "hands": 4096,
+      "decisions": 19951,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 156,
+        "early_stop": false,
+        "policy_loss": -0.009960907178017526,
+        "approx_kl": 0.001237241693570912,
+        "samples": 19951
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 4,
+      "hands": 4096,
+      "decisions": 18911,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 148,
+        "early_stop": false,
+        "policy_loss": -0.008803959689547893,
+        "approx_kl": 0.0009203327550053337,
+        "samples": 18911
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 4,
+      "hands": 4096,
+      "decisions": 20151,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 160,
+        "early_stop": false,
+        "policy_loss": -0.008744170783435668,
+        "approx_kl": 0.0011324023096967839,
+        "samples": 20151
+      }
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 5,
+      "hands": 4096,
+      "decisions": 19047,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 152,
+        "early_stop": false,
+        "policy_loss": -0.009306653524582709,
+        "approx_kl": 0.0009816439649459267,
+        "samples": 19047
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 5,
+      "hands": 4096,
+      "decisions": 19236,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 152,
+        "early_stop": false,
+        "policy_loss": -0.009044310681622614,
+        "approx_kl": 0.0011644758523272677,
+        "samples": 19236
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 5,
+      "hands": 4096,
+      "decisions": 19796,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 156,
+        "early_stop": false,
+        "policy_loss": -0.008597207547885974,
+        "approx_kl": 0.0009810962608590684,
+        "samples": 19796
+      }
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 6,
+      "hands": 4096,
+      "decisions": 19477,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 156,
+        "early_stop": false,
+        "policy_loss": -0.009168000284561318,
+        "approx_kl": 0.0010205751797651005,
+        "samples": 19477
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 6,
+      "hands": 4096,
+      "decisions": 18909,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 148,
+        "early_stop": false,
+        "policy_loss": -0.008222028359273,
+        "approx_kl": 0.000762079156986082,
+        "samples": 18909
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 6,
+      "hands": 4096,
+      "decisions": 19777,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 156,
+        "early_stop": false,
+        "policy_loss": -0.008167668797015385,
+        "approx_kl": 0.0009214064753429929,
+        "samples": 19777
+      }
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 7,
+      "hands": 4096,
+      "decisions": 19365,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 152,
+        "early_stop": false,
+        "policy_loss": -0.009213472882338527,
+        "approx_kl": 0.000985291633887403,
+        "samples": 19365
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 7,
+      "hands": 4096,
+      "decisions": 19134,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 152,
+        "early_stop": false,
+        "policy_loss": -0.009211994992315937,
+        "approx_kl": 0.0010852080889639036,
+        "samples": 19134
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 7,
+      "hands": 4096,
+      "decisions": 20052,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 160,
+        "early_stop": false,
+        "policy_loss": -0.008521612209297456,
+        "approx_kl": 0.0007986063605660957,
+        "samples": 20052
+      }
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 8,
+      "hands": 4096,
+      "decisions": 19113,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 152,
+        "early_stop": false,
+        "policy_loss": -0.009203506943759753,
+        "approx_kl": 0.0011972175460454296,
+        "samples": 19113
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 8,
+      "hands": 4096,
+      "decisions": 18894,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 148,
+        "early_stop": false,
+        "policy_loss": -0.008174917385375137,
+        "approx_kl": 0.0008490417612751732,
+        "samples": 18894
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 8,
+      "hands": 4096,
+      "decisions": 19251,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 152,
+        "early_stop": false,
+        "policy_loss": -0.008444986977368986,
+        "approx_kl": 0.000846036996123987,
+        "samples": 19251
+      }
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 9,
+      "hands": 4096,
+      "decisions": 19024,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 152,
+        "early_stop": false,
+        "policy_loss": -0.009476547600145088,
+        "approx_kl": 0.0010541183497494568,
+        "samples": 19024
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 9,
+      "hands": 4096,
+      "decisions": 18876,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 148,
+        "early_stop": false,
+        "policy_loss": -0.008820634643522701,
+        "approx_kl": 0.0009177026105516382,
+        "samples": 18876
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 9,
+      "hands": 4096,
+      "decisions": 19901,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 156,
+        "early_stop": false,
+        "policy_loss": -0.008553582300584431,
+        "approx_kl": 0.0008433353405492341,
+        "samples": 19901
+      }
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 10,
+      "hands": 4096,
+      "decisions": 19680,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 156,
+        "early_stop": false,
+        "policy_loss": -0.008513914755435588,
+        "approx_kl": 0.0010503864156399202,
+        "samples": 19680
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 10,
+      "hands": 4096,
+      "decisions": 19471,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 156,
+        "early_stop": false,
+        "policy_loss": -0.008354985548202694,
+        "approx_kl": 0.0010254261962836773,
+        "samples": 19471
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 10,
+      "hands": 4096,
+      "decisions": 20294,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 160,
+        "early_stop": false,
+        "policy_loss": -0.008816148662553069,
+        "approx_kl": 0.0010088455439430184,
+        "samples": 20294
+      }
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 11,
+      "hands": 4096,
+      "decisions": 19259,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 152,
+        "early_stop": false,
+        "policy_loss": -0.008930625803064283,
+        "approx_kl": 0.0007916577500933311,
+        "samples": 19259
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 11,
+      "hands": 4096,
+      "decisions": 18568,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 148,
+        "early_stop": false,
+        "policy_loss": -0.009089687221430246,
+        "approx_kl": 0.0012921169876690532,
+        "samples": 18568
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 11,
+      "hands": 4096,
+      "decisions": 19489,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 156,
+        "early_stop": false,
+        "policy_loss": -0.008501843590076226,
+        "approx_kl": 0.0011287870270921933,
+        "samples": 19489
+      }
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 12,
+      "hands": 4096,
+      "decisions": 19246,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 152,
+        "early_stop": false,
+        "policy_loss": -0.009440066288865121,
+        "approx_kl": 0.0011062579481844331,
+        "samples": 19246
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 12,
+      "hands": 4096,
+      "decisions": 19231,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 152,
+        "early_stop": false,
+        "policy_loss": -0.008837318612805933,
+        "approx_kl": 0.0009699294629783667,
+        "samples": 19231
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 12,
+      "hands": 4096,
+      "decisions": 19755,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 156,
+        "early_stop": false,
+        "policy_loss": -0.009165877058879298,
+        "approx_kl": 0.001114254312116994,
+        "samples": 19755
+      }
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 13,
+      "hands": 4096,
+      "decisions": 19574,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 156,
+        "early_stop": false,
+        "policy_loss": -0.009343872177389526,
+        "approx_kl": 0.0009684360601458136,
+        "samples": 19574
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 13,
+      "hands": 4096,
+      "decisions": 19156,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 152,
+        "early_stop": false,
+        "policy_loss": -0.009785918629055536,
+        "approx_kl": 0.0011821739600677895,
+        "samples": 19156
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 13,
+      "hands": 4096,
+      "decisions": 19339,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 152,
+        "early_stop": false,
+        "policy_loss": -0.00895427504533674,
+        "approx_kl": 0.0010838630595687547,
+        "samples": 19339
+      }
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 14,
+      "hands": 4096,
+      "decisions": 19094,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 152,
+        "early_stop": false,
+        "policy_loss": -0.009618383130230062,
+        "approx_kl": 0.0011050903515012042,
+        "samples": 19094
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 14,
+      "hands": 4096,
+      "decisions": 19619,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 156,
+        "early_stop": false,
+        "policy_loss": -0.008780250777716738,
+        "approx_kl": 0.0009896888890907599,
+        "samples": 19619
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 14,
+      "hands": 4096,
+      "decisions": 19527,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 156,
+        "early_stop": false,
+        "policy_loss": -0.008983425912256137,
+        "approx_kl": 0.0008923008680780622,
+        "samples": 19527
+      }
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 15,
+      "hands": 4096,
+      "decisions": 19260,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 152,
+        "early_stop": false,
+        "policy_loss": -0.009609149570126657,
+        "approx_kl": 0.0010596464941919391,
+        "samples": 19260
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 15,
+      "hands": 4096,
+      "decisions": 19434,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 152,
+        "early_stop": false,
+        "policy_loss": -0.008228274345848493,
+        "approx_kl": 0.0010682945936579466,
+        "samples": 19434
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 15,
+      "hands": 4096,
+      "decisions": 19904,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 156,
+        "early_stop": false,
+        "policy_loss": -0.008959104883957857,
+        "approx_kl": 0.0007301587279840025,
+        "samples": 19904
+      }
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 16,
+      "hands": 4096,
+      "decisions": 19253,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 152,
+        "early_stop": false,
+        "policy_loss": -0.009195422649882006,
+        "approx_kl": 0.0010667875974010534,
+        "samples": 19253
+      }
+    },
+    {
+      "profile": "balanced",
+      "iteration": 16,
+      "hands": 4096,
+      "decisions": 19277,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 152,
+        "early_stop": false,
+        "policy_loss": -0.00892962082826442,
+        "approx_kl": 0.0012907860094975756,
+        "samples": 19277
+      }
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 16,
+      "hands": 4096,
+      "decisions": 19539,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 156,
+        "early_stop": false,
+        "policy_loss": -0.00886732209892019,
+        "approx_kl": 0.0011425978332495236,
+        "samples": 19539
+      }
+    }
+  ],
+  "protocol": "12 predeclared distillation epochs; validation macro conditional KL selects epoch. 16 PPO updates; development comparisons at 0,4,8,12,16 with fixed decks. Retention gate <=1.25*distilled validation KL + .005. Choose highest development panel delta among eligible trained checkpoints. One final evaluation at fixed 3000 deck blocks per opponent, per candidate; 98.33% intervals over three models. No test-dependent training or sample extension.",
+  "limitations": [
+    "Preflop one solve tree, node-group split only; correlated.",
+    "Flop only BTN vs BB SRP 100 BB, 148 board classes; not general 6-way postflop coverage.",
+    "Turn/river raw exports quarantined: continuation ranges and history mapping not audited.",
+    "Restricted-tree probabilities supervise conditional family ratios only.",
+    "Bet-size heads and critic receive no HRC labels; fixed tree sizes are not optimal-size labels.",
+    "training_release=false is retained; user authorized private research, not public/live gambling deployment."
+  ],
+  "domain_shift": "Teacher: GG Network 5% rake, 10 BB cap. App/RL: no rake. Not equivalent objectives.",
+  "selection_frozen": true,
+  "selected_hashes": {
+    "human_emphasis": "d151cabfbcc8efcfc691028978447c7f6238b0172e3c61f52c5345f4e435e5d0",
+    "balanced": "2cfbebf12c4eeaa82f3af06ab01f4e4216ad2a42168fb559ba526bfa89ffdf61",
+    "pluribus_emphasis": "1ca2555739b673b2c14ea8de123e6ed198cda77211ef6e4f0c59a43950c0c02a"
+  },
+  "elapsed_seconds": 1091.5630000000237,
+  "old_models_unchanged": true
+}

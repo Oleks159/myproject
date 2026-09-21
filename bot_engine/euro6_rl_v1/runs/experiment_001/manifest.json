@@ -1,0 +1,2936 @@
+{
+  "config": {
+    "output": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\experiment_001",
+    "workers": 6,
+    "iterations": 32,
+    "hands_per_update": 4096,
+    "eval_every": 8,
+    "dev_blocks": 128,
+    "test_blocks": 1000,
+    "seed": 20260913,
+    "lr": 0.0001,
+    "anchor": 0.025,
+    "resume": false
+  },
+  "created_utc": "2026-09-13T11:27:00.110644+00:00",
+  "original_hashes": {
+    "models\\balanced\\decision_policy_model_v3.npz": "8aad173404599413770cfff0f79e313befd9afa5791702acaa1dfde9a94bde59",
+    "models\\balanced\\sizing.npz": "2ca9e59b7b7d25cf612af5c73b8d120559e76186829201a03f76c1989cd38597",
+    "models\\human_emphasis\\decision_policy_model_v3.npz": "52143809b7e50e56ec41d9819c762d66fc0155b8e4d5845941a59cfd8047771f",
+    "models\\human_emphasis\\sizing.npz": "f8b71d52d32fe89b036ade15fa6c1b09260f2692b6597ba3764944e4212066bf",
+    "models\\pluribus_emphasis\\decision_policy_model_v3.npz": "40682759cb7058182d3580435a18261f0c3186d6e64ee509e6ca87a158a607b7",
+    "models\\pluribus_emphasis\\sizing.npz": "b85ddd598c64f1bc956a0c8201499c633704be18ed8a2515718427b58345d101"
+  },
+  "status": "complete",
+  "completed": {
+    "human_emphasis": 32,
+    "balanced": 32,
+    "pluribus_emphasis": 32
+  },
+  "selected": {
+    "human_emphasis": {
+      "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\experiment_001\\human_emphasis\\iteration_016.npz",
+      "iteration": 16,
+      "dev_score_bb100": 13.885850694444446
+    },
+    "balanced": {
+      "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\experiment_001\\balanced\\iteration_032.npz",
+      "iteration": 32,
+      "dev_score_bb100": 11.87456597222222
+    },
+    "pluribus_emphasis": {
+      "path": "C:\\Users\\oleks\\Documents\\Codex\\2026-09-13\\wie-wird-so-ein-modell-trainieren\\outputs\\euro6_rl_v1\\runs\\experiment_001\\pluribus_emphasis\\iteration_016.npz",
+      "iteration": 16,
+      "dev_score_bb100": 17.433159722222218
+    }
+  },
+  "metrics": [
+    {
+      "profile": "human_emphasis",
+      "iteration": 1,
+      "hands": 4096,
+      "hands_per_second": 791.9566898653854,
+      "rollout_seconds": 5.172000000020489,
+      "elapsed_seconds": 6.875,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 168,
+        "early_stop": false,
+        "policy_loss": -0.013160865452570456,
+        "approx_kl": 0.0023464184408856855,
+        "samples": 21410
+      },
+      "action_counts": [
+        11780,
+        3180,
+        2151,
+        1484,
+        2815
+      ],
+      "sizing_counts": [
+        2073,
+        556,
+        1484,
+        186
+      ],
+      "selfplay_hands": 2105
+    },
+    {
+      "profile": "balanced",
+      "iteration": 1,
+      "hands": 4096,
+      "hands_per_second": 992.969696969697,
+      "rollout_seconds": 4.125,
+      "elapsed_seconds": 5.530999999959022,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 168,
+        "early_stop": false,
+        "policy_loss": -0.012589204782079713,
+        "approx_kl": 0.002338000741115052,
+        "samples": 21152
+      },
+      "action_counts": [
+        11410,
+        3442,
+        2167,
+        1470,
+        2663
+      ],
+      "sizing_counts": [
+        1991,
+        503,
+        1470,
+        169
+      ],
+      "selfplay_hands": 2016
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 1,
+      "hands": 4096,
+      "hands_per_second": 960.150023440429,
+      "rollout_seconds": 4.26600000000326,
+      "elapsed_seconds": 5.51600000000326,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 168,
+        "early_stop": false,
+        "policy_loss": -0.012657383529820638,
+        "approx_kl": 0.0019510381836938917,
+        "samples": 21360
+      },
+      "action_counts": [
+        11547,
+        3396,
+        2212,
+        1436,
+        2769
+      ],
+      "sizing_counts": [
+        2022,
+        549,
+        1436,
+        198
+      ],
+      "selfplay_hands": 2052
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 2,
+      "hands": 4096,
+      "hands_per_second": 851.0284645812021,
+      "rollout_seconds": 4.812999999965541,
+      "elapsed_seconds": 6.077999999979511,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 168,
+        "early_stop": false,
+        "policy_loss": -0.014281134090584489,
+        "approx_kl": 0.0023704183849613636,
+        "samples": 21043
+      },
+      "action_counts": [
+        11412,
+        3035,
+        2167,
+        1541,
+        2888
+      ],
+      "sizing_counts": [
+        2066,
+        622,
+        1541,
+        200
+      ],
+      "selfplay_hands": 2020
+    },
+    {
+      "profile": "balanced",
+      "iteration": 2,
+      "hands": 4096,
+      "hands_per_second": 885.6216216216217,
+      "rollout_seconds": 4.625,
+      "elapsed_seconds": 5.920999999972992,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 172,
+        "early_stop": false,
+        "policy_loss": -0.01358570693112355,
+        "approx_kl": 0.0025199421733333063,
+        "samples": 21562
+      },
+      "action_counts": [
+        11669,
+        3399,
+        2229,
+        1576,
+        2689
+      ],
+      "sizing_counts": [
+        2041,
+        478,
+        1576,
+        170
+      ],
+      "selfplay_hands": 2075
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 2,
+      "hands": 4096,
+      "hands_per_second": 859.4208980271084,
+      "rollout_seconds": 4.76600000000326,
+      "elapsed_seconds": 6.0939999999827705,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 172,
+        "early_stop": false,
+        "policy_loss": -0.013383580459101603,
+        "approx_kl": 0.0019928205475715976,
+        "samples": 21800
+      },
+      "action_counts": [
+        11393,
+        3603,
+        2406,
+        1604,
+        2794
+      ],
+      "sizing_counts": [
+        2039,
+        529,
+        1604,
+        226
+      ],
+      "selfplay_hands": 2033
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 3,
+      "hands": 4096,
+      "hands_per_second": 932.8171259387291,
+      "rollout_seconds": 4.39100000000326,
+      "elapsed_seconds": 5.7189999999827705,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 168,
+        "early_stop": false,
+        "policy_loss": -0.014151627799536073,
+        "approx_kl": 0.0023754946933311713,
+        "samples": 21170
+      },
+      "action_counts": [
+        11552,
+        2998,
+        2168,
+        1528,
+        2924
+      ],
+      "sizing_counts": [
+        2089,
+        653,
+        1528,
+        182
+      ],
+      "selfplay_hands": 2059
+    },
+    {
+      "profile": "balanced",
+      "iteration": 3,
+      "hands": 4096,
+      "hands_per_second": 876.9000214137623,
+      "rollout_seconds": 4.670999999972992,
+      "elapsed_seconds": 6.0,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 172,
+        "early_stop": false,
+        "policy_loss": -0.01444014493643654,
+        "approx_kl": 0.0027810988264006437,
+        "samples": 21831
+      },
+      "action_counts": [
+        11817,
+        3288,
+        2284,
+        1617,
+        2825
+      ],
+      "sizing_counts": [
+        2080,
+        532,
+        1617,
+        213
+      ],
+      "selfplay_hands": 2109
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 3,
+      "hands": 4096,
+      "hands_per_second": 873.7201365143452,
+      "rollout_seconds": 4.688000000023749,
+      "elapsed_seconds": 5.969000000040978,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 168,
+        "early_stop": false,
+        "policy_loss": -0.013842267478602585,
+        "approx_kl": 0.0020404987544706495,
+        "samples": 21290
+      },
+      "action_counts": [
+        11494,
+        3371,
+        2230,
+        1480,
+        2715
+      ],
+      "sizing_counts": [
+        1948,
+        539,
+        1480,
+        228
+      ],
+      "selfplay_hands": 2040
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 4,
+      "hands": 4096,
+      "hands_per_second": 888.5032537875693,
+      "rollout_seconds": 4.610000000044238,
+      "elapsed_seconds": 5.907000000006519,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 164,
+        "early_stop": false,
+        "policy_loss": -0.01461225152899582,
+        "approx_kl": 0.002715977538691778,
+        "samples": 20932
+      },
+      "action_counts": [
+        11549,
+        2907,
+        2105,
+        1497,
+        2874
+      ],
+      "sizing_counts": [
+        2068,
+        628,
+        1497,
+        178
+      ],
+      "selfplay_hands": 2050
+    },
+    {
+      "profile": "balanced",
+      "iteration": 4,
+      "hands": 4096,
+      "hands_per_second": 926.4872200916134,
+      "rollout_seconds": 4.420999999972992,
+      "elapsed_seconds": 5.686999999976251,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 168,
+        "early_stop": false,
+        "policy_loss": -0.014612374266401152,
+        "approx_kl": 0.0025598143302902644,
+        "samples": 21094
+      },
+      "action_counts": [
+        11415,
+        3104,
+        2219,
+        1598,
+        2758
+      ],
+      "sizing_counts": [
+        2023,
+        542,
+        1598,
+        193
+      ],
+      "selfplay_hands": 2017
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 4,
+      "hands": 4096,
+      "hands_per_second": 926.2777023928136,
+      "rollout_seconds": 4.422000000020489,
+      "elapsed_seconds": 5.6560000000172295,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 168,
+        "early_stop": false,
+        "policy_loss": -0.013689509981867552,
+        "approx_kl": 0.002215602547261846,
+        "samples": 21098
+      },
+      "action_counts": [
+        11215,
+        3514,
+        2220,
+        1470,
+        2679
+      ],
+      "sizing_counts": [
+        1948,
+        508,
+        1470,
+        223
+      ],
+      "selfplay_hands": 1983
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 5,
+      "hands": 4096,
+      "hands_per_second": 910.2222222222222,
+      "rollout_seconds": 4.5,
+      "elapsed_seconds": 6.344000000040978,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 168,
+        "early_stop": false,
+        "policy_loss": -0.014492874270000318,
+        "approx_kl": 0.0028374206532226732,
+        "samples": 21193
+      },
+      "action_counts": [
+        11704,
+        2902,
+        2132,
+        1517,
+        2938
+      ],
+      "sizing_counts": [
+        2112,
+        635,
+        1517,
+        191
+      ],
+      "selfplay_hands": 2088
+    },
+    {
+      "profile": "balanced",
+      "iteration": 5,
+      "hands": 4096,
+      "hands_per_second": 903.7952338910212,
+      "rollout_seconds": 4.532000000006519,
+      "elapsed_seconds": 5.89100000000326,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 168,
+        "early_stop": false,
+        "policy_loss": -0.013903893236779187,
+        "approx_kl": 0.002442423512779241,
+        "samples": 21129
+      },
+      "action_counts": [
+        11540,
+        3009,
+        2236,
+        1616,
+        2728
+      ],
+      "sizing_counts": [
+        2021,
+        533,
+        1616,
+        174
+      ],
+      "selfplay_hands": 2043
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 5,
+      "hands": 4096,
+      "hands_per_second": 897.85181938214,
+      "rollout_seconds": 4.561999999976251,
+      "elapsed_seconds": 5.85899999999674,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 172,
+        "early_stop": false,
+        "policy_loss": -0.014199485122946871,
+        "approx_kl": 0.0024746951480644473,
+        "samples": 21591
+      },
+      "action_counts": [
+        11461,
+        3351,
+        2360,
+        1593,
+        2826
+      ],
+      "sizing_counts": [
+        2013,
+        570,
+        1593,
+        243
+      ],
+      "selfplay_hands": 2054
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 6,
+      "hands": 4096,
+      "hands_per_second": 996.8362131913481,
+      "rollout_seconds": 4.10899999999674,
+      "elapsed_seconds": 5.2810000000172295,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 160,
+        "early_stop": false,
+        "policy_loss": -0.015027659495548013,
+        "approx_kl": 0.0026383888764988945,
+        "samples": 20446
+      },
+      "action_counts": [
+        11412,
+        2633,
+        2028,
+        1473,
+        2900
+      ],
+      "sizing_counts": [
+        2021,
+        682,
+        1473,
+        197
+      ],
+      "selfplay_hands": 2014
+    },
+    {
+      "profile": "balanced",
+      "iteration": 6,
+      "hands": 4096,
+      "hands_per_second": 971.076339498893,
+      "rollout_seconds": 4.217999999993481,
+      "elapsed_seconds": 5.14000000001397,
+      "ppo": {
+        "epochs": 2,
+        "minibatches": 121,
+        "early_stop": true,
+        "policy_loss": -0.010684223326012588,
+        "approx_kl": 0.02702755939448368,
+        "samples": 21193
+      },
+      "action_counts": [
+        11408,
+        3003,
+        2326,
+        1700,
+        2756
+      ],
+      "sizing_counts": [
+        2027,
+        500,
+        1700,
+        229
+      ],
+      "selfplay_hands": 2016
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 6,
+      "hands": 4096,
+      "hands_per_second": 780.1904761904761,
+      "rollout_seconds": 5.25,
+      "elapsed_seconds": 6.719000000040978,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 172,
+        "early_stop": false,
+        "policy_loss": -0.014760495026691434,
+        "approx_kl": 0.0021592558505602794,
+        "samples": 21907
+      },
+      "action_counts": [
+        11414,
+        3480,
+        2438,
+        1678,
+        2897
+      ],
+      "sizing_counts": [
+        2020,
+        588,
+        1678,
+        289
+      ],
+      "selfplay_hands": 2046
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 7,
+      "hands": 4096,
+      "hands_per_second": 834.8960456554454,
+      "rollout_seconds": 4.9060000000172295,
+      "elapsed_seconds": 6.39000000001397,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 156,
+        "early_stop": false,
+        "policy_loss": -0.015262882421088345,
+        "approx_kl": 0.0024967045863475332,
+        "samples": 19926
+      },
+      "action_counts": [
+        11291,
+        2502,
+        1893,
+        1395,
+        2845
+      ],
+      "sizing_counts": [
+        2004,
+        653,
+        1395,
+        188
+      ],
+      "selfplay_hands": 1973
+    },
+    {
+      "profile": "balanced",
+      "iteration": 7,
+      "hands": 4096,
+      "hands_per_second": 775.6106798015117,
+      "rollout_seconds": 5.280999999959022,
+      "elapsed_seconds": 6.875,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 168,
+        "early_stop": false,
+        "policy_loss": -0.01357212568111352,
+        "approx_kl": 0.0021937813924715055,
+        "samples": 21190
+      },
+      "action_counts": [
+        11444,
+        3168,
+        2273,
+        1565,
+        2740
+      ],
+      "sizing_counts": [
+        2006,
+        533,
+        1565,
+        201
+      ],
+      "selfplay_hands": 2030
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 7,
+      "hands": 4096,
+      "hands_per_second": 759.7848265623304,
+      "rollout_seconds": 5.39100000000326,
+      "elapsed_seconds": 7.01600000000326,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 176,
+        "early_stop": false,
+        "policy_loss": -0.014364956486476795,
+        "approx_kl": 0.0024094076394989687,
+        "samples": 22177
+      },
+      "action_counts": [
+        11582,
+        3572,
+        2509,
+        1628,
+        2886
+      ],
+      "sizing_counts": [
+        2059,
+        550,
+        1628,
+        277
+      ],
+      "selfplay_hands": 2095
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 8,
+      "hands": 4096,
+      "hands_per_second": 851.2053200374512,
+      "rollout_seconds": 4.811999999976251,
+      "elapsed_seconds": 6.23399999999674,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 168,
+        "early_stop": false,
+        "policy_loss": -0.015285119206419173,
+        "approx_kl": 0.0028144215460519585,
+        "samples": 21081
+      },
+      "action_counts": [
+        11757,
+        2586,
+        2134,
+        1580,
+        3024
+      ],
+      "sizing_counts": [
+        2123,
+        708,
+        1580,
+        193
+      ],
+      "selfplay_hands": 2097
+    },
+    {
+      "profile": "balanced",
+      "iteration": 8,
+      "hands": 4096,
+      "hands_per_second": 794.2602288141985,
+      "rollout_seconds": 5.157000000006519,
+      "elapsed_seconds": 6.579000000027008,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 164,
+        "early_stop": false,
+        "policy_loss": -0.013841281260885834,
+        "approx_kl": 0.00241113825070524,
+        "samples": 20734
+      },
+      "action_counts": [
+        11408,
+        2814,
+        2158,
+        1553,
+        2801
+      ],
+      "sizing_counts": [
+        2008,
+        561,
+        1553,
+        232
+      ],
+      "selfplay_hands": 2012
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 8,
+      "hands": 4096,
+      "hands_per_second": 956.7857977199737,
+      "rollout_seconds": 4.280999999959022,
+      "elapsed_seconds": 5.577999999979511,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 172,
+        "early_stop": false,
+        "policy_loss": -0.014814815820965999,
+        "approx_kl": 0.002384866875236186,
+        "samples": 21711
+      },
+      "action_counts": [
+        11335,
+        3599,
+        2410,
+        1583,
+        2784
+      ],
+      "sizing_counts": [
+        2001,
+        513,
+        1583,
+        270
+      ],
+      "selfplay_hands": 2029
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 9,
+      "hands": 4096,
+      "hands_per_second": 956.7857977069646,
+      "rollout_seconds": 4.2810000000172295,
+      "elapsed_seconds": 5.51500000001397,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 160,
+        "early_stop": false,
+        "policy_loss": -0.015155790795443252,
+        "approx_kl": 0.002950688090651832,
+        "samples": 20238
+      },
+      "action_counts": [
+        11426,
+        2525,
+        1953,
+        1442,
+        2892
+      ],
+      "sizing_counts": [
+        2048,
+        657,
+        1442,
+        187
+      ],
+      "selfplay_hands": 2012
+    },
+    {
+      "profile": "balanced",
+      "iteration": 9,
+      "hands": 4096,
+      "hands_per_second": 929.6413980898735,
+      "rollout_seconds": 4.4060000000172295,
+      "elapsed_seconds": 5.672000000020489,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 168,
+        "early_stop": false,
+        "policy_loss": -0.013621825292798252,
+        "approx_kl": 0.002162443942308544,
+        "samples": 21201
+      },
+      "action_counts": [
+        11554,
+        3065,
+        2219,
+        1615,
+        2748
+      ],
+      "sizing_counts": [
+        2038,
+        518,
+        1615,
+        192
+      ],
+      "selfplay_hands": 2041
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 9,
+      "hands": 4096,
+      "hands_per_second": 903.9947031642118,
+      "rollout_seconds": 4.530999999959022,
+      "elapsed_seconds": 5.827999999979511,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 172,
+        "early_stop": false,
+        "policy_loss": -0.014353424550168694,
+        "approx_kl": 0.0025286700170422853,
+        "samples": 21786
+      },
+      "action_counts": [
+        11370,
+        3654,
+        2381,
+        1546,
+        2835
+      ],
+      "sizing_counts": [
+        2008,
+        564,
+        1546,
+        263
+      ],
+      "selfplay_hands": 2043
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 10,
+      "hands": 4096,
+      "hands_per_second": 981.7833173626633,
+      "rollout_seconds": 4.171999999962281,
+      "elapsed_seconds": 5.437999999965541,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 164,
+        "early_stop": false,
+        "policy_loss": -0.014957118407713082,
+        "approx_kl": 0.002683518591202693,
+        "samples": 20904
+      },
+      "action_counts": [
+        11619,
+        2713,
+        2063,
+        1528,
+        2981
+      ],
+      "sizing_counts": [
+        2103,
+        642,
+        1528,
+        236
+      ],
+      "selfplay_hands": 2061
+    },
+    {
+      "profile": "balanced",
+      "iteration": 10,
+      "hands": 4096,
+      "hands_per_second": 1031.9979843834167,
+      "rollout_seconds": 3.9689999999827705,
+      "elapsed_seconds": 5.2810000000172295,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 172,
+        "early_stop": false,
+        "policy_loss": -0.014222599544613395,
+        "approx_kl": 0.00261969188208591,
+        "samples": 21623
+      },
+      "action_counts": [
+        11765,
+        3077,
+        2275,
+        1584,
+        2922
+      ],
+      "sizing_counts": [
+        2094,
+        589,
+        1584,
+        239
+      ],
+      "selfplay_hands": 2108
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 10,
+      "hands": 4096,
+      "hands_per_second": 910.2222222222222,
+      "rollout_seconds": 4.5,
+      "elapsed_seconds": 5.797000000020489,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 172,
+        "early_stop": false,
+        "policy_loss": -0.01402765071422203,
+        "approx_kl": 0.0024342578388783552,
+        "samples": 21812
+      },
+      "action_counts": [
+        11274,
+        3768,
+        2408,
+        1524,
+        2838
+      ],
+      "sizing_counts": [
+        1990,
+        584,
+        1524,
+        264
+      ],
+      "selfplay_hands": 2030
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 11,
+      "hands": 4096,
+      "hands_per_second": 1019.9203187242717,
+      "rollout_seconds": 4.01600000000326,
+      "elapsed_seconds": 5.312999999965541,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 164,
+        "early_stop": false,
+        "policy_loss": -0.014321294789804711,
+        "approx_kl": 0.002381934713016618,
+        "samples": 20806
+      },
+      "action_counts": [
+        11649,
+        2624,
+        2014,
+        1492,
+        3027
+      ],
+      "sizing_counts": [
+        2117,
+        654,
+        1492,
+        256
+      ],
+      "selfplay_hands": 2067
+    },
+    {
+      "profile": "balanced",
+      "iteration": 11,
+      "hands": 4096,
+      "hands_per_second": 907.1982281256537,
+      "rollout_seconds": 4.51500000001397,
+      "elapsed_seconds": 5.795999999972992,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 164,
+        "early_stop": false,
+        "policy_loss": -0.013970841757380673,
+        "approx_kl": 0.0026950262341094576,
+        "samples": 20947
+      },
+      "action_counts": [
+        11431,
+        2746,
+        2183,
+        1623,
+        2964
+      ],
+      "sizing_counts": [
+        2066,
+        619,
+        1623,
+        279
+      ],
+      "selfplay_hands": 2020
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 11,
+      "hands": 4096,
+      "hands_per_second": 879.536182090244,
+      "rollout_seconds": 4.657000000006519,
+      "elapsed_seconds": 6.0939999999827705,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 172,
+        "early_stop": false,
+        "policy_loss": -0.013781063665364928,
+        "approx_kl": 0.002293457442052088,
+        "samples": 21988
+      },
+      "action_counts": [
+        11506,
+        3536,
+        2468,
+        1627,
+        2851
+      ],
+      "sizing_counts": [
+        1991,
+        555,
+        1627,
+        305
+      ],
+      "selfplay_hands": 2067
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 12,
+      "hands": 4096,
+      "hands_per_second": 1000.4885197892618,
+      "rollout_seconds": 4.0939999999827705,
+      "elapsed_seconds": 5.407000000006519,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 164,
+        "early_stop": false,
+        "policy_loss": -0.015193533816805596,
+        "approx_kl": 0.0027366720588253564,
+        "samples": 20630
+      },
+      "action_counts": [
+        11421,
+        2665,
+        2015,
+        1464,
+        3065
+      ],
+      "sizing_counts": [
+        2125,
+        673,
+        1464,
+        267
+      ],
+      "selfplay_hands": 2025
+    },
+    {
+      "profile": "balanced",
+      "iteration": 12,
+      "hands": 4096,
+      "hands_per_second": 1000.488519775037,
+      "rollout_seconds": 4.094000000040978,
+      "elapsed_seconds": 5.313000000023749,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 164,
+        "early_stop": false,
+        "policy_loss": -0.01434895515064223,
+        "approx_kl": 0.002752241508736271,
+        "samples": 20700
+      },
+      "action_counts": [
+        11778,
+        2495,
+        2043,
+        1532,
+        2852
+      ],
+      "sizing_counts": [
+        2009,
+        606,
+        1532,
+        237
+      ],
+      "selfplay_hands": 2079
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 12,
+      "hands": 4096,
+      "hands_per_second": 919.8293285467879,
+      "rollout_seconds": 4.452999999979511,
+      "elapsed_seconds": 5.764999999955762,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 172,
+        "early_stop": false,
+        "policy_loss": -0.013942536061844066,
+        "approx_kl": 0.0023716273888851986,
+        "samples": 21612
+      },
+      "action_counts": [
+        11410,
+        3607,
+        2284,
+        1480,
+        2831
+      ],
+      "sizing_counts": [
+        2015,
+        537,
+        1480,
+        279
+      ],
+      "selfplay_hands": 2053
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 13,
+      "hands": 4096,
+      "hands_per_second": 862.3157894736842,
+      "rollout_seconds": 4.75,
+      "elapsed_seconds": 6.01600000000326,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 164,
+        "early_stop": false,
+        "policy_loss": -0.014062310372141784,
+        "approx_kl": 0.0026780873105204054,
+        "samples": 20890
+      },
+      "action_counts": [
+        11582,
+        2741,
+        2057,
+        1494,
+        3016
+      ],
+      "sizing_counts": [
+        2066,
+        702,
+        1494,
+        248
+      ],
+      "selfplay_hands": 2056
+    },
+    {
+      "profile": "balanced",
+      "iteration": 13,
+      "hands": 4096,
+      "hands_per_second": 942.9097605930584,
+      "rollout_seconds": 4.3439999999827705,
+      "elapsed_seconds": 5.60999999998603,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 164,
+        "early_stop": false,
+        "policy_loss": -0.01440572364317127,
+        "approx_kl": 0.002545249425745933,
+        "samples": 20762
+      },
+      "action_counts": [
+        11643,
+        2594,
+        2054,
+        1548,
+        2923
+      ],
+      "sizing_counts": [
+        2106,
+        600,
+        1548,
+        217
+      ],
+      "selfplay_hands": 2068
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 13,
+      "hands": 4096,
+      "hands_per_second": 989.1330596466496,
+      "rollout_seconds": 4.14100000000326,
+      "elapsed_seconds": 5.422000000020489,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 168,
+        "early_stop": false,
+        "policy_loss": -0.014625619329298465,
+        "approx_kl": 0.002714566629501201,
+        "samples": 21478
+      },
+      "action_counts": [
+        11357,
+        3483,
+        2358,
+        1488,
+        2792
+      ],
+      "sizing_counts": [
+        1954,
+        539,
+        1488,
+        299
+      ],
+      "selfplay_hands": 2034
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 14,
+      "hands": 4096,
+      "hands_per_second": 736.2933668929304,
+      "rollout_seconds": 5.562999999965541,
+      "elapsed_seconds": 6.76600000000326,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 164,
+        "early_stop": false,
+        "policy_loss": -0.01491589955710415,
+        "approx_kl": 0.002808273076779454,
+        "samples": 20696
+      },
+      "action_counts": [
+        11623,
+        2629,
+        2037,
+        1448,
+        2959
+      ],
+      "sizing_counts": [
+        2029,
+        688,
+        1448,
+        242
+      ],
+      "selfplay_hands": 2058
+    },
+    {
+      "profile": "balanced",
+      "iteration": 14,
+      "hands": 4096,
+      "hands_per_second": 1061.4148743206686,
+      "rollout_seconds": 3.8589999999967404,
+      "elapsed_seconds": 5.047000000020489,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 160,
+        "early_stop": false,
+        "policy_loss": -0.014029184815885231,
+        "approx_kl": 0.002508558611891595,
+        "samples": 20453
+      },
+      "action_counts": [
+        11452,
+        2551,
+        2096,
+        1559,
+        2795
+      ],
+      "sizing_counts": [
+        2040,
+        540,
+        1559,
+        215
+      ],
+      "selfplay_hands": 2012
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 14,
+      "hands": 4096,
+      "hands_per_second": 956.7857977199737,
+      "rollout_seconds": 4.280999999959022,
+      "elapsed_seconds": 5.561999999976251,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 176,
+        "early_stop": false,
+        "policy_loss": -0.01407695415380892,
+        "approx_kl": 0.002399170532208031,
+        "samples": 22123
+      },
+      "action_counts": [
+        11419,
+        4001,
+        2484,
+        1551,
+        2668
+      ],
+      "sizing_counts": [
+        1915,
+        477,
+        1551,
+        276
+      ],
+      "selfplay_hands": 2067
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 15,
+      "hands": 4096,
+      "hands_per_second": 1083.311293303712,
+      "rollout_seconds": 3.7810000000172295,
+      "elapsed_seconds": 4.98399999999674,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 164,
+        "early_stop": false,
+        "policy_loss": -0.013652082468412893,
+        "approx_kl": 0.0024539022523888446,
+        "samples": 20773
+      },
+      "action_counts": [
+        11717,
+        2671,
+        1905,
+        1377,
+        3103
+      ],
+      "sizing_counts": [
+        2132,
+        753,
+        1377,
+        218
+      ],
+      "selfplay_hands": 2087
+    },
+    {
+      "profile": "balanced",
+      "iteration": 15,
+      "hands": 4096,
+      "hands_per_second": 1065.8339838685788,
+      "rollout_seconds": 3.8429999999934807,
+      "elapsed_seconds": 5.061999999976251,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 164,
+        "early_stop": false,
+        "policy_loss": -0.014264053922439842,
+        "approx_kl": 0.00233264827006167,
+        "samples": 20539
+      },
+      "action_counts": [
+        11648,
+        2391,
+        2076,
+        1569,
+        2855
+      ],
+      "sizing_counts": [
+        2023,
+        598,
+        1569,
+        234
+      ],
+      "selfplay_hands": 2063
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 15,
+      "hands": 4096,
+      "hands_per_second": 1000.4885197892618,
+      "rollout_seconds": 4.0939999999827705,
+      "elapsed_seconds": 5.3439999999827705,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 172,
+        "early_stop": false,
+        "policy_loss": -0.015055785505072243,
+        "approx_kl": 0.0027139780456473133,
+        "samples": 21565
+      },
+      "action_counts": [
+        11262,
+        3656,
+        2425,
+        1550,
+        2672
+      ],
+      "sizing_counts": [
+        1890,
+        502,
+        1550,
+        280
+      ],
+      "selfplay_hands": 2019
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 16,
+      "hands": 4096,
+      "hands_per_second": 1012.3578843369605,
+      "rollout_seconds": 4.045999999972992,
+      "elapsed_seconds": 5.2810000000172295,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 160,
+        "early_stop": false,
+        "policy_loss": -0.01452566967534076,
+        "approx_kl": 0.002913670060173666,
+        "samples": 20258
+      },
+      "action_counts": [
+        11609,
+        2435,
+        1834,
+        1343,
+        3037
+      ],
+      "sizing_counts": [
+        2058,
+        716,
+        1343,
+        263
+      ],
+      "selfplay_hands": 2040
+    },
+    {
+      "profile": "balanced",
+      "iteration": 16,
+      "hands": 4096,
+      "hands_per_second": 1040.3860807784374,
+      "rollout_seconds": 3.9369999999762513,
+      "elapsed_seconds": 5.0939999999827705,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 156,
+        "early_stop": false,
+        "policy_loss": -0.015022722879851343,
+        "approx_kl": 0.002695117673859339,
+        "samples": 19837
+      },
+      "action_counts": [
+        11380,
+        2224,
+        1942,
+        1491,
+        2800
+      ],
+      "sizing_counts": [
+        1991,
+        599,
+        1491,
+        210
+      ],
+      "selfplay_hands": 1986
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 16,
+      "hands": 4096,
+      "hands_per_second": 946.395563762547,
+      "rollout_seconds": 4.328000000037719,
+      "elapsed_seconds": 5.592999999993481,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 176,
+        "early_stop": false,
+        "policy_loss": -0.015314187260099433,
+        "approx_kl": 0.0023499727607765868,
+        "samples": 22185
+      },
+      "action_counts": [
+        11631,
+        3622,
+        2502,
+        1702,
+        2728
+      ],
+      "sizing_counts": [
+        1963,
+        477,
+        1702,
+        288
+      ],
+      "selfplay_hands": 2105
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 17,
+      "hands": 4096,
+      "hands_per_second": 853.8670002048166,
+      "rollout_seconds": 4.797000000020489,
+      "elapsed_seconds": 6.39100000000326,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 160,
+        "early_stop": false,
+        "policy_loss": -0.015990984853976965,
+        "approx_kl": 0.0027088543601185345,
+        "samples": 20246
+      },
+      "action_counts": [
+        11471,
+        2543,
+        1948,
+        1379,
+        2905
+      ],
+      "sizing_counts": [
+        2018,
+        633,
+        1379,
+        254
+      ],
+      "selfplay_hands": 2016
+    },
+    {
+      "profile": "balanced",
+      "iteration": 17,
+      "hands": 4096,
+      "hands_per_second": 579.9235452385649,
+      "rollout_seconds": 7.062999999965541,
+      "elapsed_seconds": 9.296999999962281,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 156,
+        "early_stop": false,
+        "policy_loss": -0.014706825322543261,
+        "approx_kl": 0.002679649686996635,
+        "samples": 19949
+      },
+      "action_counts": [
+        11574,
+        2134,
+        1937,
+        1475,
+        2829
+      ],
+      "sizing_counts": [
+        2017,
+        578,
+        1475,
+        234
+      ],
+      "selfplay_hands": 2029
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 17,
+      "hands": 4096,
+      "hands_per_second": 480.1312859007941,
+      "rollout_seconds": 8.530999999959022,
+      "elapsed_seconds": 10.73499999998603,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 168,
+        "early_stop": false,
+        "policy_loss": -0.0143932936918515,
+        "approx_kl": 0.002454936265688043,
+        "samples": 21099
+      },
+      "action_counts": [
+        11302,
+        3358,
+        2337,
+        1562,
+        2540
+      ],
+      "sizing_counts": [
+        1839,
+        479,
+        1562,
+        222
+      ],
+      "selfplay_hands": 2010
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 18,
+      "hands": 4096,
+      "hands_per_second": 510.97804391196786,
+      "rollout_seconds": 8.01600000000326,
+      "elapsed_seconds": 10.0,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 164,
+        "early_stop": false,
+        "policy_loss": -0.014905198757378925,
+        "approx_kl": 0.0032098570921214407,
+        "samples": 20564
+      },
+      "action_counts": [
+        11534,
+        2609,
+        1983,
+        1407,
+        3031
+      ],
+      "sizing_counts": [
+        2079,
+        716,
+        1407,
+        236
+      ],
+      "selfplay_hands": 2036
+    },
+    {
+      "profile": "balanced",
+      "iteration": 18,
+      "hands": 4096,
+      "hands_per_second": 482.79113625666827,
+      "rollout_seconds": 8.48399999999674,
+      "elapsed_seconds": 10.51600000000326,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 160,
+        "early_stop": false,
+        "policy_loss": -0.01454261292995894,
+        "approx_kl": 0.0023334298004626082,
+        "samples": 20155
+      },
+      "action_counts": [
+        11583,
+        2259,
+        1967,
+        1481,
+        2865
+      ],
+      "sizing_counts": [
+        1998,
+        587,
+        1481,
+        280
+      ],
+      "selfplay_hands": 2048
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 18,
+      "hands": 4096,
+      "hands_per_second": 509.0095687857834,
+      "rollout_seconds": 8.046999999962281,
+      "elapsed_seconds": 10.202999999979511,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 168,
+        "early_stop": false,
+        "policy_loss": -0.013694698414599419,
+        "approx_kl": 0.002495666894337634,
+        "samples": 21473
+      },
+      "action_counts": [
+        11349,
+        3440,
+        2430,
+        1606,
+        2648
+      ],
+      "sizing_counts": [
+        1919,
+        441,
+        1606,
+        288
+      ],
+      "selfplay_hands": 2021
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 19,
+      "hands": 4096,
+      "hands_per_second": 578.6945464789733,
+      "rollout_seconds": 7.078000000037719,
+      "elapsed_seconds": 8.969000000040978,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 160,
+        "early_stop": false,
+        "policy_loss": -0.013782494922500273,
+        "approx_kl": 0.0024100450659596756,
+        "samples": 20413
+      },
+      "action_counts": [
+        11454,
+        2535,
+        2005,
+        1425,
+        2994
+      ],
+      "sizing_counts": [
+        2066,
+        681,
+        1425,
+        247
+      ],
+      "selfplay_hands": 2017
+    },
+    {
+      "profile": "balanced",
+      "iteration": 19,
+      "hands": 4096,
+      "hands_per_second": 606.8148148148148,
+      "rollout_seconds": 6.75,
+      "elapsed_seconds": 8.76600000000326,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 160,
+        "early_stop": false,
+        "policy_loss": -0.014334197825167616,
+        "approx_kl": 0.0025774027527392467,
+        "samples": 20130
+      },
+      "action_counts": [
+        11583,
+        2208,
+        1954,
+        1513,
+        2872
+      ],
+      "sizing_counts": [
+        1998,
+        582,
+        1513,
+        292
+      ],
+      "selfplay_hands": 2035
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 19,
+      "hands": 4096,
+      "hands_per_second": 573.5891331743636,
+      "rollout_seconds": 7.14100000000326,
+      "elapsed_seconds": 9.188000000023749,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 176,
+        "early_stop": false,
+        "policy_loss": -0.014130883055691747,
+        "approx_kl": 0.002448307224571143,
+        "samples": 22018
+      },
+      "action_counts": [
+        11696,
+        3643,
+        2398,
+        1576,
+        2705
+      ],
+      "sizing_counts": [
+        1944,
+        493,
+        1576,
+        268
+      ],
+      "selfplay_hands": 2095
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 20,
+      "hands": 4096,
+      "hands_per_second": 580.0056641149836,
+      "rollout_seconds": 7.062000000034459,
+      "elapsed_seconds": 9.03100000001723,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 160,
+        "early_stop": false,
+        "policy_loss": -0.014777226966253923,
+        "approx_kl": 0.002615076111157811,
+        "samples": 20131
+      },
+      "action_counts": [
+        11500,
+        2305,
+        1863,
+        1361,
+        3102
+      ],
+      "sizing_counts": [
+        2074,
+        780,
+        1361,
+        248
+      ],
+      "selfplay_hands": 2026
+    },
+    {
+      "profile": "balanced",
+      "iteration": 20,
+      "hands": 4096,
+      "hands_per_second": 599.8828353804003,
+      "rollout_seconds": 6.828000000037719,
+      "elapsed_seconds": 9.15600000001723,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 160,
+        "early_stop": false,
+        "policy_loss": -0.014216729761952391,
+        "approx_kl": 0.0027371980041528124,
+        "samples": 20290
+      },
+      "action_counts": [
+        11614,
+        2255,
+        2006,
+        1510,
+        2905
+      ],
+      "sizing_counts": [
+        2030,
+        590,
+        1510,
+        285
+      ],
+      "selfplay_hands": 2044
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 20,
+      "hands": 4096,
+      "hands_per_second": 509.0095687821015,
+      "rollout_seconds": 8.047000000020489,
+      "elapsed_seconds": 10.25,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 168,
+        "early_stop": false,
+        "policy_loss": -0.014805690688133739,
+        "approx_kl": 0.002619245853001472,
+        "samples": 21253
+      },
+      "action_counts": [
+        11270,
+        3531,
+        2321,
+        1503,
+        2628
+      ],
+      "sizing_counts": [
+        1908,
+        452,
+        1503,
+        268
+      ],
+      "selfplay_hands": 2001
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 21,
+      "hands": 4096,
+      "hands_per_second": 589.0982309811693,
+      "rollout_seconds": 6.952999999979511,
+      "elapsed_seconds": 8.98499999998603,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 160,
+        "early_stop": false,
+        "policy_loss": -0.01486088647605302,
+        "approx_kl": 0.002611401170529356,
+        "samples": 20186
+      },
+      "action_counts": [
+        11602,
+        2277,
+        1837,
+        1358,
+        3112
+      ],
+      "sizing_counts": [
+        2086,
+        771,
+        1358,
+        255
+      ],
+      "selfplay_hands": 2048
+    },
+    {
+      "profile": "balanced",
+      "iteration": 21,
+      "hands": 4096,
+      "hands_per_second": 616.8674698782203,
+      "rollout_seconds": 6.64000000001397,
+      "elapsed_seconds": 8.89000000001397,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 160,
+        "early_stop": false,
+        "policy_loss": -0.01512906700034459,
+        "approx_kl": 0.0029508285465799375,
+        "samples": 20283
+      },
+      "action_counts": [
+        11481,
+        2355,
+        2039,
+        1542,
+        2866
+      ],
+      "sizing_counts": [
+        1982,
+        573,
+        1542,
+        311
+      ],
+      "selfplay_hands": 2007
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 21,
+      "hands": 4096,
+      "hands_per_second": 712.3478260869565,
+      "rollout_seconds": 5.75,
+      "elapsed_seconds": 7.780999999959022,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 168,
+        "early_stop": false,
+        "policy_loss": -0.014620592498150984,
+        "approx_kl": 0.0023620277699889503,
+        "samples": 21388
+      },
+      "action_counts": [
+        11506,
+        3297,
+        2278,
+        1586,
+        2721
+      ],
+      "sizing_counts": [
+        1975,
+        479,
+        1586,
+        267
+      ],
+      "selfplay_hands": 2048
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 22,
+      "hands": 4096,
+      "hands_per_second": 633.1735971573519,
+      "rollout_seconds": 6.4689999999827705,
+      "elapsed_seconds": 8.75,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 160,
+        "early_stop": false,
+        "policy_loss": -0.015025305610222464,
+        "approx_kl": 0.00270281645101209,
+        "samples": 20347
+      },
+      "action_counts": [
+        11684,
+        2405,
+        1872,
+        1373,
+        3013
+      ],
+      "sizing_counts": [
+        2063,
+        678,
+        1373,
+        272
+      ],
+      "selfplay_hands": 2072
+    },
+    {
+      "profile": "balanced",
+      "iteration": 22,
+      "hands": 4096,
+      "hands_per_second": 574.8771929824561,
+      "rollout_seconds": 7.125,
+      "elapsed_seconds": 9.40700000000652,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 160,
+        "early_stop": false,
+        "policy_loss": -0.013892045047149443,
+        "approx_kl": 0.002473231014701716,
+        "samples": 20232
+      },
+      "action_counts": [
+        11357,
+        2497,
+        2050,
+        1520,
+        2808
+      ],
+      "sizing_counts": [
+        2041,
+        490,
+        1520,
+        277
+      ],
+      "selfplay_hands": 1997
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 22,
+      "hands": 4096,
+      "hands_per_second": 567.3916054823036,
+      "rollout_seconds": 7.219000000040978,
+      "elapsed_seconds": 9.40600000001723,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 168,
+        "early_stop": false,
+        "policy_loss": -0.0140362346643629,
+        "approx_kl": 0.002349731621813885,
+        "samples": 21347
+      },
+      "action_counts": [
+        11632,
+        3146,
+        2261,
+        1536,
+        2772
+      ],
+      "sizing_counts": [
+        2004,
+        486,
+        1536,
+        282
+      ],
+      "selfplay_hands": 2076
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 23,
+      "hands": 4096,
+      "hands_per_second": 628.7029930971316,
+      "rollout_seconds": 6.514999999955762,
+      "elapsed_seconds": 8.34399999998277,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 156,
+        "early_stop": false,
+        "policy_loss": -0.015326802681970482,
+        "approx_kl": 0.002802544452562784,
+        "samples": 19799
+      },
+      "action_counts": [
+        11796,
+        2043,
+        1654,
+        1261,
+        3045
+      ],
+      "sizing_counts": [
+        2089,
+        714,
+        1261,
+        242
+      ],
+      "selfplay_hands": 2072
+    },
+    {
+      "profile": "balanced",
+      "iteration": 23,
+      "hands": 4096,
+      "hands_per_second": 602.6188024110127,
+      "rollout_seconds": 6.797000000020489,
+      "elapsed_seconds": 8.703000000037719,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 164,
+        "early_stop": false,
+        "policy_loss": -0.014457669037750535,
+        "approx_kl": 0.0026964418580479876,
+        "samples": 20562
+      },
+      "action_counts": [
+        11527,
+        2714,
+        2037,
+        1443,
+        2841
+      ],
+      "sizing_counts": [
+        2031,
+        557,
+        1443,
+        253
+      ],
+      "selfplay_hands": 2042
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 23,
+      "hands": 4096,
+      "hands_per_second": 568.6519505777663,
+      "rollout_seconds": 7.202999999979511,
+      "elapsed_seconds": 8.061999999976251,
+      "ppo": {
+        "epochs": 1,
+        "minibatches": 52,
+        "early_stop": true,
+        "policy_loss": -0.0012789047188846482,
+        "approx_kl": 0.026033062448321077,
+        "samples": 21265
+      },
+      "action_counts": [
+        11544,
+        3148,
+        2294,
+        1574,
+        2705
+      ],
+      "sizing_counts": [
+        1984,
+        474,
+        1574,
+        247
+      ],
+      "selfplay_hands": 2058
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 24,
+      "hands": 4096,
+      "hands_per_second": 598.5678795855476,
+      "rollout_seconds": 6.842999999993481,
+      "elapsed_seconds": 8.84299999999348,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 156,
+        "early_stop": false,
+        "policy_loss": -0.015530763487913237,
+        "approx_kl": 0.0033947418281224614,
+        "samples": 19710
+      },
+      "action_counts": [
+        11478,
+        2139,
+        1765,
+        1371,
+        2957
+      ],
+      "sizing_counts": [
+        2054,
+        660,
+        1371,
+        243
+      ],
+      "selfplay_hands": 1999
+    },
+    {
+      "profile": "balanced",
+      "iteration": 24,
+      "hands": 4096,
+      "hands_per_second": 609.6145259726899,
+      "rollout_seconds": 6.7189999999827705,
+      "elapsed_seconds": 8.75,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 164,
+        "early_stop": false,
+        "policy_loss": -0.013457519600620967,
+        "approx_kl": 0.0028894064903394177,
+        "samples": 20815
+      },
+      "action_counts": [
+        11595,
+        2663,
+        2135,
+        1569,
+        2853
+      ],
+      "sizing_counts": [
+        2013,
+        553,
+        1569,
+        287
+      ],
+      "selfplay_hands": 2050
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 24,
+      "hands": 4096,
+      "hands_per_second": 557.8101593359168,
+      "rollout_seconds": 7.342999999993481,
+      "elapsed_seconds": 9.452999999979511,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 168,
+        "early_stop": false,
+        "policy_loss": -0.013829180833283753,
+        "approx_kl": 0.0024767630152894237,
+        "samples": 21107
+      },
+      "action_counts": [
+        11418,
+        3303,
+        2258,
+        1547,
+        2581
+      ],
+      "sizing_counts": [
+        1885,
+        440,
+        1547,
+        256
+      ],
+      "selfplay_hands": 2034
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 25,
+      "hands": 4096,
+      "hands_per_second": 613.9088729051492,
+      "rollout_seconds": 6.671999999962281,
+      "elapsed_seconds": 8.76600000000326,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 156,
+        "early_stop": false,
+        "policy_loss": -0.01508147540262858,
+        "approx_kl": 0.002657959527247651,
+        "samples": 19672
+      },
+      "action_counts": [
+        11551,
+        2171,
+        1710,
+        1225,
+        3015
+      ],
+      "sizing_counts": [
+        2072,
+        718,
+        1225,
+        225
+      ],
+      "selfplay_hands": 2018
+    },
+    {
+      "profile": "balanced",
+      "iteration": 25,
+      "hands": 4096,
+      "hands_per_second": 702.8140013751545,
+      "rollout_seconds": 5.827999999979511,
+      "elapsed_seconds": 7.547000000020489,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 168,
+        "early_stop": false,
+        "policy_loss": -0.014803754747131071,
+        "approx_kl": 0.0026230475626614676,
+        "samples": 21117
+      },
+      "action_counts": [
+        11674,
+        2815,
+        2166,
+        1533,
+        2929
+      ],
+      "sizing_counts": [
+        2047,
+        586,
+        1533,
+        296
+      ],
+      "selfplay_hands": 2077
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 25,
+      "hands": 4096,
+      "hands_per_second": 573.6694677859924,
+      "rollout_seconds": 7.14000000001397,
+      "elapsed_seconds": 9.077999999979511,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 168,
+        "early_stop": false,
+        "policy_loss": -0.01441445235829153,
+        "approx_kl": 0.0024199433361863885,
+        "samples": 21306
+      },
+      "action_counts": [
+        11499,
+        3223,
+        2317,
+        1577,
+        2690
+      ],
+      "sizing_counts": [
+        1953,
+        473,
+        1577,
+        264
+      ],
+      "selfplay_hands": 2041
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 26,
+      "hands": 4096,
+      "hands_per_second": 1101.6675632079564,
+      "rollout_seconds": 3.7179999999934807,
+      "elapsed_seconds": 4.89000000001397,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 156,
+        "early_stop": false,
+        "policy_loss": -0.014655161463805997,
+        "approx_kl": 0.00278691509985618,
+        "samples": 19837
+      },
+      "action_counts": [
+        11663,
+        2050,
+        1680,
+        1351,
+        3093
+      ],
+      "sizing_counts": [
+        2157,
+        702,
+        1351,
+        234
+      ],
+      "selfplay_hands": 2043
+    },
+    {
+      "profile": "balanced",
+      "iteration": 26,
+      "hands": 4096,
+      "hands_per_second": 873.7201365143452,
+      "rollout_seconds": 4.688000000023749,
+      "elapsed_seconds": 6.157000000006519,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 164,
+        "early_stop": false,
+        "policy_loss": -0.014197892217105613,
+        "approx_kl": 0.002620150670629482,
+        "samples": 20721
+      },
+      "action_counts": [
+        11613,
+        2641,
+        2049,
+        1521,
+        2897
+      ],
+      "sizing_counts": [
+        2033,
+        587,
+        1521,
+        277
+      ],
+      "selfplay_hands": 2057
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 26,
+      "hands": 4096,
+      "hands_per_second": 845.7567623385327,
+      "rollout_seconds": 4.842999999993481,
+      "elapsed_seconds": 6.311999999976251,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 164,
+        "early_stop": false,
+        "policy_loss": -0.01348051694643788,
+        "approx_kl": 0.0021932119062620355,
+        "samples": 20988
+      },
+      "action_counts": [
+        11401,
+        3263,
+        2189,
+        1492,
+        2643
+      ],
+      "sizing_counts": [
+        1952,
+        416,
+        1492,
+        275
+      ],
+      "selfplay_hands": 2028
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 27,
+      "hands": 4096,
+      "hands_per_second": 868.1644764742814,
+      "rollout_seconds": 4.717999999993481,
+      "elapsed_seconds": 6.061999999976251,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 156,
+        "early_stop": false,
+        "policy_loss": -0.014152947103360262,
+        "approx_kl": 0.0024268220822569334,
+        "samples": 19473
+      },
+      "action_counts": [
+        11312,
+        2079,
+        1776,
+        1361,
+        2945
+      ],
+      "sizing_counts": [
+        2046,
+        645,
+        1361,
+        254
+      ],
+      "selfplay_hands": 1958
+    },
+    {
+      "profile": "balanced",
+      "iteration": 27,
+      "hands": 4096,
+      "hands_per_second": 859.6012591790119,
+      "rollout_seconds": 4.76500000001397,
+      "elapsed_seconds": 6.077999999979511,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 164,
+        "early_stop": false,
+        "policy_loss": -0.014321690489467983,
+        "approx_kl": 0.0027454815416279896,
+        "samples": 20649
+      },
+      "action_counts": [
+        11495,
+        2670,
+        2108,
+        1546,
+        2830
+      ],
+      "sizing_counts": [
+        2054,
+        529,
+        1546,
+        247
+      ],
+      "selfplay_hands": 2036
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 27,
+      "hands": 4096,
+      "hands_per_second": 923.1462700071949,
+      "rollout_seconds": 4.436999999976251,
+      "elapsed_seconds": 5.717999999993481,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 168,
+        "early_stop": false,
+        "policy_loss": -0.014194936422920766,
+        "approx_kl": 0.0022503698446216473,
+        "samples": 21304
+      },
+      "action_counts": [
+        11286,
+        3388,
+        2298,
+        1583,
+        2749
+      ],
+      "sizing_counts": [
+        1938,
+        454,
+        1583,
+        357
+      ],
+      "selfplay_hands": 1997
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 28,
+      "hands": 4096,
+      "hands_per_second": 1106.1301647374194,
+      "rollout_seconds": 3.702999999979511,
+      "elapsed_seconds": 5.0,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 160,
+        "early_stop": false,
+        "policy_loss": -0.014562710722518824,
+        "approx_kl": 0.0027174438121508175,
+        "samples": 20222
+      },
+      "action_counts": [
+        11821,
+        2139,
+        1774,
+        1387,
+        3101
+      ],
+      "sizing_counts": [
+        2137,
+        709,
+        1387,
+        255
+      ],
+      "selfplay_hands": 2086
+    },
+    {
+      "profile": "balanced",
+      "iteration": 28,
+      "hands": 4096,
+      "hands_per_second": 1027.854454191852,
+      "rollout_seconds": 3.985000000044238,
+      "elapsed_seconds": 5.204000000027008,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 164,
+        "early_stop": false,
+        "policy_loss": -0.013867353303670508,
+        "approx_kl": 0.0023405671354808175,
+        "samples": 20654
+      },
+      "action_counts": [
+        11613,
+        2627,
+        2022,
+        1482,
+        2910
+      ],
+      "sizing_counts": [
+        2057,
+        592,
+        1482,
+        261
+      ],
+      "selfplay_hands": 2059
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 28,
+      "hands": 4096,
+      "hands_per_second": 992.969696969697,
+      "rollout_seconds": 4.125,
+      "elapsed_seconds": 5.438000000023749,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 168,
+        "early_stop": false,
+        "policy_loss": -0.013894241982595043,
+        "approx_kl": 0.0021922364509498983,
+        "samples": 21352
+      },
+      "action_counts": [
+        11703,
+        3209,
+        2137,
+        1488,
+        2815
+      ],
+      "sizing_counts": [
+        2004,
+        532,
+        1488,
+        279
+      ],
+      "selfplay_hands": 2100
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 29,
+      "hands": 4096,
+      "hands_per_second": 1061.1398963768975,
+      "rollout_seconds": 3.85999999998603,
+      "elapsed_seconds": 5.10999999998603,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 160,
+        "early_stop": false,
+        "policy_loss": -0.014114286480159074,
+        "approx_kl": 0.002648117608858522,
+        "samples": 20112
+      },
+      "action_counts": [
+        11665,
+        2235,
+        1769,
+        1369,
+        3074
+      ],
+      "sizing_counts": [
+        2091,
+        704,
+        1369,
+        279
+      ],
+      "selfplay_hands": 2053
+    },
+    {
+      "profile": "balanced",
+      "iteration": 29,
+      "hands": 4096,
+      "hands_per_second": 897.6550514965334,
+      "rollout_seconds": 4.563000000023749,
+      "elapsed_seconds": 5.89100000000326,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 168,
+        "early_stop": false,
+        "policy_loss": -0.013438395290414587,
+        "approx_kl": 0.002450783666763061,
+        "samples": 21015
+      },
+      "action_counts": [
+        11689,
+        2735,
+        2109,
+        1545,
+        2937
+      ],
+      "sizing_counts": [
+        2043,
+        560,
+        1545,
+        334
+      ],
+      "selfplay_hands": 2072
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 29,
+      "hands": 4096,
+      "hands_per_second": 906.9973427805677,
+      "rollout_seconds": 4.51600000000326,
+      "elapsed_seconds": 5.7810000000172295,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 168,
+        "early_stop": false,
+        "policy_loss": -0.014029204069299998,
+        "approx_kl": 0.002268333828289062,
+        "samples": 21409
+      },
+      "action_counts": [
+        11457,
+        3284,
+        2278,
+        1555,
+        2835
+      ],
+      "sizing_counts": [
+        2024,
+        523,
+        1555,
+        288
+      ],
+      "selfplay_hands": 2046
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 30,
+      "hands": 4096,
+      "hands_per_second": 1028.112449800038,
+      "rollout_seconds": 3.9839999999967404,
+      "elapsed_seconds": 5.297000000020489,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 156,
+        "early_stop": false,
+        "policy_loss": -0.014341823848782052,
+        "approx_kl": 0.002511546575242771,
+        "samples": 19928
+      },
+      "action_counts": [
+        11709,
+        2136,
+        1758,
+        1342,
+        2983
+      ],
+      "sizing_counts": [
+        2070,
+        666,
+        1342,
+        247
+      ],
+      "selfplay_hands": 2049
+    },
+    {
+      "profile": "balanced",
+      "iteration": 30,
+      "hands": 4096,
+      "hands_per_second": 1008.122077291346,
+      "rollout_seconds": 4.062999999965541,
+      "elapsed_seconds": 5.280999999959022,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 160,
+        "early_stop": false,
+        "policy_loss": -0.013995663246476378,
+        "approx_kl": 0.0025880771488135043,
+        "samples": 20368
+      },
+      "action_counts": [
+        11572,
+        2642,
+        1961,
+        1410,
+        2783
+      ],
+      "sizing_counts": [
+        1973,
+        553,
+        1410,
+        257
+      ],
+      "selfplay_hands": 2036
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 30,
+      "hands": 4096,
+      "hands_per_second": 1004.4139284013191,
+      "rollout_seconds": 4.077999999979511,
+      "elapsed_seconds": 5.375,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 168,
+        "early_stop": false,
+        "policy_loss": -0.014015942652007103,
+        "approx_kl": 0.002426241980309675,
+        "samples": 21501
+      },
+      "action_counts": [
+        11616,
+        3205,
+        2269,
+        1587,
+        2824
+      ],
+      "sizing_counts": [
+        2054,
+        466,
+        1587,
+        304
+      ],
+      "selfplay_hands": 2076
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 31,
+      "hands": 4096,
+      "hands_per_second": 1000.4885197892618,
+      "rollout_seconds": 4.0939999999827705,
+      "elapsed_seconds": 5.296999999962281,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 152,
+        "early_stop": false,
+        "policy_loss": -0.014404021280752166,
+        "approx_kl": 0.0028460536803141716,
+        "samples": 19454
+      },
+      "action_counts": [
+        11356,
+        2031,
+        1738,
+        1394,
+        2935
+      ],
+      "sizing_counts": [
+        2011,
+        697,
+        1394,
+        227
+      ],
+      "selfplay_hands": 1961
+    },
+    {
+      "profile": "balanced",
+      "iteration": 31,
+      "hands": 4096,
+      "hands_per_second": 989.37198067299,
+      "rollout_seconds": 4.14000000001397,
+      "elapsed_seconds": 5.35899999999674,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 164,
+        "early_stop": false,
+        "policy_loss": -0.01456747509415319,
+        "approx_kl": 0.00291436634696987,
+        "samples": 20719
+      },
+      "action_counts": [
+        11520,
+        2732,
+        2083,
+        1504,
+        2880
+      ],
+      "sizing_counts": [
+        2020,
+        561,
+        1504,
+        299
+      ],
+      "selfplay_hands": 2039
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 31,
+      "hands": 4096,
+      "hands_per_second": 1031.9979843834167,
+      "rollout_seconds": 3.9689999999827705,
+      "elapsed_seconds": 5.421999999962281,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 164,
+        "early_stop": false,
+        "policy_loss": -0.01345908261679618,
+        "approx_kl": 0.0023268781808772044,
+        "samples": 20894
+      },
+      "action_counts": [
+        11405,
+        3121,
+        2084,
+        1414,
+        2870
+      ],
+      "sizing_counts": [
+        2014,
+        572,
+        1414,
+        284
+      ],
+      "selfplay_hands": 2019
+    },
+    {
+      "profile": "human_emphasis",
+      "iteration": 32,
+      "hands": 4096,
+      "hands_per_second": 1057.032258064516,
+      "rollout_seconds": 3.875,
+      "elapsed_seconds": 5.061999999976251,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 156,
+        "early_stop": false,
+        "policy_loss": -0.01409748863160094,
+        "approx_kl": 0.0026318607975197752,
+        "samples": 19666
+      },
+      "action_counts": [
+        11557,
+        1955,
+        1745,
+        1397,
+        3012
+      ],
+      "sizing_counts": [
+        2076,
+        707,
+        1397,
+        229
+      ],
+      "selfplay_hands": 2015
+    },
+    {
+      "profile": "balanced",
+      "iteration": 32,
+      "hands": 4096,
+      "hands_per_second": 953.2231789575213,
+      "rollout_seconds": 4.297000000020489,
+      "elapsed_seconds": 5.547000000020489,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 160,
+        "early_stop": false,
+        "policy_loss": -0.014532082227307421,
+        "approx_kl": 0.002777617220195933,
+        "samples": 20301
+      },
+      "action_counts": [
+        11378,
+        2599,
+        2051,
+        1478,
+        2795
+      ],
+      "sizing_counts": [
+        1917,
+        568,
+        1478,
+        310
+      ],
+      "selfplay_hands": 1991
+    },
+    {
+      "profile": "pluribus_emphasis",
+      "iteration": 32,
+      "hands": 4096,
+      "hands_per_second": 967.1782762590824,
+      "rollout_seconds": 4.235000000044238,
+      "elapsed_seconds": 5.657000000006519,
+      "ppo": {
+        "epochs": 4,
+        "minibatches": 164,
+        "early_stop": false,
+        "policy_loss": -0.0137885406456108,
+        "approx_kl": 0.0022059550295651384,
+        "samples": 20519
+      },
+      "action_counts": [
+        11415,
+        2931,
+        2025,
+        1380,
+        2768
+      ],
+      "sizing_counts": [
+        1959,
+        545,
+        1380,
+        264
+      ],
+      "selfplay_hands": 2016
+    }
+  ],
+  "algorithm": "Hierarchical clipped PPO, Monte-Carlo terminal returns, Huber critic, initial-policy KL anchor",
+  "game": "6-Max NLHE, 100 BB per hand, fixed 0.5/1 BB blinds, no rake",
+  "reward": "Net payoff in BB / 100, gamma=1. No win/loss labels and no future cards in observations.",
+  "league": "50% six-seat current self-play; 50% one learner vs initial models / past checkpoints",
+  "evaluation": "Frozen original panel, independent development and test chance seeds; no online replacement",
+  "elapsed_seconds_this_run": 816.1719999999623,
+  "original_models_unchanged": true
+}

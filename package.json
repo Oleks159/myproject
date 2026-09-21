@@ -1,0 +1,30 @@
+{
+  "name": "token-poker-farm-react",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.19.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c yellow,cyan \"node --env-file-if-exists=.env server.mjs\" \"vite\"",
+    "dev:web": "vite",
+    "dev:api": "node --env-file-if-exists=.env server.mjs",
+    "build": "tsc -b && vite build",
+    "start": "node --env-file-if-exists=.env server.mjs",
+    "test": "tsc -b && vite build && node --test --test-isolation=none tests/domain.test.mjs tests/server.test.mjs tests/telegram.test.mjs tests/victory.test.mjs tests/bots.test.mjs"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.16",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.4",
+    "concurrently": "^9.2.1",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.7"
+  }
+}

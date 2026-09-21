@@ -1,0 +1,29 @@
+{
+  "schema_version": "euro6_pilot_model_registry_v1",
+  "input_schema": "euro6_runtime_state_v1",
+  "training_schema": "euro6_decision_packet_v2",
+  "profiles": {
+    "human_emphasis": {
+      "directory": "models/human_emphasis",
+      "pokerstars_weight": 1.0,
+      "description": "PokerStars-Hero-Zeilen und Zeilen aus pluribus_all_player erhalten gleiches Gewicht."
+    },
+    "balanced": {
+      "directory": "models/balanced",
+      "pokerstars_weight": 0.35,
+      "description": "PokerStars-Hero-Zeilen erhalten Gewicht 0,35; pluribus_all_player erhält Gewicht 1."
+    },
+    "pluribus_emphasis": {
+      "directory": "models/pluribus_emphasis",
+      "pokerstars_weight": 0.1,
+      "description": "PokerStars-Hero-Zeilen erhalten Gewicht 0,10; pluribus_all_player erhält Gewicht 1."
+    }
+  },
+  "limitations": [
+    "Diese Kandidaten imitieren Aktionen; sie schätzen noch keinen EV.",
+    "Offline-Modellspiele verändern die Gewichte nicht; kein Self-Play-Lernen implementiert.",
+    "Separate Größenmodelle verwenden sieben Größenklassen je Kontext, keine EV-Optimierung.",
+    "pluribus_all_player enthält Aktionen aller erfassten Spieler und ist nicht als reiner Pluribus-Teacher verifiziert.",
+    "HRC-Referenzen wurden in diesen Modellen noch nicht verwendet."
+  ]
+}

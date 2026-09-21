@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.env
+*.log
+data/*.sqlite-shm
+data/*.sqlite-wal
+qa/
+**/__pycache__/

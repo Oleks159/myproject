@@ -1,0 +1,38 @@
+{
+  "balanced": {
+    "hands": 144,
+    "sessions": 36,
+    "decisions": 1098,
+    "all_actions_legal": true,
+    "maximum_probability_error": 1.6310181527590117e-07,
+    "heads_seen": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "stack_min_bb": 0.01,
+    "stack_max_bb": 10001.0,
+    "inference_ms_p50": 0.24900000425986946,
+    "inference_ms_p95": 0.5772099713794885,
+    "scope": "Technical tests only, including 10000 BB. Warm local inference, excludes Telegram/network."
+  },
+  "pluribus_emphasis": {
+    "hands": 144,
+    "sessions": 36,
+    "decisions": 1302,
+    "all_actions_legal": true,
+    "maximum_probability_error": 1.9510261206612256e-07,
+    "heads_seen": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "stack_min_bb": 0.01,
+    "stack_max_bb": 10001.0,
+    "inference_ms_p50": 0.2625499910209328,
+    "inference_ms_p95": 0.6216850189957769,
+    "scope": "Technical tests only, including 10000 BB. Warm local inference, excludes Telegram/network."
+  }
+}
