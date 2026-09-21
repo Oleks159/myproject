@@ -14,10 +14,15 @@ export class BotEngine {
     if (this.ready) return this.ready;
     const bundled = join(process.env.USERPROFILE || '', '.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe');
     const python = process.env.TPF_PYTHON || (existsSync(bundled) ? bundled : process.platform === 'win32' ? 'python' : 'python3');
+    const projectPythonPath = join(this.root, '.python-packages');
     this.ready = new Promise((resolve, reject) => {
       const child = spawn(python, ['-B', '-u', join(this.root, 'bot_engine/worker.py')], {
         cwd: this.root, windowsHide: true, stdio: ['pipe', 'pipe', 'pipe'],
-        env: { ...process.env, OPENBLAS_NUM_THREADS: '1', OMP_NUM_THREADS: '1', PYTHONUTF8: '1', TPF_BOT_DATA_DIR: join(this.dataDirectory, 'bot_tables') }
+        env: {
+          ...process.env,
+          PYTHONPATH: [projectPythonPath, process.env.PYTHONPATH].filter(Boolean).join(process.platform === 'win32' ? ';' : ':'),
+          OPENBLAS_NUM_THREADS: '1', OMP_NUM_THREADS: '1', PYTHONUTF8: '1', TPF_BOT_DATA_DIR: join(this.dataDirectory, 'bot_tables')
+        }
       });
       this.child = child;
       const startupTimer = setTimeout(() => { fail(); child.kill(); }, 30000);
