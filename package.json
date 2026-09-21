@@ -12,7 +12,7 @@
     "dev:web": "vite",
     "dev:api": "node --env-file-if-exists=.env server.mjs",
     "build": "tsc -b && vite build",
-    "render:build": "pnpm install --frozen-lockfile && pnpm run build && python3 -m pip install --user -r bot_engine/euro6_pilot_v1/requirements.txt",
+    "render:build": "pnpm install --frozen-lockfile && pnpm run build && python3 -m pip install --user --break-system-packages -r bot_engine/euro6_pilot_v1/requirements.txt",
     "start": "node --env-file-if-exists=.env server.mjs",
     "test": "tsc -b && vite build && node --test --test-isolation=none tests/domain.test.mjs tests/server.test.mjs tests/telegram.test.mjs tests/victory.test.mjs tests/bots.test.mjs"
   },
