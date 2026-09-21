@@ -1,4 +1,6 @@
-const configuredOrigin = String(import.meta.env.VITE_API_ORIGIN || '').trim().replace(/\/+$/, '');
+const renderApiOrigin = 'https://myproject-7dre.onrender.com';
+const isLocalBrowser = ['127.0.0.1', 'localhost'].includes(location.hostname);
+const configuredOrigin = String(import.meta.env.VITE_API_ORIGIN || (isLocalBrowser ? '' : renderApiOrigin)).trim().replace(/\/+$/, '');
 const sessionKey = 'tpf_preview_session';
 
 export function apiUrl(path: string) {
