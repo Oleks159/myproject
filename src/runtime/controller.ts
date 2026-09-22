@@ -592,13 +592,7 @@ function render() {
     $('#app-header .header-back').dataset.action = 'bot-back';
   }
   $('#bottom-nav').hidden = isTable;
-  $('#bottom-nav').innerHTML = r === 'home' ? `
-    <a class="active" href="#home" aria-current="page">${icon('home')}<span>Home</span></a>
-    <a href="#play">${icon('play')}<span>Tables</span></a>
-    <span class="reserved" aria-disabled="true" aria-label="Progress – für eine zukünftige Seite reserviert">${icon('bolt')}<span>Progress</span><small>Reserviert</small></span>
-    <a href="#friends">${icon('users')}<span>Friends</span></a>
-    <a href="#missions">${icon('target')}<span>Missions</span></a>
-    <a href="#profile">${icon('more')}<span>More</span></a>` : links.map(([id, name, sym]) => `<a href="#${id}" ${activeNav === id ? 'class="active" aria-current="page"' : ''}>${icon(sym)}${name}</a>`).join('');
+  $('#bottom-nav').innerHTML = links.map(([id, name, sym]) => `<a href="#${id}" ${activeNav === id ? 'class="active" aria-current="page"' : ''}>${icon(sym)}${name}</a>`).join('');
   $('#studio-nav').innerHTML = links.map(([id, name], i) => `<a href="#${id}" ${activeNav === id ? 'class="active"' : ''}><span>0${i + 1}</span>${name}</a>`).join('');
   const scroll = renderedRoute === r ? $('#view').scrollTop : 0;
   $('#view').innerHTML = r === 'bots' ? botUI.table() : ({ home, play, table, missions, rules, friends, referrals, profile, history }[r] || home)();
