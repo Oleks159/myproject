@@ -1,0 +1,151 @@
+/* ============================================================
+   UI POLISH — 2026-09-22
+   1. ONE bottom tab bar on every page, matching the Home
+      (Velvet & Noir) design: floating rounded bar, gold active
+      tab, no indicator bar. The old absolute overlay nav from
+      the former Progress page is retired — it used to cover
+      the bottom of the Home content.
+   2. Milestones & Rewards banner styling (the section had no
+      CSS, so the artwork rendered at the wrong size and the
+      card looked broken / cut off).
+   This file loads last, so it wins ties in the cascade.
+   ============================================================ */
+
+/* ---------- 1. Unified bottom navigation ---------- */
+.phone #bottom-nav,
+.phone.is-progress-page #bottom-nav,
+.phone.is-play-lobby #bottom-nav,
+.phone.is-friends-page #bottom-nav {
+  position: relative; /* in-flow: never overlaps page content */
+  left: auto;
+  right: auto;
+  top: auto;
+  bottom: auto;
+  width: auto;
+  height: 58px;
+  min-height: 58px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 20px 27px;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 13px;
+  background: linear-gradient(105deg, #172a4ff0, #183253e8);
+  box-shadow: inset 0 1px 0 #a8caff24, 0 9px 21px #0d1d3b26;
+  z-index: 4;
+}
+
+.phone #bottom-nav a,
+.phone.is-progress-page #bottom-nav a,
+.phone.is-play-lobby #bottom-nav a,
+.phone.is-friends-page #bottom-nav a {
+  position: relative;
+  width: 20%;
+  min-width: 0;
+  min-height: 52px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding-top: 5px;
+  font-size: 9px;
+  letter-spacing: .4px;
+  color: #c4d6f2;
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+.phone #bottom-nav a svg,
+.phone.is-progress-page #bottom-nav a svg,
+.phone.is-play-lobby #bottom-nav a svg,
+.phone.is-friends-page #bottom-nav a svg {
+  width: 21px;
+  height: 21px;
+  flex: none;
+}
+
+.phone #bottom-nav a.active,
+.phone.is-progress-page #bottom-nav a.active,
+.phone.is-play-lobby #bottom-nav a.active,
+.phone.is-friends-page #bottom-nav a.active {
+  color: #ffe493;
+}
+
+.phone #bottom-nav a.active::before,
+.phone.is-progress-page #bottom-nav a.active::before,
+.phone.is-play-lobby #bottom-nav a.active::before,
+.phone.is-friends-page #bottom-nav a.active::before {
+  display: none;
+  content: none;
+}
+
+@media (max-height: 800px) {
+  .phone #bottom-nav,
+  .phone.is-progress-page #bottom-nav,
+  .phone.is-play-lobby #bottom-nav,
+  .phone.is-friends-page #bottom-nav {
+    margin-bottom: 24px;
+  }
+}
+
+/* ---------- 2. Milestones & Rewards banner (Home) ---------- */
+.progress-rewards {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border: 1px solid #617cba55;
+  border-radius: 13px;
+  background: linear-gradient(105deg, #16264ae8, #101d3ae8);
+  box-shadow: inset 0 1px 0 #a8caff24;
+}
+
+.progress-rewards .progress-gift-art {
+  width: 84px;
+  height: auto;
+  flex: none;
+  display: block;
+}
+
+.progress-rewards > div {
+  flex: 1;
+  min-width: 0;
+}
+
+.progress-rewards strong {
+  display: block;
+  color: #ffe493;
+  font-size: 14px;
+  font-weight: 750;
+  letter-spacing: -.2px;
+}
+
+.progress-rewards p {
+  color: #9db4dd;
+  font-size: 10px;
+  line-height: 1.5;
+  margin-top: 4px;
+}
+
+.progress-rewards a {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 16px;
+  border: 1px solid #ffd978aa;
+  border-radius: 12px;
+  background: #ffd97812;
+  color: #ffe493;
+  font-size: 11px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.progress-rewards a svg {
+  width: 14px;
+  height: 14px;
+}
