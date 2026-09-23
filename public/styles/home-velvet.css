@@ -1,0 +1,288 @@
+/* ============================================================
+   HOME VELVET & NOIR REBUILD — 2026-09-23
+   Rebuilds the Home page as real components matching the
+   Velvet & Noir design reference (replaces the old flattened
+   master-image approach). Loads after ui-polish.css.
+   Palette sampled from the reference:
+   gold #eaca72 / #ffe493 · cyan #46e2f7 · mint #24f3cb
+   ink #fafbfc · muted #8fa3c8 · card #041e4a
+   ============================================================ */
+
+/* ---------- page backdrop + layout ---------- */
+.phone.is-progress-page {
+  background:
+    radial-gradient(120% 55% at 82% -4%, #3b2a6e59, transparent 60%),
+    radial-gradient(105% 50% at 8% 32%, #1c4d8f4d, transparent 62%),
+    radial-gradient(95% 45% at 88% 74%, #2a1a5e4d, transparent 60%),
+    linear-gradient(180deg, #161934 0%, #0a123f 38%, #071330 68%, #151831 100%);
+}
+.is-progress-page #view {
+  position: relative;
+  inset: auto;
+  width: auto;
+  height: auto;
+  flex: 1;
+  min-height: 0;
+  z-index: 1;
+}
+.velvet-home {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px 14px 10px;
+}
+
+/* ---------- header ---------- */
+.vh-header { display: flex; align-items: center; gap: 10px; padding: 2px 2px 0; }
+.vh-back { color: #8fa3c8; background: none; padding: 6px; display: grid; place-items: center; }
+.vh-back svg { width: 22px; height: 22px; }
+.vh-logo {
+  width: 46px; height: 46px; flex: none;
+  display: grid; place-items: center;
+  border-radius: 13px; color: #1a1206;
+  background: linear-gradient(145deg, #f7d774, #d9a83f);
+  box-shadow: 0 4px 14px #eaca7255, inset 0 1px 0 #fff8;
+}
+.vh-logo svg { width: 27px; height: 27px; }
+.vh-title { flex: 1; min-width: 0; font-size: 19px; font-weight: 800; color: #fafbfc; letter-spacing: -.3px; line-height: 1.15; }
+.vh-title small { display: block; font-size: 8.5px; font-weight: 600; letter-spacing: 2.4px; color: #8fa3c8; margin-top: 3px; }
+.vh-ap {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 9px 12px; border-radius: 12px;
+  border: 1px solid #eaca7255; background: #eaca7214;
+  color: #eaca72; font-size: 13px; white-space: nowrap;
+}
+.vh-ap svg { width: 16px; height: 16px; }
+.vh-ap strong { font-weight: 800; }
+.vh-avatar { position: relative; flex: none; width: 42px; height: 42px; }
+.vh-avatar img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; display: block; border: 2px solid #46e2f7; box-shadow: 0 0 12px #46e2f755; }
+.vh-avatar i { position: absolute; right: -1px; bottom: -1px; width: 12px; height: 12px; border-radius: 50%; background: #24f3cb; border: 2px solid #0a1740; }
+.vh-gear { color: #8fa3c8; display: grid; place-items: center; padding: 4px; }
+.vh-gear svg { width: 24px; height: 24px; }
+
+/* ---------- metric cards ---------- */
+.vh-metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.vh-metric {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 9px; border-radius: 14px;
+  background: linear-gradient(160deg, #0c2560d9, #081a45e6);
+  border: 1px solid #2c4f96aa;
+  box-shadow: inset 0 1px 0 #ffffff14;
+  min-width: 0;
+}
+.vh-micon { color: #eaca72; flex: none; display: grid; place-items: center; }
+.vh-micon svg { width: 21px; height: 21px; }
+.vh-metric p { min-width: 0; }
+.vh-metric small { display: block; font-size: 7px; font-weight: 700; letter-spacing: .7px; color: #8fa3c8; white-space: nowrap; }
+.vh-metric strong { display: block; font-size: 14.5px; font-weight: 800; color: #fafbfc; letter-spacing: -.3px; font-variant-numeric: tabular-nums; }
+.vh-metric em { font-style: normal; font-size: 8.5px; color: #8fa3c8; }
+
+/* ---------- generic card ---------- */
+.vh-card {
+  border-radius: 18px; padding: 14px;
+  background: linear-gradient(165deg, #0d2763e6, #081a45f2);
+  border: 1px solid #35589b88;
+  box-shadow: inset 0 1px 0 #ffffff17, 0 10px 30px #02081f66;
+}
+.vh-card-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
+.vh-card-head > div { flex: 1; min-width: 0; }
+.vh-card-head h2 { font-size: 13px; font-weight: 800; letter-spacing: .6px; color: #fafbfc; }
+.vh-card-head p { font-size: 10.5px; color: #8fa3c8; margin-top: 3px; line-height: 1.45; }
+.vh-head-ico {
+  width: 38px; height: 38px; flex: none;
+  display: grid; place-items: center; border-radius: 12px;
+  color: #eaca72; background: #eaca7212; border: 1px solid #eaca7233;
+  font-weight: 800; font-size: 17px;
+}
+.vh-head-ico.cyan { color: #46e2f7; background: #46e2f712; border-color: #46e2f733; }
+.vh-head-ico svg { width: 22px; height: 22px; }
+.vh-link {
+  margin-left: auto; flex: none;
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11px; font-weight: 700; color: #46e2f7;
+  border: 1px solid #46e2f744; background: #46e2f70d;
+  padding: 7px 12px; border-radius: 10px; white-space: nowrap;
+}
+.vh-link svg { width: 13px; height: 13px; }
+
+/* ---------- earning rate panel ---------- */
+.vh-rate-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: start; }
+.vh-big { font-size: 33px; font-weight: 800; color: #fafbfc; letter-spacing: -.8px; font-variant-numeric: tabular-nums; line-height: 1.05; }
+.vh-big em { font-style: normal; font-size: 16px; font-weight: 800; color: #46e2f7; margin-left: 5px; letter-spacing: 0; }
+.vh-persec { color: #46e2f7; font-size: 15px; font-weight: 700; margin-top: 3px; font-variant-numeric: tabular-nums; }
+.vh-chip-up {
+  display: inline-flex; align-items: center; gap: 6px; margin-top: 10px;
+  padding: 8px 12px; border-radius: 10px;
+  border: 1px solid #24f3cb66; background: #24f3cb0d;
+  color: #24f3cb; font-size: 12px; font-weight: 800; font-variant-numeric: tabular-nums;
+}
+.vh-chip-up small { color: #8fa3c8; font-weight: 600; font-size: 10px; }
+.vh-live {
+  display: inline-flex; align-items: center; gap: 8px; margin-top: 8px;
+  padding: 9px 14px; border-radius: 10px;
+  font-size: 11.5px; font-weight: 800; letter-spacing: .4px;
+}
+.vh-live i { width: 8px; height: 8px; border-radius: 50%; background: currentColor; box-shadow: 0 0 10px currentColor; flex: none; }
+.vh-live svg { width: 14px; height: 14px; }
+.vh-live.is-live { color: #24f3cb; border: 1px solid #24f3cb66; background: #24f3cb14; }
+.vh-live.is-locked { color: #8fa3c8; border: 1px solid #8fa3c855; background: #8fa3c812; }
+.vh-rate-main .progress-live-action { margin-top: 8px; }
+.vh-rtable { background: #06143899; border: 1px solid #2c4f9666; border-radius: 12px; padding: 4px 12px; }
+.vh-rtable p { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 7px 0; border-bottom: 1px solid #ffffff0d; font-size: 10.5px; }
+.vh-rtable p:last-child { border-bottom: 0; }
+.vh-rtable span { color: #8fa3c8; }
+.vh-rtable strong { color: #fafbfc; font-weight: 700; font-variant-numeric: tabular-nums; text-align: right; }
+.vh-rtable strong em { font-style: normal; font-size: 9px; color: #46e2f7; font-weight: 600; }
+.vh-rtable strong.ok { color: #24f3cb; }
+
+/* shared action button (start / claim) */
+.velvet-home .progress-live-action {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 11px 18px; border-radius: 12px;
+  background: linear-gradient(145deg, #f7d774, #d9a83f);
+  color: #1a1206; font-size: 13px; font-weight: 800;
+  box-shadow: 0 6px 18px #eaca7244, inset 0 1px 0 #fff8;
+  border: 0;
+}
+.velvet-home .progress-live-action svg { width: 18px; height: 18px; }
+
+/* ---------- earning cycle panel ---------- */
+.vh-status-pill {
+  margin-left: auto; flex: none;
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 10.5px; font-weight: 800; letter-spacing: .6px;
+  padding: 7px 12px; border-radius: 10px; border: 1px solid;
+}
+.vh-status-pill i { width: 8px; height: 8px; border-radius: 50%; background: currentColor; box-shadow: 0 0 8px currentColor; }
+.vh-status-pill.is-active { color: #24f3cb; border-color: #24f3cb66; background: #24f3cb14; }
+.vh-status-pill.is-ready { color: #46e2f7; border-color: #46e2f766; background: #46e2f714; }
+.vh-status-pill.is-complete { color: #ffe493; border-color: #eaca7266; background: #eaca7214; }
+.vh-status-pill.is-locked { color: #8fa3c8; border-color: #8fa3c855; background: #8fa3c812; }
+.vh-cycle-grid { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; background: #06143899; border: 1px solid #2c4f9666; border-radius: 12px; padding: 12px; }
+.vh-cycle-left strong { display: block; color: #24f3cb; font-size: 16px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.vh-cycle-left strong em { font-style: normal; font-size: 11px; }
+.vh-cycle-left small { color: #8fa3c8; font-size: 9.5px; }
+.vh-bar { height: 10px; border-radius: 6px; background: #12305e; overflow: hidden; min-width: 60px; }
+.vh-bar i { display: block; height: 100%; border-radius: 6px; background: linear-gradient(90deg, #1fb6d4, #46e2f7); box-shadow: 0 0 12px #46e2f766; transition: width .6s ease; }
+.vh-cycle-right { text-align: right; }
+.vh-cycle-right strong { display: block; color: #fafbfc; font-size: 15px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.vh-cycle-right small { color: #8fa3c8; font-size: 9.5px; }
+.vh-cycle-cta { display: flex; justify-content: center; padding: 4px 0; }
+.vh-cycle-locked p { font-size: 11px; color: #8fa3c8; margin-bottom: 10px; }
+.velvet-home .progress-live-segments { display: flex; gap: 5px; }
+.velvet-home .progress-live-segments i { flex: 1; height: 8px; border-radius: 4px; background: #12305e; }
+.velvet-home .progress-live-segments i.on { background: linear-gradient(90deg, #1fb6d4, #46e2f7); box-shadow: 0 0 8px #46e2f755; }
+
+/* ---------- how your rate grows ---------- */
+.vh-head-ico.ring { border-radius: 50%; }
+.vh-steps { display: flex; align-items: flex-start; margin: 2px 0 4px; }
+.vh-step { flex: 1; min-width: 0; text-align: center; }
+.vh-step-ico {
+  width: 56px; height: 56px; margin: 0 auto 8px;
+  border-radius: 50%; display: grid; place-items: center;
+  border: 1.5px solid;
+}
+.vh-step-ico svg { width: 26px; height: 26px; }
+.vh-step-ico.gold { color: #eaca72; border-color: #eaca7288; background: #eaca7210; box-shadow: 0 0 18px #eaca7233, inset 0 0 12px #eaca7214; }
+.vh-step-ico.cyan { color: #46e2f7; border-color: #46e2f788; background: #46e2f710; box-shadow: 0 0 18px #46e2f733, inset 0 0 12px #46e2f714; }
+.vh-step strong { display: block; font-size: 9px; font-weight: 800; color: #fafbfc; letter-spacing: .3px; }
+.vh-step p { font-size: 8.5px; color: #8fa3c8; margin-top: 4px; line-height: 1.45; padding: 0 2px; }
+.vh-sep { flex: none; color: #46e2f7; font-size: 20px; font-style: normal; padding-top: 16px; opacity: .8; }
+.vh-example { margin-top: 10px; background: #06143899; border: 1px solid #2c4f9666; border-radius: 12px; padding: 10px 12px; }
+.vh-ex-title { font-size: 9px; font-weight: 800; letter-spacing: 1px; color: #8fa3c8; }
+.vh-ex-flow { display: flex; align-items: center; gap: 6px 8px; margin-top: 8px; flex-wrap: wrap; }
+.vh-ex-flow .vh-sep { padding-top: 0; font-size: 16px; }
+.vh-ex-chips { display: flex; align-items: center; gap: 7px; color: #eaca72; flex: none; }
+.vh-ex-chips svg { width: 26px; height: 26px; }
+.vh-ex-chips b { color: #eaca72; font-size: 13px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.vh-ex-chips b em, .vh-ex-flow b em { font-style: normal; font-size: 9px; color: #8fa3c8; font-weight: 600; margin-left: 2px; }
+.vh-ex-flow > span small { display: block; font-size: 8px; color: #8fa3c8; margin-bottom: 2px; white-space: nowrap; }
+.vh-ex-flow > span b { font-size: 10.5px; color: #fafbfc; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.vh-ex-flow > span b .vh-count { color: #46e2f7; font-style: normal; }
+
+/* ---------- league + progress duo ---------- */
+.vh-duo { display: grid; grid-template-columns: 1.04fr 1fr; gap: 10px; }
+.vh-duo .vh-card { padding: 12px; }
+.vh-duo .vh-card-head { margin-bottom: 10px; }
+.vh-duo .vh-card-head h2 { font-size: 12px; }
+.vh-duo .vh-card-head p { font-size: 9.5px; }
+.vh-league-body { display: flex; gap: 10px; align-items: stretch; }
+.vh-league-now { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.vh-emblem {
+  width: 74px; height: 84px; display: grid; place-items: center;
+  clip-path: polygon(50% 0, 100% 20%, 100% 62%, 50% 100%, 0 62%, 0 20%);
+  color: #2a1804;
+}
+.vh-emblem svg { width: 34px; height: 34px; margin-top: -8px; }
+.vh-emblem.bronze { background: linear-gradient(160deg, #f0b96a, #8a5a2b 70%, #6e421f); filter: drop-shadow(0 6px 14px #e09a4a55); }
+.vh-emblem.silver { background: linear-gradient(160deg, #f2f5fa, #8a93a6 70%, #6b7488); filter: drop-shadow(0 6px 14px #aeb8cc55); }
+.vh-emblem.sm { width: 44px; height: 50px; }
+.vh-emblem.sm svg { width: 20px; height: 20px; }
+.vh-league-now > strong { font-size: 12px; font-weight: 800; color: #eaca72; letter-spacing: .5px; margin-top: 6px; }
+.vh-league-bar { width: 100%; height: 8px; border-radius: 4px; background: #12305e; margin-top: 8px; overflow: hidden; }
+.vh-league-bar i { display: block; height: 100%; border-radius: 4px; background: linear-gradient(90deg, #1fb6d4, #46e2f7); }
+.vh-league-progress { font-size: 9.5px; color: #8fa3c8; margin-top: 5px; font-variant-numeric: tabular-nums; }
+.vh-league-next {
+  flex: 1; min-width: 0; border-radius: 12px; padding: 10px;
+  background: #06143899; border: 1px solid #2c4f9666;
+  display: grid; grid-template-columns: 1fr auto; gap: 4px 8px; align-items: center; align-content: start;
+}
+.vh-next-label { font-size: 9px; color: #8fa3c8; }
+.vh-next-label small { display: block; font-size: 12px; font-weight: 800; color: #fafbfc; letter-spacing: .4px; margin-top: 2px; }
+.vh-league-next > svg { width: 16px; height: 16px; color: #8fa3c8; justify-self: end; }
+.vh-unlocks { grid-column: 1 / -1; font-size: 9.5px; color: #c4d6f2; line-height: 1.6; margin-top: 2px; }
+.vh-goal { display: flex; align-items: center; gap: 10px; padding: 9px 4px; border-bottom: 1px solid #ffffff0d; }
+.vh-goal:last-child { border-bottom: 0; }
+.vh-goal-ico { width: 36px; height: 36px; flex: none; border-radius: 50%; display: grid; place-items: center; border: 1.5px solid; }
+.vh-goal-ico svg { width: 19px; height: 19px; }
+.vh-goal-ico.cyan { color: #46e2f7; border-color: #46e2f766; background: #46e2f70d; }
+.vh-goal-ico.pink { color: #e879f9; border-color: #e879f966; background: #e879f90d; }
+.vh-goal-ico.gold { color: #eaca72; border-color: #eaca7266; background: #eaca720d; }
+.vh-goal > span:nth-child(2) { flex: 1; min-width: 0; }
+.vh-goal strong { display: block; font-size: 11.5px; font-weight: 800; color: #fafbfc; }
+.vh-goal small { display: block; font-size: 9px; color: #8fa3c8; margin-top: 2px; line-height: 1.4; }
+.vh-goal > svg { width: 16px; height: 16px; color: #8fa3c8; flex: none; }
+
+/* ---------- daily reward banner ---------- */
+.vh-reward {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 14px; border-radius: 16px;
+  background: linear-gradient(105deg, #142c5ee6, #0a1c40f2);
+  border: 1px solid #eaca7244;
+  box-shadow: inset 0 1px 0 #ffffff14;
+}
+.vh-gift { width: 50px; height: 50px; flex: none; color: #eaca72; display: grid; place-items: center; filter: drop-shadow(0 4px 10px #eaca7255); }
+.vh-gift svg { width: 46px; height: 46px; }
+.vh-reward > div { flex: 1; min-width: 0; }
+.vh-reward strong { display: block; color: #eaca72; font-size: 14px; font-weight: 800; }
+.vh-reward p { color: #8fa3c8; font-size: 10.5px; margin-top: 3px; }
+.vh-reward-side { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; flex: none; }
+.vh-reward-side small { color: #8fa3c8; font-size: 10px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.vh-btn {
+  display: inline-flex; align-items: center; gap: 8px; white-space: nowrap;
+  padding: 10px 16px; border-radius: 12px;
+  border: 1px solid #eaca72aa; background: #eaca7210;
+  color: #ffe493; font-size: 12px; font-weight: 800;
+}
+.vh-btn svg { width: 14px; height: 14px; }
+
+/* ---------- home nav: cyan active per reference ---------- */
+.phone.is-progress-page #bottom-nav a.active { color: #46e2f7; }
+.phone.is-progress-page #bottom-nav a.active::before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  width: 20px;
+  height: 3px;
+  margin-left: -10px;
+  border-radius: 2px;
+  background: #46e2f7;
+  box-shadow: 0 0 10px #46e2f7;
+}
+
+@media (max-height: 800px) {
+  .vh-big { font-size: 29px; }
+  .vh-step-ico { width: 50px; height: 50px; }
+}
