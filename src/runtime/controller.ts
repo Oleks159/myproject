@@ -426,39 +426,120 @@ function legacyEarn() {
   </div>`;
 }
 function earn() {
-  const progressModel = progressPhaseOneModel();
-  return `<main class="progress-approved-screen" aria-label="Progress">
-    <div class="progress-master-crop">
-      <div class="progress-master-canvas">
-        <img class="progress-approved-master" src="/assets/progress/progress-approved-master.png" width="1024" height="1536" alt="" aria-hidden="true" draggable="false">
-        <div class="progress-motion-stage">
-          <img class="progress-motion-hero-clean" src="/assets/progress/hero-poker-art.webp" width="964" height="126" alt="" aria-hidden="true" draggable="false">
-          <header class="progress-motion-header" aria-label="Progress header">
-            <button class="progress-motion-back" data-action="back" aria-label="Back">${icon('back')}</button>
-            <span class="progress-motion-brand" aria-hidden="true">${icon('spade')}</span>
-            <div class="progress-motion-title">Velvet &amp; Noir<small>TOKEN POKER FARM</small></div>
-            <a class="progress-motion-ap" href="#home" aria-label="${number(state.ap, 2)} AP">${icon('bolt')}<strong>${number(state.ap, 2)} AP</strong></a>
-            <a class="progress-motion-profile" href="#profile" aria-label="Profile">${profilePhoto()}<i></i></a>
-            <a class="progress-motion-settings" href="#profile" aria-label="Settings">${icon('gear')}</a>
-          </header>
+  // Velvet & Noir home screen: real components rebuilt 1:1 from the design
+  // reference. Every value stays bound to live account state.
+  const model = progressPhaseOneModel();
+  const rate = metricNumber(model.rate, 2);
+  const perSec = model.rate / 3600;
+  const perSecLabel = perSec >= 1 ? number(perSec, 2) : number(perSec, 3);
+  const win = model.win;
+  const delta = win ? Math.max(0, win.nextRate - win.previousRate) : 0;
+  const deltaLabel = delta > 0 ? `+${number(delta, 2)}` : '+0';
+  const accruedAttr = model.debug ? '' : ' data-progress-accrued';
+  const timeAttr = model.debug ? '' : ' data-progress-cycle-time';
+  const cyclePct = Math.round(cycleProgress());
+  const leagues = ['Bronze', 'Silver', 'Gold', 'Platinum', 'Diamond'];
+  const league = state.leagueProgress || { league: state.league || 'Bronze', division: state.leagueDivision || 'I', rating: state.leagueRating || 0 };
+  const leagueName = league.league || 'Bronze';
+  const leagueIndex = leagues.indexOf(leagueName);
+  const nextLeague = leagueIndex >= 0 ? leagues[leagueIndex + 1] || null : null;
+  const thresholds = state.config.leagueThresholds || {};
+  const nextRating = Object.values(thresholds).find(value => value > league.rating) || 500;
+  const status = model.status;
+  const cardsIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="3" width="12" height="17" rx="2"/><path d="M8 6H6a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h9"/></svg>';
+  const rateStatus = status === 'active'
+    ? '<span class="vh-live is-live"><i></i>EARNING NOW</span>'
+    : status === 'locked'
+      ? `<span class="vh-live is-locked">${icon('lock')}EARNING LOCKED</span>`
+      : status === 'ready'
+        ? progressPhaseAction(model, 'start-cycle', 'active', 'Start Earning')
+        : progressPhaseAction(model, 'claim-cycle', 'locked', 'Claim AP');
+  const cyclePill = { active: 'ACTIVE', locked: 'LOCKED', ready: 'READY', complete: 'CLAIMABLE' }[status];
+  const cycleSub = {
+    active: 'You are earning right now. Claim your AP in 6 hours.',
+    locked: 'Turn your activity into AP. Play to unlock, then earn automatically.',
+    ready: 'Your six-hour earning cycle is available.',
+    complete: 'Your cycle is ready to be claimed.'
+  }[status];
+  let cycleBody;
+  if (status === 'active') {
+    cycleBody = `<div class="vh-cycle-grid"><div class="vh-cycle-left"><strong>+<span${accruedAttr}>${number(model.accrued, 2)}</span> <em>AP</em></strong><small>earned this cycle</small></div><div class="vh-bar" role="progressbar" aria-valuenow="${cyclePct}" aria-valuemin="0" aria-valuemax="100" aria-label="Cycle progress"><i data-cycle-bar style="width:${cyclePct}%"></i></div><div class="vh-cycle-right"><strong${timeAttr}>${model.remainingLabel}</strong><small>remaining</small></div></div>`;
+  } else if (status === 'ready' || status === 'complete') {
+    cycleBody = `<div class="vh-cycle-cta">${status === 'ready' ? progressPhaseAction(model, 'start-cycle', 'active', 'Start 6h Earning') : progressPhaseAction(model, 'claim-cycle', 'locked', 'Claim AP')}</div>`;
+  } else {
+    cycleBody = `<div class="vh-cycle-locked"><p>Play ${model.target} hands to unlock your earning cycle.</p>${progressPhaseSegments(model.hands, model.target)}</div>`;
+  }
+  const winStrip = win ? `<div class="vh-example"><span class="vh-ex-title">EXAMPLE: QUALIFIED WIN</span><div class="vh-ex-flow"><span class="vh-ex-chips">${icon('chips')}<b>+${metricNumber(win.qualifiedWin)}<em>Chips</em></b></span><i class="vh-sep">›</i><span><small>Qualified Winnings</small><b>${metricNumber(model.qualifiedWinnings - win.qualifiedWin)} → ${metricNumber(model.qualifiedWinnings)}</b></span><i class="vh-sep">›</i><span><small>Earning Rate</small><b>${metricNumber(win.previousRate, 2)} → <em class="vh-count" data-rate-count data-from="${win.previousRate}" data-to="${win.nextRate}">${metricNumber(win.previousRate, 2)}</em> <em>AP/h</em></b></span><i class="vh-sep">›</i><span><small>AP per Second</small><b>${(win.previousRate / 3600) >= 1 ? number(win.previousRate / 3600, 2) : number(win.previousRate / 3600, 3)} → ${(win.nextRate / 3600) >= 1 ? number(win.nextRate / 3600, 2) : number(win.nextRate / 3600, 3)} <em>AP/sec</em></b></span></div></div>` : '';
+  const faucetAt = state.faucetAt || 0;
+  const faucetLabel = now() >= faucetAt ? 'Reward ready now' : `Available in ${clockDuration(faucetAt - now())}`;
+  return `<div class="page velvet-home">
+    <header class="vh-header" aria-label="Velvet and Noir home">
+      <button class="vh-back" data-action="back" aria-label="Back">${icon('back')}</button>
+      <span class="vh-logo" aria-hidden="true">${icon('spade')}</span>
+      <div class="vh-title">Velvet &amp; Noir<small>TOKEN POKER FARM</small></div>
+      <a class="vh-ap" href="#home" aria-label="${metricNumber(state.ap)} AP collected">${icon('bolt')}<strong>${metricNumber(state.ap)} AP</strong></a>
+      <a class="vh-avatar" href="#profile" aria-label="Open profile">${profilePhoto()}<i></i></a>
+      <a class="vh-gear" href="#profile" aria-label="Settings">${icon('gear')}</a>
+    </header>
+    <section class="vh-metrics" aria-label="Account overview">
+      <div class="vh-metric"><span class="vh-micon">${icon('chips')}</span><p><small>CHIP BALANCE</small><strong>${metricNumber(state.chips)}</strong><em>Chips</em></p></div>
+      <div class="vh-metric"><span class="vh-micon">${icon('bolt')}</span><p><small>TOTAL AP</small><strong>${metricNumber(model.totalAP, 2)}</strong><em>AP</em></p></div>
+      <div class="vh-metric"><span class="vh-micon">${icon('bar')}</span><p><small>EARNING RATE</small><strong>${rate}</strong><em>AP/h</em></p></div>
+      <div class="vh-metric"><span class="vh-micon">${icon('trophy')}</span><p><small>QUALIFIED WINNINGS</small><strong>${metricNumber(model.qualifiedWinnings)}</strong><em>Chips</em></p></div>
+    </section>
+    <section class="vh-card vh-rate" aria-label="Current earning rate">
+      <div class="vh-card-head"><span class="vh-head-ico">${icon('bolt')}</span><div><h2>CURRENT EARNING RATE</h2><p>Your poker wins increase this rate permanently.</p></div><a class="vh-link" href="#rules">How it works? ${icon('arrow')}</a></div>
+      <div class="vh-rate-grid">
+        <div class="vh-rate-main">
+          <div class="vh-big">${rate}<em>AP/h</em></div>
+          <div class="vh-persec">= ${perSecLabel} AP/sec</div>
+          <span class="vh-chip-up">▲ ${deltaLabel} AP/h <small>Today</small></span>
+          ${rateStatus}
         </div>
-        <div class="progress-live-phase-one">
-          ${progressMetricsState(progressModel)}
-          ${progressRateState(progressModel)}
-          ${progressCycleState(progressModel)}
-          ${progressGoalsState(progressModel)}
-        </div>
-        <div class="progress-interactions" aria-label="Progress navigation">
-          <a class="progress-hitbox hit-how" href="#rules" aria-label="How it works?"></a>
-          <a class="progress-hitbox hit-learn" href="#rules" aria-label="Learn more"></a>
-          <a class="progress-hitbox hit-play-more" href="#play" aria-label="Play More"></a>
-          <a class="progress-hitbox hit-win-more" href="#play" aria-label="Win More"></a>
-          <a class="progress-hitbox hit-climb-leagues" href="#play" aria-label="Climb Leagues"></a>
-          <a class="progress-hitbox hit-view-rewards" href="#missions" aria-label="View Rewards"></a>
+        <div class="vh-rtable">
+          <p><span>Current Rate</span><strong>${rate} <em>AP/h</em></strong></p>
+          <p><span>AP per second</span><strong>${perSecLabel} <em>AP/sec</em></strong></p>
+          <p><span>Status</span><strong class="${status === 'active' ? 'ok' : ''}">${status === 'active' ? '● EARNING NOW' : status.toUpperCase()}</strong></p>
+          <p><span>Total AP (lifetime)</span><strong>${metricNumber(model.totalAP, 2)} <em>AP</em></strong></p>
+          <p><span>Qualified Winnings</span><strong>${metricNumber(model.qualifiedWinnings)} <em>Chips</em></strong></p>
         </div>
       </div>
+    </section>
+    <section class="vh-card vh-cycle" aria-label="Current earning cycle">
+      <div class="vh-card-head"><span class="vh-head-ico cyan">${icon('clock')}</span><div><h2>CURRENT EARNING CYCLE</h2><p>${cycleSub}</p></div><b class="vh-status-pill is-${status}"><i></i>${cyclePill}</b></div>
+      ${cycleBody}
+    </section>
+    <section class="vh-card vh-growth" aria-label="How your rate grows">
+      <div class="vh-card-head"><span class="vh-head-ico ring">A</span><div><h2>HOW YOUR RATE GROWS</h2><p>Play poker, win qualified pots, and increase your rate. The more you play, the faster you earn.</p></div><a class="vh-link cyan" href="#rules">Learn more ${icon('arrow')}</a></div>
+      <div class="vh-steps">
+        <div class="vh-step"><span class="vh-step-ico gold">${cardsIcon}</span><strong>1. PLAY &amp; WIN</strong><p>Win Chips in qualifying hands</p></div><i class="vh-sep">›</i>
+        <div class="vh-step"><span class="vh-step-ico gold">${icon('chips')}</span><strong>2. QUALIFIED WINNINGS</strong><p>Your net wins increase here</p></div><i class="vh-sep">›</i>
+        <div class="vh-step"><span class="vh-step-ico cyan">${icon('bar')}</span><strong>3. EARNING RATE</strong><p>Increases permanently</p></div><i class="vh-sep">›</i>
+        <div class="vh-step"><span class="vh-step-ico gold">${icon('bolt')}</span><strong>4. EARN FASTER</strong><p>Get more AP every second</p></div>
+      </div>
+      ${winStrip}
+    </section>
+    <div class="vh-duo">
+      <section class="vh-card vh-league" aria-label="League">
+        <div class="vh-card-head"><span class="vh-head-ico">${icon('trophy')}</span><div><h2>LEAGUE</h2><p>Show your skill. Unlock higher stakes.</p></div></div>
+        <div class="vh-league-body">
+          <div class="vh-league-now"><span class="vh-emblem bronze">${icon('spade')}</span><strong>${html(leagueName.toUpperCase())} ${html(league.division || 'I')}</strong><div class="vh-league-bar"><i style="width:${Math.min(100, Math.round(league.rating / nextRating * 100))}%"></i></div><span class="vh-league-progress">${metricNumber(league.rating)} / ${metricNumber(nextRating)}</span></div>
+          ${nextLeague ? `<a class="vh-league-next" href="#play" aria-label="Next league: ${html(nextLeague)}"><span class="vh-next-label">Next League<small>${html(nextLeague.toUpperCase())} I</small></span><span class="vh-emblem silver sm">${icon('spade')}</span>${icon('arrow')}<span class="vh-unlocks">Unlocks:<br>● Higher stakes<br>● Bigger Rewards</span></a>` : ''}
+        </div>
+      </section>
+      <section class="vh-card vh-progress" aria-label="Your progress">
+        <div class="vh-card-head"><span class="vh-head-ico">${icon('bar')}</span><div><h2>YOUR PROGRESS</h2><p>Keep playing to grow even faster.</p></div></div>
+        <a class="vh-goal" href="#play"><span class="vh-goal-ico cyan">${icon('playCircle')}</span><span><strong>Play More</strong><small>View available tables and start winning</small></span>${icon('arrow')}</a>
+        <a class="vh-goal" href="#play"><span class="vh-goal-ico pink">${icon('chips')}</span><span><strong>Win Qualified Pots</strong><small>Increase your Qualified Winnings</small></span>${icon('arrow')}</a>
+        <a class="vh-goal" href="#play"><span class="vh-goal-ico gold">${icon('trophy')}</span><span><strong>Climb Leagues</strong><small>Unlock higher stakes and better rewards</small></span>${icon('arrow')}</a>
+      </section>
     </div>
-  </main>`;
+    <section class="vh-reward" aria-label="Daily reward">
+      <span class="vh-gift" aria-hidden="true">${icon('gift')}</span>
+      <div><strong>Daily Reward</strong><p>Get free Chips every 24 hours.</p></div>
+      <span class="vh-reward-side"><small data-vh-faucet>${faucetLabel}</small><a class="vh-btn" href="#missions">View Rewards ${icon('arrow')}</a></span>
+    </section>
+  </div>`;
 }
 function missions() {
   return `<div class="page">${title('ETWAS MEHR MITNEHMEN', 'Deine Missionen', 'Kleine Ziele. Zusätzliche Spielchips. Keine gekaufte Earning-Rate.')}${state.missions.map(m => `<section class="list-card"><div class="row"><h3>${m.title}</h3><span class="tag">+${number(m.reward)} Chips</span></div><p>${m.description}</p><div class="progress-line"><span style="width:${m.progress / m.target * 100}%"></span></div><div class="row"><span class="small muted">${m.progress} / ${m.target}</span><button class="reward-button" data-action="mission" data-id="${m.id}" ${m.claimed || m.progress < m.target ? 'disabled' : ''}>${m.claimed ? 'Abgeholt ✓' : m.progress >= m.target ? 'Chips abholen' : 'In Arbeit'}</button></div></section>`).join('')}<p class="info-note">Vorschau-Missionen: Fortschritt wird hier durch Demo-Hände erzeugt. Live-Prüfung und Tagesmissionen sind noch nicht angebunden.</p></div>`;
@@ -627,6 +708,7 @@ function updateTimers() {
     document.querySelectorAll('[data-cycle-ring]').forEach(e => e.style.setProperty('--progress', cycleProgress() + '%'));
   }
   if ($('[data-faucet-time]')) $('[data-faucet-time]').textContent = now() >= state.faucetAt ? 'Ein Paket ist bereit' : `Wieder in ${duration(state.faucetAt - now())}`;
+  document.querySelectorAll('[data-vh-faucet]').forEach(e => e.textContent = now() >= state.faucetAt ? 'Reward ready now' : `Available in ${clockDuration(state.faucetAt - now())}`);
 }
 function demoModal() {
   if (rewardPreview) {
